@@ -20,6 +20,8 @@ default: &default
   # For details on connection pooling, see Rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: aypdbadmin
+  password: punta1217
 
 development:
   <<: *default
@@ -57,6 +59,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
   database: ayp_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
@@ -80,6 +83,7 @@ test:
 #
 production:
   <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
   database: ayp_production
   username: ayp
   password: <%= ENV['AYP_DATABASE_PASSWORD'] %>
