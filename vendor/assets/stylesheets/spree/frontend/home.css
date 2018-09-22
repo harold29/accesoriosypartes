@@ -1,4 +1,65 @@
+#spree-header {
+  background-image: url("fondo.png") !important;
+  background-color: transparent;
+  margin-bottom: 0;
+}
+
 #header {
   background-image: url("fondo.png") !important;
   padding: 35px 0 !important;
+}
+
+#main-nav-bar {
+  font-weight: bold;
+}
+
+#spree-header .container {
+
+}
+
+#products-featured {
+  margin-top: 15px;
+}
+
+#about-container {
+  background-color: #f1f1f1;
+  text-align: justify;
+  padding: 2% 3% 2% 3%;
+}
+
+#footer-container {
+  background-color: #2d2d2d !important;
+  color: white;
+  padding: 4%;
+}
+
+.footer-title {
+  font-size: 15px;
+  margin-bottom: 30px;
+}
+
+#footer-subcontainer {
+  padding-left: 2%;
+  padding-right: 2%;
+  height: 250px;
+}
+
+#footer-logo {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+#footer-3 div {
+  text-align: center;
+}
+
+#footer-3 div .btn {
+  background-color: #757575;
+  border-color: #8c8c8c;
+  color: white;
+  border-radius: 0px;
+}
+
+#footer-1, #footer-2, #footer-3 {
+  border-right: 1px solid white;
 }

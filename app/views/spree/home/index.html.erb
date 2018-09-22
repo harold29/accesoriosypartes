@@ -1,13 +1,16 @@
 <% @body_id = 'home-page' %>
-<% content_for :sidebar do %>
-  <div data-hook="homepage_sidebar_navigation">
+<%= render partial: 'spree/shared/slider' %>
+<%= render partial: 'spree/shared/featured', locals: { products: @products } %>
+<%= render partial: 'spree/shared/about' %>
+<%= render partial: 'spree/shared/footer' %>
+<%# content_for :sidebar do %>
+  <!-- <div data-hook="homepage_sidebar_navigation">
     <%= render partial: 'spree/shared/taxonomies' %>
-  </div>
-<% end %>
+  </div> -->
+<%# end %>
 
-<div data-hook="homepage_products">
-  POTATO
-  <% cache(cache_key_for_products) do %>
-    <%= render partial: 'spree/shared/products', locals: { products: @products } %>
-  <% end %>
-</div>
+<!-- <div data-hook="homepage_products"> -->
+  <%# cache(cache_key_for_products) do %>
+    <%# render partial: 'spree/shared/products', locals: { products: @products } %>
+  <%# end %>
+<!-- </div> -->
