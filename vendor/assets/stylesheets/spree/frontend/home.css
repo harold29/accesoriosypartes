@@ -1,7 +1,12 @@
+body {
+  background-color: #2d2d2d;
+}
+
 #spree-header {
   background-image: url("https://www.accesoriosypartes.com.ar/wp-content/themes/Divi/epanel/shortcodes/img/fondo.png") !important;
   background-color: transparent;
   margin-bottom: 0;
+  border-bottom: 5px solid #7c7c7c;
 }
 
 #header {
@@ -15,6 +20,70 @@
 
 #spree-header .container {
 
+}
+
+#slider-container {
+  border-bottom: 15px solid #e6e6e6;
+}
+
+.companies-slider {
+  border-bottom: 15px solid #e6e6e6;
+  background-color: #ffffff;
+}
+
+.company, .company-sub {
+  text-align: center;
+}
+
+.companies-slider .companies {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.companies-slider .companies .company .company-container {
+  display: inline-block;
+  width: 145px;
+}
+
+.companies-slider .companies .company .company-container .company-img {
+  width: 100%
+}
+
+.companies-slider .companies .company-sub .company-container {
+  display: inline-block;
+  width: 87px;
+}
+
+.companies-slider .companies .company-sub .company-container .company-img-sub {
+  width: 100%;
+}
+
+.collage-container {
+  width: 100%;
+  text-align: center;
+  background-color: #fff;
+}
+
+.collage-container .collage-rows {
+  padding-left: 10%;
+  padding-right: 10%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+.featured-products-container {
+  background-color: #fff;
+  padding-top: 3%;
+  padding-bottom: 3%;
+}
+
+.featured-products-container .featured-title {
+  text-align: center;
+}
+
+.featured-products-container .featured-title h2 {
+  font-weight: bold;
+  font-size: 2em;
 }
 
 #products-featured {

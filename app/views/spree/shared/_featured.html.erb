@@ -1,7 +1,14 @@
-<% @f_taxon = Spree::Taxon.find_by(name: "Destacados") %>
-<% unless @f_taxon.nil? %>
+<div class="featured-products-container">
+  <div class="featured-title">
+    <h2>
+      Artículos Destacados
+    </h2>
+  </div>
+  <% @f_taxon = Spree::Taxon.find_by(name: "Destacados") %>
+  <% unless @f_taxon.nil? %>
   <% @f_products = @f_taxon.products %>
   <div id="products-featured" class="row" data-hook>
     <%= render partial: 'spree/products/product', collection: @f_products, locals: { taxon: @f_taxon } %>
   </div>
-<% end %>
+  <% end %>
+</div>
