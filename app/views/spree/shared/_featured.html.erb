@@ -8,7 +8,13 @@
   <% unless @f_taxon.nil? %>
   <% @f_products = @f_taxon.products %>
   <div id="products-featured" class="row" data-hook>
+    <div class="col-md-1 col-sm-1">
+
+    </div>
     <%= render partial: 'spree/products/product', collection: @f_products, locals: { taxon: @f_taxon } %>
+    <div class="col-md-1 col-sm-1">
+      
+    </div>
   </div>
   <% end %>
 </div>
