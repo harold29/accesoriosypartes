@@ -1,12 +1,13 @@
-<nav class="col-md-12">
-  <div id="main-nav-bar" class="navbar">
-    <ul class="nav navbar-nav" data-hook>
-      <li id="home-link" data-hook><%= link_to Spree.t(:home), spree.root_path %></li>
-      <li id="catalogue-link" class="dropdown" data-hook>
-        <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          CATÁLOGO
-        </a>
-        <ul class="dropdown-menu">
+<div class="row">
+  <nav class="col-md-6">
+    <div id="main-nav-bar" class="navbar">
+      <ul class="nav navbar-nav" data-hook>
+        <li id="home-link" data-hook><%= link_to Spree.t(:home), spree.root_path %></li>
+        <li id="catalogue-link" class="dropdown" data-hook>
+          <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            CATÁLOGO
+          </a>
+          <ul class="dropdown-menu">
             <li><a href="#">Audio, Video y Multimedia</a></li>
             <li><a href="#">Domótica y Control</a></li>
             <li><a href="#">Limpieza Inteligente</a></li>
@@ -15,28 +16,36 @@
             <li><a href="#">Diseño de Interior</a></li>
             <li><a href="#">Instalaciones</a></li>
           </ul>
-      </li>
-      <li id="service-link" data-hook>
-        <a href="#">SERVICIOS</a>
-      </li>
-      <li id="company-link" data-hook>
-        <a href="#">EMPRESA</a>
-      </li>
-      <li id="blog-link" data-hook>
-        <a href="#">BLOG</a>
-      </li>
-      <li id="contact-link" data-hook>
-        <a href="#">CONTACTO</a>
-      </li>
-    </ul>
-    <!-- <ul class="nav navbar-nav navbar-right" data-hook>
-      <li id="link-to-cart" data-hook>
-        <noscript>
+        </li>
+        <li id="service-link" data-hook>
+          <a href="#">SERVICIOS</a>
+        </li>
+        <li id="company-link" data-hook>
+          <a href="#">EMPRESA</a>
+        </li>
+        <li id="blog-link" data-hook>
+          <a href="#">BLOG</a>
+        </li>
+        <li id="contact-link" data-hook>
+          <a href="#">CONTACTO</a>
+        </li>
+      </ul>
+          <!-- <ul class="nav navbar-nav navbar-right" data-hook>
+          <li id="link-to-cart" data-hook>
+          <noscript>
           <%= link_to_cart %>
         </noscript>
         &nbsp;
       </li>
       <script>Spree.fetch_cart()</script>
     </ul> -->
+    </div>
+  </nav>
+  <div class="col-md-6">
+    <ul id="nav-bar" class="nav navbar-nav navbar-right" data-hook>
+      <li id="search-bar" data-hook>
+        <%= render partial: 'spree/shared/search' %>
+      </li>
+    </ul>
   </div>
-</nav>
+</div>
