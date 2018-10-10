@@ -1,14 +1,31 @@
-<div class="row">
-  <nav class="col-md-6">
-    <div id="main-nav-bar" class="navbar">
-      <ul class="nav navbar-nav" data-hook>
+<div class="row second-header-container">
+  <nav class="col-md-7">
+    <div id="main-nav-bar" class="menu-wrapper collapse navbar-collapse navbar">
+      <ul class="nav navbar-nav nav-main desenfoque" data-hook>
         <li id="home-link" data-hook><%= link_to Spree.t(:home), spree.root_path %></li>
         <li id="catalogue-link" class="dropdown" data-hook>
           <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            CATÁLOGO
+            &nbsp;&nbsp;CATÁLOGO&nbsp;&nbsp;
           </a>
           <ul class="dropdown-menu">
-            <li><a href="#">Audio, Video y Multimedia</a></li>
+            <li class="dropdown-submenu second-level">
+              <a class="sub-link" href="#">Audio, Video y Multimedia</a>
+              <ul class="dropdown-menu submenu-container" id="audio-video">
+                <div class="submenu-links">
+                  <li><a href="https://www.accesoriosypartes.com.ar/sitio-en-construccion">Sintoamplificadores y potencias</a></li>
+                  <li><a href="https://www.accesoriosypartes.com.ar/sitio-en-construccion">Parlantes</a></li>
+                  <li><a href="https://www.accesoriosypartes.com.ar/sitio-en-construccion">Microfonos y auriculares</a></li>
+                  <li><a href="https://www.accesoriosypartes.com.ar/sitio-en-construccion">Proyectores y pantallas</a></li>
+                  <li><a href="https://www.accesoriosypartes.com.ar/sitio-en-construccion">Multimedia</a></li>
+                  <li><a href="https://www.accesoriosypartes.com.ar/sitio-en-construccion">Accesorios A/V</a></li>
+                </div>
+                <div class="submenu-img">
+                  <div>
+                    <img src="https://accesoriosypartes.com.ar/wp-content/themes/Divi/epanel/shortcodes/img/prueba_menu.jpg" alt="">
+                  </div>
+                </div>
+              </ul>
+            </li>
             <li><a href="#">Domótica y Control</a></li>
             <li><a href="#">Limpieza Inteligente</a></li>
             <li><a href="#">Control de Acceso</a></li>
@@ -18,16 +35,16 @@
           </ul>
         </li>
         <li id="service-link" data-hook>
-          <a href="#">SERVICIOS</a>
+          <a href="#">&nbsp;&nbsp;SERVICIOS&nbsp;&nbsp;</a>
         </li>
         <li id="company-link" data-hook>
-          <a href="#">EMPRESA</a>
+          <a href="#">&nbsp;&nbsp;EMPRESA&nbsp;&nbsp;</a>
         </li>
         <li id="blog-link" data-hook>
-          <a href="#">BLOG</a>
+          <a href="#">&nbsp;&nbsp;BLOG&nbsp;&nbsp;</a>
         </li>
         <li id="contact-link" data-hook>
-          <a href="#">CONTACTO</a>
+          <a href="https://www.accesoriosypartes.com.ar/contacto">&nbsp;&nbsp;CONTACTO&nbsp;&nbsp;</a>
         </li>
       </ul>
           <!-- <ul class="nav navbar-nav navbar-right" data-hook>
@@ -41,7 +58,7 @@
     </ul> -->
     </div>
   </nav>
-  <div class="col-md-6">
+  <div class="col-md-5">
     <ul id="nav-bar" class="nav navbar-nav navbar-right" data-hook>
       <li id="search-bar" data-hook>
         <%= render partial: 'spree/shared/search' %>

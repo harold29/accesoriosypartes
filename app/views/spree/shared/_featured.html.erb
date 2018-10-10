@@ -1,7 +1,7 @@
 <div class="featured-products-container">
   <div class="featured-title">
     <h2>
-      Artículos Destacados
+      Artículos destacados
     </h2>
   </div>
   <% @f_taxon = Spree::Taxon.find_by(name: "Destacados") %>
@@ -13,7 +13,7 @@
     </div>
     <%= render partial: 'spree/products/product', collection: @f_products, locals: { taxon: @f_taxon } %>
     <div class="col-md-1 col-sm-1">
-      
+
     </div>
   </div>
   <% end %>
