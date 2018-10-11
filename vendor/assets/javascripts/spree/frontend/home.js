@@ -13,7 +13,7 @@ $(document).ready(function() {
     cssEase: 'linear',
     dots: false,
     paused: false,
-    pauseOnHover: false,
+    pauseOnHover: true,
     responsive: [{
       breakpoint: 768,
       settings: {
@@ -34,11 +34,11 @@ $(document).ready(function() {
     autoplay: true,
     autoplaySpeed: 0,
     arrows: false,
-            cssEase: 'linear',
+    cssEase: 'linear',
     dots: false,
-            paused: false,
-      pauseOnHover: false,
-      responsive: [{
+    paused: false,
+    pauseOnHover: true,
+    responsive: [{
       breakpoint: 768,
       settings: {
         slidesToShow: 4
@@ -62,7 +62,7 @@ $(document).ready(function() {
     cssEase: 'linear',
     dots: false,
     paused: false,
-    pauseOnHover: false,
+    pauseOnHover: true,
     responsive: [{
       breakpoint: 768,
       settings: {
@@ -86,7 +86,7 @@ $(document).ready(function() {
     cssEase: 'linear',
     dots: false,
     paused: true,
-    pauseOnHover: false,
+    pauseOnHover: true,
     responsive: [{
       breakpoint: 768,
       settings: {
