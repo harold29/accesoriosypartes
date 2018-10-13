@@ -100,12 +100,40 @@ body {
   width: 310px;
 }
 
+.navbar-form {
+  position: relative;
+  background-color: white;
+  border-radius: 15px;
+  border: 1px solid #d6d6d6;
+
+}
+
 #search-bar {
-  width: 100%;
+  width: 75%;
 }
 
 .form-group {
   width: 80%;
+}
+
+.search-field input {
+
+}
+
+.search-field::-webkit-input-placeholder {
+color: black !important;
+}
+
+.search-field:-moz-placeholder { /* Firefox 18- */
+color: black !important;
+}
+
+.search-field::-moz-placeholder {  /* Firefox 19+ */
+color: black !important;
+}
+
+.search-field:-ms-input-placeholder {
+color: black !important;
 }
 
 #search-bar #keywords {
@@ -119,12 +147,28 @@ body {
   font-style: normal;
   text-indent: 3px;
   display: inline-block;
-  padding: 2px 40px 2px 10px;
+  /* padding: 2px 40px 2px 10px; */
+  padding-left: 0px;
   margin: 0;
   width: 100% !important;
   height: initial;
   outline: none;
-  border: 1px solid #d6d6d6;
+  border: 0px solid #d6d6d6;
+}
+
+.search-button {
+  position: absolute;
+  background: transparent;
+  border: 0px;
+  color: #dd8d13;
+  font-weight: bold;
+  right: 5px;
+  bottom: 0px;
+  top: 0px;
+}
+
+.search-button .glyphicon-search {
+  font-weight: bold !important;
 }
 
 #search-button {
@@ -214,7 +258,7 @@ body {
   text-align: justify !important;
   border-radius: 0 10px 10px 0;
   box-sizing: border-box;
-  padding: 10px 1% !important;
+  padding: 0px 1% !important;
   left: 0%;
   bottom: 2% !important;
 }
@@ -454,6 +498,7 @@ body {
   width: 100%;
   text-align: center;
   background-color: #fff;
+  padding-bottom: 1%;
 }
 
 .collage-container .collage-rows {
@@ -465,8 +510,10 @@ body {
 
 .featured-products-container {
   background-color: #fff;
-  padding-top: 4vw;
+  padding-top: 1.5vw;
   padding-bottom: 3%;
+  border-top: 15px solid #e6e6e6;
+  border-bottom: 15px solid #e6e6e6;
 }
 
 .featured-products-container .featured-title {
@@ -828,6 +875,12 @@ body {
 #footer-logo {
   margin-top: 10px;
   margin-bottom: 20px;
+}
+
+#footer-1 .pages ul li, #footer-2 .pages ul li {
+  font-size: 13px;
+  margin-bottom: 5px;
+  list-style-type: square;
 }
 
 #footer-3 .footer-title {
