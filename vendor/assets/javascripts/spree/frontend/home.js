@@ -52,7 +52,7 @@ $(document).ready(function() {
   });
 
   $('.clients-slider').slick({
-    speed: 4500,
+    speed: 2500,
     variableWidth: true,
     slidesToShow: 9,
     slidesToScroll: 1,
