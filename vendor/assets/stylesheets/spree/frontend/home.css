@@ -192,9 +192,9 @@ color: black !important;
   text-transform: uppercase;
 }
 
-#catalogue-link .dropdown-menu::before {
+.dropdown-menu.first::before {
   content: ' ';
-  display: block;
+  /* display: block; */
   position: absolute;
   top: -20px;
   left: 18px;
@@ -204,24 +204,24 @@ color: black !important;
   border-bottom: 10px solid #444343;
 }
 
-#catalogue-link .dropdown-menu {
+.dropdown-menu {
   background-color: #444343;
   padding-top: 20px !important;
   padding-bottom: 20px !important;
 }
 
-#catalogue-link .dropdown-menu li {
+.dropdown-menu li {
   margin-bottom: 10px !important;
   padding: 0 16px !important;
 }
 
-#catalogue-link .dropdown-menu li a {
+.dropdown-menu li a {
   font-size: 16px !important;
   padding-left: 8px !important;
   padding-right: 8px !important;
 }
 
-#catalogue-link .dropdown-menu li a:hover {
+.dropdown-menu li a:hover {
   background: none;
   background-image: none;
   background-position-x: initial;
@@ -235,6 +235,179 @@ color: black !important;
   background-color: initial;
 }
 
+.dropdown-menu {
+  background: #444343 ;
+  background-color: #444343 ;
+  height: auto;
+  padding: 16px 0;
+  /* display: block; */
+  margin-top: 0px;
+  border: none !important;
+  border-radius: 0px;
+  -webkit-transition: .1s all;
+  -webkit-transition-delay: .4s;
+  -moz-transition: .1s all;
+  -moz-transition-delay: .4s;
+  -ms-transition: .1s all;
+  -ms-transition-delay: .4s;
+  -o-transition: .1s all;
+  -o-transition-delay: .4s;
+  transition: .1s all;
+  transition-delay: .4s;
+}
+
+.dropdown-menu.submenu-container {
+  margin-top: 0;
+  top: 0 !important;
+}
+
+.dropdown-menu::after {
+  content: ' ';
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 0;
+}
+
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -1px;
+}
+
+.dropdown-menu.first::before {
+  content: ' ';
+  display: block;
+  position: absolute;
+  top: -20px;
+  left: 18px;
+  border-right: 10px solid transparent;
+  border-top: 10px solid transparent;
+  border-left: 10px solid transparent;
+  border-bottom: 10px solid #444343 ;
+}
+
+.dropdown-menu > li  a {
+  padding-left:5px;
+  font-size: 16px !important;
+  margin-bottom: 5px;
+}
+
+.dropdown-submenu {
+  position:relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top:0;
+  left:100%;
+  margin-top:-6px;margin-left:-1px;
+  -webkit-border-radius:0 6px 6px 6px;
+  -moz-border-radius:0 6px 6px 6px;
+  border-radius:0 6px 6px 6px;
+  width: 520px !important;
+}
+
+.dropdown-submenu > a:after {
+  border-color: transparent transparent transparent #444343;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  content: " ";
+  display: block;
+  float: right;
+  height: 0;
+  margin-right: -10px;
+  margin-top: 5px;
+  width: 0;
+}
+
+.dropdown-submenu.second-level {
+  position: initial !important;
+}
+
+ul.dropdown-menu.submenu-container{
+  background: #232323 !important;
+}
+
+.second-level a {
+    color: white !important;
+}
+  /*==submenu==*/
+.dropdown-submenu.second-level > a:after {
+  border: none;
+}
+.submenu-container {
+  top: 5px !important;
+  min-height: 100px !important;
+  padding: 16px 0px 16px 7px;
+  border-radius: 0px !important;
+}
+
+.nav li:hover > ul {
+  -webkit-transition-delay: 0s;
+  -moz-transition-delay: 0s;
+  -ms-transition-delay: 0s;
+  -o-transition-delay: 0s;
+  transition-delay: 0s;
+}
+
+.submenu-links {
+  padding-right: 10px;
+  width: 300px;
+  float: left;
+}
+
+.submenu-links li {
+  margin-left: 5px;
+  margin-bottom: 10px;
+  height: 30px;
+  width: 100%;
+}
+
+.nav li ul > .second-level {
+    height: 30px;
+}
+
+.submenu-links li a {
+padding-left: 0 !important;
+
+}
+.submenu-links a:hover {
+  color: #C2AD70;
+  text-decoration: none;
+}
+
+.submenu-img {
+  width: 180px;
+  float: left;
+}
+
+.submenu-img img {
+  display: block;
+  margin: 0 auto;
+}
+
+.img-responsive, .thumbnail>img, .thumbnail a>img, .carousel-inner>.item>img, .carousel-inner>.item>a>img {
+    margin: auto;
+}
+
+.submenu-container.dropdown-menu::before {
+  border: none;
+}
+
+ul.nav li:hover > ul.dropdown-menu {
+  display: block;
+    width: auto;
+}
+
+#slider{
+-webkit-transition: all 2s ease;
+-moz-transition: all 2s ease;
+-o-transition: all 2s ease;
+transition: all 2s ease;
+}
 /* ================================END HEADER=============================== */
 
 

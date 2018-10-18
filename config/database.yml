@@ -83,7 +83,7 @@ test:
 #
 production:
   <<: *default
-  url: <%= ENV['DATABASE_URL'] %>
-  database: ayp_production
-  username: ayp
-  password: <%= ENV['AYP_DATABASE_PASSWORD'] %>
+  host: "/cloudsql/nueva-ayp:us-central1:aypdb"
+  database: "ayp_production"
+  username: "aypdbadmin"
+  password: "punta1217"
