@@ -3,6 +3,13 @@ $(document).ready(function() {
   //   wrap: false,
   // });
 
+  $('.dropdown-submenu a.sub-link').on("click", function(e){
+    console.log("MENU");
+    $(this).next('ul').toggle();
+    e.stopPropagation();
+    e.preventDefault();
+  });
+
   $('.companies-conveyor').slick({
     speed: 6500,
     slidesToShow: 6,
@@ -133,12 +140,14 @@ $(document).ready(function() {
   		}
   	});
 
-  $('.dropdown-submenu a.sub-link').on("click", function(e){
-    console.log("MENU");
-    $(this).next('ul').toggle();
-    e.stopPropagation();
-    e.preventDefault();
-  });
+
+
+  // $('.dropdown-submenu a.test').on("click", function(e){
+  //   console.log("FOR TWO LEVELS")
+  //   $(this).next('ul').toggle();
+  //   e.stopPropagation();
+  //   e.preventDefault();
+  // });
 
   var item = $(".desenfoque");
   // agrego la clase blur a todos los 'ítem' que NO sea al que le se le esta aplicando el evento 'hover'
