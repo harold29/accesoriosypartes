@@ -1,0 +1,21 @@
+<div class="other-models-products-container">
+  <div class="other-models-title">
+    <h2>
+      Otros Modelos
+    </h2>
+  </div>
+  <% @p_taxon = @product.taxons.last %>
+  <% @m_taxon = Spree::Taxon.find_by(name: @p_taxon.name) %>
+  <% unless @m_taxon.blank? %>
+  <% @f_products = @m_taxon.products %>
+  <div id="products-other-models" class="row" data-hook>
+    <div class="col-md-1 col-sm-1">
+
+    </div>
+    <%= render partial: 'spree/products/product', collection: @f_products, locals: { taxon: @m_taxon } %>
+    <div class="col-md-1 col-sm-1">
+
+    </div>
+  </div>
+  <% end %>
+</div>

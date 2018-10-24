@@ -419,6 +419,8 @@ transition: all 2s ease;
 #slider-container {
   border-bottom: 15px solid #e6e6e6;
   position: relative;
+  padding-bottom: 7px;
+  background-color: white;
 }
 
 
@@ -565,13 +567,13 @@ transition: all 2s ease;
 .companies-slider .companies-conveyor .company .company-img {
   /* width: 100% */
   width: auto;
-  height: 60px;
+  height: 50px;
   margin-left: auto;
   margin-right: auto;
 }
 
 .companies-slider .companies-conveyor .company #logo-1 {
-  /* height: 90px */
+
 }
 
 .companies-slider .companies-conveyor .company #logo-2 {
@@ -646,6 +648,14 @@ transition: all 2s ease;
 .collage-link-container {
   position: absolute;
   border: 1px solid #ccc;
+  width: 100px;
+  height: 100px;
+}
+
+.collage-container .collage-link-container .collage-img {
+  position: relative;
+  height: 100%;
+  width: 100%;
 }
 
 .collage-link-container:hover {
@@ -678,41 +688,56 @@ transition: all 2s ease;
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
+  z-index: 1;
 }
 
 #cat-uno {
   top: 0;
   left: 0;
+  width: 317px;
+  height: auto;
 }
 
 #cat-dos {
   left: 0;
   bottom: 0;
+  width: 317px;
+  height: auto;
 }
 
 #cat-tres {
   top: 0;
   left: 330px;
+  width: 351px;
+  height: auto;
 }
 
 #cat-cuatro {
   bottom: 0;
   left: 330px;
+  width: 351px;
+  height: auto;
 }
 
 #cat-cinco {
   top: 0;
   left: 694px;
+  width: 203px;
+  height: auto;
 }
 
 #cat-seis {
   bottom: 0;
   left: 694px;
+  width: 203px;
+  height: auto;
 }
 
 #cat-siete {
   left: 908px;
   top: 0;
+  width: 346px;
+  height: auto;
 }
 
 .collage-container {
@@ -1041,6 +1066,16 @@ transition: all 2s ease;
 .client-32 {
   width: 97.5px !important;
   margin-top: 19px;
+}
+
+.client-33 {
+  width: 69.5px !important;
+  margin-top: 7px;
+}
+
+.client-34 {
+  width: 70.5px !important;
+  margin-top: 8px;
 }
 
 

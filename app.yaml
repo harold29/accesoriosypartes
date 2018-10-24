@@ -4,6 +4,7 @@ runtime: ruby
 
 env_variables:
   SECRET_KEY_BASE: 8aba9463731d73a03a8c4149c4e09693ad79a6e0c134f4db67379d644850db9c19b96a872a9fc5a41130c6523188efc753b624acb91154000842a4a610f7d1fb
+  RAILS_ENV: production
 
 beta_settings:
   cloud_sql_instances: nueva-ayp:us-central1:aypdb

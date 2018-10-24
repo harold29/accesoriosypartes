@@ -14,7 +14,7 @@ $(document).ready(function() {
     speed: 6500,
     slidesToShow: 6,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 0,
     arrows: false,
     cssEase: 'linear',
