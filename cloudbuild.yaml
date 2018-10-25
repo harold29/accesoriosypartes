@@ -1,7 +1,5 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['pull', 'gcr.io/nueva-ayp/01a4a3ecc31a:latest']
-- name: 'gcr.io/cloud-builders/docker'
   args: [
             'build',
             '-t', 'gcr.io/nueva-ayp/01a4a3ecc31a:latest',
