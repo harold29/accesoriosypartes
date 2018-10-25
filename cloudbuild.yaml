@@ -1,4 +1,4 @@
 steps:
-- name: "gcr.io/580075846952/gcloud"
+- name: "gcr.io/nueva-ayp/gcloud"
   args: ["app", "deploy"]
 timeout: "1600s"
