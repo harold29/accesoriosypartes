@@ -1,4 +1,11 @@
 steps:
-- name: "gcr.io/nueva-ayp/gcloud"
-  args: ["app", "deploy"]
-timeout: "1600s"
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['pull', 'gcr.io/nueva-ayp/01a4a3ecc31a:latest']
+- name: 'gcr.io/cloud-builders/docker'
+  args: [
+            'build',
+            '-t', 'gcr.io/nueva-ayp/01a4a3ecc31a:latest',
+            '--cache-from', 'gcr.io/nueva-ayp/01a4a3ecc31a:latest',
+            '.'
+        ]
+images: ['gcr.io/nueva-ayp/01a4a3ecc31a:latest']
