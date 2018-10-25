@@ -1,9 +1,0 @@
-steps:
-- name: 'gcr.io/cloud-builders/docker'
-  args: [
-            'build',
-            '-t', 'gcr.io/nueva-ayp/01a4a3ecc31a:latest',
-            '--cache-from', 'gcr.io/nueva-ayp/01a4a3ecc31a:latest',
-            '.'
-        ]
-images: ['gcr.io/nueva-ayp/01a4a3ecc31a:latest']
