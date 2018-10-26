@@ -7,7 +7,7 @@
       <div data-hook="admin_product_form_name">
         <%= f.field_container :name, class: ['form-group'] do %>
           <%= f.label :name, raw(Spree.t(:name) + content_tag(:span, ' *', class: 'required')) %>
-          <%= f.text_field :name, class: 'form-control title' %>
+          <%= f.text_field :name, class: 'form-control title', maxlength: 100 %>
           <%= f.error_message_on :name %>
         <% end %>
       </div>
@@ -23,7 +23,7 @@
       <div data-hook="admin_product_form_description">
         <%= f.field_container :description, class: ['form-group'] do %>
           <%= f.label :description, Spree.t(:description) %>
-          <%= f.text_area :description, { rows: "#{unless @product.has_variants? then '20' else '13' end}", class: 'form-control' } %>
+          <%= f.text_area :description, { rows: "#{unless @product.has_variants? then '20' else '13' end}", class: 'form-control', maxlength: 500 } %>
           <%= f.error_message_on :description %>
         <% end %>
       </div>

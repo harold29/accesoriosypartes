@@ -9,7 +9,7 @@
   <fieldset data-hook="new_product">
     <%= f.field_container :name, class: ['form-group'] do %>
       <%= f.label :name, Spree.t(:name) %> <span class="required">*</span>
-      <%= f.text_field :name, class: 'form-control title', required: :required %>
+      <%= f.text_field :name, class: 'form-control title', required: :required, maxlength: 100 %>
       <%= f.error_message_on :name %>
     <% end %>
 
