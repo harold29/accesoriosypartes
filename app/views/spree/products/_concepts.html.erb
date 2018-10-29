@@ -3,7 +3,7 @@
     <div class="row" id="concepts-show-1">
       <div class="col-md-6 col-sm-6">
         <% unless @product_properties[0].property.presentation.empty? %>
-          <h4> <%= @product_properties[0].property.name %></h4>
+          <h4 class="concept-title"> <%= @product_properties[0].property.name %></h4>
         <% end %>
         <p class="concept-text" id="concepto-principal">
           <%= @product_properties[0].value %>
@@ -26,7 +26,7 @@
       </div>
       <div class="col-md-6 col-sm-6">
         <% unless @product_properties[1].property.presentation.empty? %>
-          <h4> <%= @product_properties[1].property.name %></h4>
+          <h4 class="concept-title"> <%= @product_properties[1].property.name %></h4>
         <% end %>
         <p class="concept-text" id="concepto-principal">
           <%= @product_properties[1].value %>

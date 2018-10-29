@@ -107,6 +107,60 @@ $(document).ready(function() {
     }]
   });
 
+  $('#products-other-models').slick({
+    speed: 3500,
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    autoplaySpeed: 0,
+    arrows: true,
+	  variableWidth: true,
+    cssEase: 'linear',
+    dots: false,
+    paused: true,
+    pauseOnHover: true,
+    nextArrow: '<button type="button" class="right-arrow control-button slick-next"><span class="glyphicon flecha-icono glyphicon-menu-right" aria-hidden="true"></span></button>',
+    prevArrow: '<button type="button" class="left-arrow control-button slick-prev"><span class="glyphicon flecha-icono glyphicon-menu-left" aria-hidden="true"></span></button>',
+    arrows: true,
+    responsive: [{
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 4
+      }
+    }, {
+      breakpoint: 520,
+      settings: {
+        slidesToShow: 3
+      }
+    }]
+  });
+
+  $('#products-other').slick({
+    speed: 3500,
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    autoplaySpeed: 0,
+    arrows: true,
+	  variableWidth: true,
+    cssEase: 'linear',
+    dots: false,
+    paused: true,
+    pauseOnHover: true,
+    arrows: true,
+    nextArrow: '<button type="button" class="right-arrow control-button slick-next"><span class="glyphicon flecha-icono glyphicon-menu-right" aria-hidden="true"></span></button>',
+    prevArrow: '<button type="button" class="left-arrow control-button slick-prev"><span class="glyphicon flecha-icono glyphicon-menu-left" aria-hidden="true"></span></button>',
+    responsive: [{
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 4
+      }
+    }, {
+      breakpoint: 520,
+      settings: {
+        slidesToShow: 3
+      }
+    }]
+  });
+
   var aboveHeight = $('#header').outerHeight();
   $(window).scroll(function(){
   	if ($(window).scrollTop() > aboveHeight){

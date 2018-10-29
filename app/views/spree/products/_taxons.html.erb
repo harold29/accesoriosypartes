@@ -1,8 +1,26 @@
 <% if @product.taxons.present? %>
-  <h3 class="product-section-title"><%= Spree.t(:look_for_similar_items) %></h3>
-  <ul class="list-group" id="similar_items_by_taxon" data-hook>
-    <% @product.taxons.each do |taxon| %>
-      <li class="list-group-item"><%= link_to taxon.name, seo_url(taxon) %></li>
+  <!-- <h3 class="product-section-title"> -->
+    <%# Spree.t(:look_for_similar_items) #%>
+  <!-- </h3> -->
+  <!-- <ul class="list-group" id="similar_items_by_taxon" data-hook> -->
+    <%# @product.taxons.each do |taxon| #%>
+      <!-- <li class="list-group-item"><%# link_to taxon.name, seo_url(taxon) %></li> -->
+    <%# end #%>
+  <!-- </ul> -->
+  <div class="categories-tags-container">
+    <div class="categories-container">
+      <span class="taxon-title">Categorías: </span>
+      <% @product.taxons.each do |taxon| %>
+        <%= link_to taxon.name, seo_url(taxon) %> &nbsp;
+      <% end %>
+    </div>
+    <% @product.tags.present? %>
+      <div class="tags-container">
+        <span class="taxon-title">Etiquetas: </span>
+        <% if @product.tags.each do |tag| %>
+          <%= link_to tag.name %> &nbsp;
+        <% end %>
+      </div>
     <% end %>
-  </ul>
+  </div>
 <% end %>
