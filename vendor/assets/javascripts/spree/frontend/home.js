@@ -108,12 +108,13 @@ $(document).ready(function() {
   });
 
   $('#products-other-models').slick({
-    speed: 3500,
+    speed: 2500,
     slidesToShow: 4,
     slidesToScroll: 4,
     autoplaySpeed: 0,
     arrows: true,
-	  variableWidth: true,
+    initialSlide: 3,
+	  // variableWidth: true,
     cssEase: 'linear',
     dots: false,
     paused: true,
@@ -135,19 +136,20 @@ $(document).ready(function() {
   });
 
   $('#products-other').slick({
-    speed: 3500,
-    slidesToShow: 4,
+    speed: 2500,
+    slidesToShow: 5,
     slidesToScroll: 4,
     autoplaySpeed: 0,
     arrows: true,
-	  variableWidth: true,
+    initialSlide: 3,
+	  // variableWidth: true,
     cssEase: 'linear',
     dots: false,
-    paused: true,
+    // paused: true,
     pauseOnHover: true,
     arrows: true,
-    nextArrow: '<button type="button" class="right-arrow control-button slick-next"><span class="glyphicon flecha-icono glyphicon-menu-right" aria-hidden="true"></span></button>',
-    prevArrow: '<button type="button" class="left-arrow control-button slick-prev"><span class="glyphicon flecha-icono glyphicon-menu-left" aria-hidden="true"></span></button>',
+    // nextArrow: '<button type="button" class="right-arrow control-button slick-next"><span class="glyphicon flecha-icono glyphicon-menu-right" aria-hidden="true"></span></button>',
+    // prevArrow: '<button type="button" class="left-arrow control-button slick-prev"><span class="glyphicon flecha-icono glyphicon-menu-left" aria-hidden="true"></span></button>',
     responsive: [{
       breakpoint: 768,
       settings: {
