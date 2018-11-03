@@ -1,6 +1,7 @@
 body {
   background-color: #2d2d2d;
   font-family: 'Roboto', sans-serif;
+  /* position: fixed; */
 }
 
 /* ====================================HEADER=============================== */
@@ -19,6 +20,10 @@ body {
   /* padding: 0px 0 !important; */
   padding-top: 0px !important;
   padding-bottom: 0px !important;
+}
+
+.header-container {
+  width: 95% !important;
 }
 
 #logo {
@@ -68,7 +73,7 @@ body {
 }
 
 .contact-info-container {
-
+  text-align: right;
 }
 
 .second-header-container {
@@ -402,11 +407,11 @@ ul.nav li:hover > ul.dropdown-menu {
     width: auto;
 }
 
-#slider{
--webkit-transition: all 2s ease;
--moz-transition: all 2s ease;
--o-transition: all 2s ease;
-transition: all 2s ease;
+#slider-container{
+  -webkit-transition: all 2s ease;
+  -moz-transition: all 2s ease;
+  -o-transition: all 2s ease;
+  transition: all 2s ease;
 }
 /* ================================END HEADER=============================== */
 
@@ -637,7 +642,7 @@ transition: all 2s ease;
 
 
 .collage-subcontainer-main {
-    width: 96%;
+    width: 82%;
     margin: auto;
     position: relative;
     height: 515px;
@@ -738,6 +743,77 @@ transition: all 2s ease;
   top: 0;
   width: 346px;
   height: auto;
+}
+
+@media (min-width: 768px) {
+
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (max-width: 1200px) {
+  .collage-subcontainer-main {
+      width: 82%;
+      margin: auto;
+      position: relative;
+      height: 387px;
+      max-width: 1320px;
+      margin-top: 15px !important;
+      margin-left: 7%;
+  }
+
+  #cat-uno {
+    top: 0;
+    left: 2%;
+    width: 240px;
+    height: auto;
+  }
+
+  #cat-dos {
+    left: 2%;
+    bottom: 0;
+    width: 240px;
+    height: auto;
+  }
+
+  #cat-tres {
+    top: 0;
+    left: 28.5%;
+    width: 262px;
+    height: auto;
+  }
+
+  #cat-cuatro {
+    bottom: 0;
+    left: 28.5%;
+    width: 262px;
+    height: auto;
+  }
+
+  #cat-cinco {
+    top: 0;
+    left: 57.5%;
+    width: 152px;
+    height: auto;
+  }
+
+  #cat-seis {
+    bottom: 0;
+    left: 57.5%;
+    width: 152px;
+    height: auto;
+  }
+
+  #cat-siete {
+    left: 74.5%;
+    top: 0;
+    width: 262px;
+    height: auto;
+  }
 }
 
 .collage-container {
@@ -1186,6 +1262,24 @@ transition: all 2s ease;
   border-color: #8c8c8c;
   color: white;
   border-radius: 0px;
+}
+
+#footer-4 .social-link {
+  text-align: center;
+  color: white;
+}
+
+#footer-4 .social {
+  text-align: center;
+  width: 32px;
+  height: 32px;
+  background-color: #666;
+  border-radius: 16px;
+}
+
+#footer-4 .social .fa {
+  line-height: 32px;
+  font-size: 17px;
 }
 
 #footer-1, #footer-2, #footer-3 {

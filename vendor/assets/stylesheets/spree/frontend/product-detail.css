@@ -145,11 +145,12 @@
   margin-left: 16%;
   margin-right: 16%;
   margin-top: 5%;
-  color: #212529;
+  /* color: #212529; */
+  color: #8e8e8e;
 }
 
 .concept-title {
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 25px;
@@ -184,10 +185,22 @@
 }
 
 #feature-title {
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   font-size: 25px;
   text-decoration: bold;
   margin-left: 40px;
+  text-align: center;
+}
+
+#feature-title div {
+  width: fit-content;
+  margin: auto;
+}
+
+#feature-title div h2 {
+  font-size: 24px;
+  width: fit-content;
+  border: 2px solid 
 }
 
 #feature-list {
@@ -208,7 +221,7 @@
   font-weight: bold;
   font-size: 20px;
   margin-bottom: 25px;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
 }
 
 .other-models-title h2 {

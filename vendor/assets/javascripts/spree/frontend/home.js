@@ -14,7 +14,7 @@ $(document).ready(function() {
     speed: 6500,
     slidesToShow: 6,
     slidesToScroll: 1,
-    autoplay: false,
+    autoplay: true,
     autoplaySpeed: 0,
     arrows: false,
     cssEase: 'linear',
@@ -181,7 +181,6 @@ $(document).ready(function() {
 
       }
   });
-  });
 
   $('a[href*="#"]:not([href="#"]):not([href="#show"]):not([href="#hide"])').click(function() {
   		if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
@@ -208,10 +207,20 @@ $(document).ready(function() {
   var item = $(".desenfoque");
   // agrego la clase blur a todos los 'ítem' que NO sea al que le se le esta aplicando el evento 'hover'
   item.hover(function() {
-  document.getElementById("slider").style.filter="blur(10px)";
+    document.getElementById("slider-container").style.filter="blur(10px)";
   // al perder el foco, retiro la clase a todos los 'item'
+    console.log("NUKE");
   }, function() {
-  document.getElementById("slider").style.filter="blur(0px)";
+  document.getElementById("slider-container").style.filter="blur(0px)";
   console.log("CAROUSEL WRAP");
+
+
+  //
+  //
+  // namefield.keyup(function() {
+  //   var charstodel, thischars;
+  //   thischars = this.value.replace(/{.*}/g, '').length;
+  // });
+  });
 
 });
