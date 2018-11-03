@@ -107,6 +107,62 @@ $(document).ready(function() {
     }]
   });
 
+  $('#products-other-models').slick({
+    speed: 2500,
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    autoplaySpeed: 0,
+    arrows: true,
+    initialSlide: 3,
+	  // variableWidth: true,
+    cssEase: 'linear',
+    dots: false,
+    paused: true,
+    pauseOnHover: true,
+    nextArrow: '<button type="button" class="right-arrow control-button slick-next"><span class="glyphicon flecha-icono glyphicon-menu-right" aria-hidden="true"></span></button>',
+    prevArrow: '<button type="button" class="left-arrow control-button slick-prev"><span class="glyphicon flecha-icono glyphicon-menu-left" aria-hidden="true"></span></button>',
+    arrows: true,
+    responsive: [{
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 4
+      }
+    }, {
+      breakpoint: 520,
+      settings: {
+        slidesToShow: 3
+      }
+    }]
+  });
+
+  $('#products-other').slick({
+    speed: 2500,
+    slidesToShow: 5,
+    slidesToScroll: 4,
+    autoplaySpeed: 0,
+    arrows: true,
+    initialSlide: 3,
+	  // variableWidth: true,
+    cssEase: 'linear',
+    dots: false,
+    // paused: true,
+    pauseOnHover: true,
+    arrows: true,
+    // nextArrow: '<button type="button" class="right-arrow control-button slick-next"><span class="glyphicon flecha-icono glyphicon-menu-right" aria-hidden="true"></span></button>',
+    // prevArrow: '<button type="button" class="left-arrow control-button slick-prev"><span class="glyphicon flecha-icono glyphicon-menu-left" aria-hidden="true"></span></button>',
+    responsive: [{
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 4
+      }
+    }, {
+      breakpoint: 520,
+      settings: {
+        slidesToShow: 3
+      }
+    }]
+  });
+
   var aboveHeight = $('#header').outerHeight();
   $(window).scroll(function(){
   	if ($(window).scrollTop() > aboveHeight){
@@ -124,7 +180,6 @@ $(document).ready(function() {
   	$('#phone-fixed').removeClass('phone-fixed-total').next().css('margin-top','0');
 
       }
-  });
   });
 
   $('a[href*="#"]:not([href="#"]):not([href="#show"]):not([href="#hide"])').click(function() {
@@ -152,10 +207,20 @@ $(document).ready(function() {
   var item = $(".desenfoque");
   // agrego la clase blur a todos los 'ítem' que NO sea al que le se le esta aplicando el evento 'hover'
   item.hover(function() {
-  document.getElementById("slider").style.filter="blur(10px)";
+    document.getElementById("slider-container").style.filter="blur(10px)";
   // al perder el foco, retiro la clase a todos los 'item'
+    console.log("NUKE");
   }, function() {
-  document.getElementById("slider").style.filter="blur(0px)";
+  document.getElementById("slider-container").style.filter="blur(0px)";
   console.log("CAROUSEL WRAP");
+
+
+  //
+  //
+  // namefield.keyup(function() {
+  //   var charstodel, thischars;
+  //   thischars = this.value.replace(/{.*}/g, '').length;
+  // });
+  });
 
 });

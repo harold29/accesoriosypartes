@@ -1,0 +1,9 @@
+default: &default
+  project_id: nueva-ayp
+  gcs_bucket: ayp-bucket
+
+development:
+  <<: *default
+
+production:
+  <<: *default

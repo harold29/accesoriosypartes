@@ -17,3 +17,22 @@ Spree.config do |config|
 end
 
 Spree.user_class = "Spree::User"
+
+# attachment_config = {
+#   styles: {
+#       mini:     "48x48>",
+#       small:    "100x100>",
+#       product:  "240x240>",
+#       large:    "600x600>"
+#   }
+# }
+#
+# attachment_config.each do |key, value|
+#   Spree::Image.attachment_definitions[:attachment][key.to_sym] = value
+# end
+# Spree::Image.attachment_definitions[:attachment][:styles] = {
+#     mini: "48x48>",
+#     small: "100x100>",
+#     product: "240x240>",
+#     large: "900x900>"
+# }

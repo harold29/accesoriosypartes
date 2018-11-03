@@ -12,7 +12,9 @@
 
     <div class="container-fluid">
       <div class="row" data-hook>
-        <%= spree_breadcrumbs(@taxon) %>
+        <% if @product %>
+          <%= spree_breadcrumbs(@taxon, @product) %>
+        <% end %>
 
         <%= render partial: 'spree/shared/sidebar' if content_for? :sidebar %>
 

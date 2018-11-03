@@ -1,0 +1,116 @@
+<tr class="product_property fields" id="spree_<%= dom_id(f.object) %>" data-hook="product_property">
+  <td class="move-handle">
+    <% if f.object.persisted? && can?(:edit, f.object) %>
+      <span class="icon icon-move handle"></span>
+      <%= f.hidden_field :id %>
+    <% end %>
+  </td>
+  <td class='property_name'>
+    <%= f.text_field :property_name, class: 'autocomplete form-control' %>
+  </td>
+  <td class='value'>
+    <%= f.text_field :value, class: 'form-control property-field-text' %>
+    <div class="text-field-number-aux">
+
+    </div>
+  </td>
+  <td class="actions actions-1">
+    <% if f.object.persisted? && can?(:destroy, f.object) %>
+      <%= link_to_delete f.object, no_text: true %>
+    <% end %>
+  </td>
+  <script type="text/javascript">
+    var field1, field2, field3, field4, field5, field6, fields;
+    var numberaux1, numberaux2, numberaux3, numberaux4, numberaux5, numberaux6, numberauxs;
+    var max1, max2;
+
+    max1 = 150;
+    max2 = 130;
+
+    numberauxs = $(".text-field-number-aux");
+    numberaux1 = $(numberauxs[0]);
+    numberaux2 = $(numberauxs[1]);
+    numberaux3 = $(numberauxs[2]);
+    numberaux4 = $(numberauxs[3]);
+    numberaux5 = $(numberauxs[4]);
+    numberaux6 = $(numberauxs[5]);
+    numberaux7 = $(numberauxs[6]);
+    numberaux8 = $(numberauxs[7]);
+
+    fields = $(".property-field-text");
+    field1 = $("#product_product_properties_attributes_0_value");
+    field2 = $("#product_product_properties_attributes_1_value");
+    field3 = $("#product_product_properties_attributes_2_value");
+    field4 = $("#product_product_properties_attributes_3_value");
+    field5 = $("#product_product_properties_attributes_4_value");
+    field6 = $("#product_product_properties_attributes_5_value");
+    field7 = $("#product_product_properties_attributes_6_value");
+    field8 = $("#product_product_properties_attributes_7_value");
+
+    var initial1 = max1 - field1.val().length;
+    var initial2 = max1 - field2.val().length;
+    var initial3 = max2 - field3.val().length;
+    var initial4 = max2 - field4.val().length;
+    var initial5 = max2 - field5.val().length;
+    var initial6 = max2 - field6.val().length;
+    var initial7 = max2 - field7.val().length;
+    var initial8 = max2 - field8.val().length;
+
+    numberaux1.html(initial1);
+    numberaux2.html(initial2);
+    numberaux3.html(initial3);
+    numberaux4.html(initial4);
+    numberaux5.html(initial5);
+    numberaux6.html(initial6);
+    numberaux7.html(initial7);
+    numberaux8.html(initial8);
+
+    field1.on("keyup", function() {
+      var length = $(this).val().length;
+      var totalname = max1 - length;
+      numberaux1.html(totalname);
+    });
+
+    field2.on("keyup", function() {
+      var length = $(this).val().length;
+      var totalname = max1 - length;
+      numberaux2.html(totalname);
+    });
+
+    field3.on("keyup", function() {
+      var length = $(this).val().length;
+      var totalname = max2 - length;
+      numberaux3.html(totalname);
+    });
+
+    field4.on("keyup", function() {
+      var length = $(this).val().length;
+      var totalname = max2 - length;
+      numberaux4.html(totalname);
+    });
+
+    field5.on("keyup", function() {
+      var length = $(this).val().length;
+      var totalname = max2 - length;
+      numberaux5.html(totalname);
+    });
+
+    field6.on("keyup", function() {
+      var length = $(this).val().length;
+      var totalname = max2 - length;
+      numberaux6.html(totalname);
+    });
+
+    field7.on("keyup", function() {
+      var length = $(this).val().length;
+      var totalname = max2 - length;
+      numberaux7.html(totalname);
+    });
+
+    field8.on("keyup", function() {
+      var length = $(this).val().length;
+      var totalname = max2 - length;
+      numberaux8.html(totalname);
+    });
+  </script>
+</tr>

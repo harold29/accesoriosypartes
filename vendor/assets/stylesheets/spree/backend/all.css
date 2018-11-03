@@ -9,3 +9,12 @@
  *= require_tree .
  *= require spree/backend/spree_digital
 */
+
+
+.number-container-aux, .text-field-number-aux {
+  text-align: right;
+}
+
+.text-field-number-aux {
+  font-size: 10px;
+}

@@ -1,57 +1,61 @@
-<div id="features">
-  <div class="row" id="feature-title">
-    <h2 class="feature-title">
-      Características
-    </h2>
+<% unless @product_properties.empty? %>
+  <div id="features">
+    <div class="row" id="feature-title">
+      <div>
+        <h2 class="feature-title">
+          Características
+        </h2>
+      </div>
+    </div>
+    <div class="row" id="feature-list">
+      <div class="col-md-6 col-sm-12 feature">
+        <h4 class="concept-subtitle">
+          <%= @product_properties[2].property.name %>
+        </h4>
+        <p class="concept-text">
+          <%= @product_properties[2].value %>
+        </p>
+      </div>
+      <div class="col-md-6 col-sm-12 feature">
+        <h4 class="concept-subtitle">
+          <%= @product_properties[3].property.name %>
+        </h4>
+        <p class="concept-text">
+          <%= @product_properties[3].value %>
+        </p>
+      </div>
+      <div class="col-md-6 col-sm-12 feature">
+        <h4 class="concept-subtitle">
+          <%= @product_properties[4].property.name %>
+        </h4>
+        <p class="concept-text">
+          <%= @product_properties[4].value %>
+        </p>
+      </div>
+      <div class="col-md-6 col-sm-12 feature">
+        <h4 class="concept-subtitle">
+          <%= @product_properties[5].property.name %>
+        </h4>
+        <p class="concept-text">
+          <%= @product_properties[5].value %>
+        </p>
+      </div>
+      <div class="col-md-6 col-sm-12 feature">
+        <h4 class="concept-subtitle">
+          <%= @product_properties[6].property.name %>
+        </h4>
+        <p class="concept-text">
+          <%= @product_properties[6].value %>
+        </p>
+      </div>
+      <div class="col-md-6 col-sm-12 feature">
+        <h4 class="concept-subtitle">
+          <%= @product_properties[7].property.name %>
+        </h4>
+        <p class="concept-text">
+          <%= @product_properties[7].value %>
+        </p>
+      </div>
+    </div>
   </div>
-  <div class="row" id="feature-list">
-    <div class="col-md-6 col-sm-12 feature">
-      <h4 class="concept-subtitle">
-        Concepto 1
-      </h4>
-      <p class="concept-text">
-        Nam in vestibulum massa. Etiam suscipit faucibus nibh sed faucibus. Suspendisse ut sodales leo. Curabitur eget odio eget lectus sollicitudin malesuada a et massa. Donec a dolor convallis massa commodo.
-      </p>
-    </div>
-    <div class="col-md-6 col-sm-12 feature">
-      <h4 class="concept-subtitle">
-        Concepto 2
-      </h4>
-      <p class="concept-text">
-        Nam in vestibulum massa. Etiam suscipit faucibus nibh sed faucibus. Suspendisse ut sodales leo. Curabitur eget odio eget lectus sollicitudin malesuada a et massa. Donec a dolor convallis massa commodo.
-      </p>
-    </div>
-    <div class="col-md-6 col-sm-12 feature">
-      <h4 class="concept-subtitle">
-        Concepto 3
-      </h4>
-      <p class="concept-text">
-        Nam in vestibulum massa. Etiam suscipit faucibus nibh sed faucibus. Suspendisse ut sodales leo. Curabitur eget odio eget lectus sollicitudin malesuada a et massa. Donec a dolor convallis massa commodo.
-      </p>
-    </div>
-    <div class="col-md-6 col-sm-12 feature">
-      <h4 class="concept-subtitle">
-        Concepto 4
-      </h4>
-      <p class="concept-text">
-        Nam in vestibulum massa. Etiam suscipit faucibus nibh sed faucibus. Suspendisse ut sodales leo. Curabitur eget odio eget lectus sollicitudin malesuada a et massa. Donec a dolor convallis massa commodo.
-      </p>
-    </div>
-    <div class="col-md-6 col-sm-12 feature">
-      <h4 class="concept-subtitle">
-        Concepto 5
-      </h4>
-      <p class="concept-text">
-        Nam in vestibulum massa. Etiam suscipit faucibus nibh sed faucibus. Suspendisse ut sodales leo. Curabitur eget odio eget lectus sollicitudin malesuada a et massa. Donec a dolor convallis massa commodo.
-      </p>
-    </div>
-    <div class="col-md-6 col-sm-12 feature">
-      <h4 class="concept-subtitle">
-        Concepto 6
-      </h4>
-      <p class="concept-text">
-        Nam in vestibulum massa. Etiam suscipit faucibus nibh sed faucibus. Suspendisse ut sodales leo. Curabitur eget odio eget lectus sollicitudin malesuada a et massa. Donec a dolor convallis massa commodo.
-      </p>
-    </div>
-  </div>
-</div>
+<% end %>

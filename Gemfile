@@ -38,6 +38,9 @@ gem 'spree_sitemap', github: 'spree-contrib/spree_sitemap'
 gem 'spree_analytics_trackers', github: 'spree-contrib/spree_analytics_trackers'
 gem 'spree_digital', github: 'spree-contrib/spree_digital'
 
+gem "google-cloud-storage", "~> 1.11", require: false
+
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
