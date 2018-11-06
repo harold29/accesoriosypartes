@@ -1,0 +1,71 @@
+<%# max_level = Spree::Config[:max_level_in_taxons_menu] || 1 %>
+<%# @taxonomies.each do |taxonomy| %>
+  <%# cache [I18n.locale, taxonomy, max_level, @taxon] do %>
+    <%# if taxonomy.root.children.any? %>
+      <%# taxons_tree(taxonomy.root, @taxon, 3) %>
+    <%# end %>
+  <%# end %>
+<%# end %>
+
+<% root_taxon = Spree::Taxon.find_by(name: "Categorias") %>
+<% taxons = root_taxon.children.map %>
+<%# css_class = @taxon && @taxon.self_and_ancestors.include?(@taxon) ? 'in' : '' %>
+<%# expanded = @taxon && @taxon.self_and_ancestors.include?(@taxon) ? 'true' : 'false' %>
+<%# style = @taxon && @taxon.self_and_ancestors.include?(@taxon) ? ' ' : 'height:0px;' %>
+<%# abort %>
+<div class="panel-title" id="sidebar-title">
+  CATEGORÍAS
+</div>
+<%= content_tag :div, class: 'panel-group', "role" => "tablist", "aria-multiselectable" => "true", id: "accordion-#{root_taxon.id}" do  %>
+  <% root_taxon.children.map do |t|  %>
+    <% css_class = @taxon && @taxon.self_and_ancestors.include?(t) ? 'in' : '' %>
+    <% expanded = @taxon && @taxon.self_and_ancestors.include?(t) ? 'true' : 'false' %>
+    <% style = @taxon && @taxon.self_and_ancestors.include?(t) ? ' ' : 'height:0px;' %>
+    <%= content_tag :div, class: 'panel panel-default' do  %>
+      <%= content_tag :div, class: 'panel-heading', "role" => "tab", id: "heading-#{t.id}" do  %>
+        <%= content_tag :h4, class: 'panel-title' do %>
+          <% int_url = t.children.empty? ? seo_url(t) : "#collapse-#{t.id}" %>
+          <% toggle = t.children.empty? ? ' ' : "collapse" %>
+          <% last = t.children.empty? ? 'lower-level' : ' ' %>
+          <%= link_to(t.name, int_url, class: last,"role" => "button", "data-toggle" => toggle, "data-parent" => "#accordion-#{root_taxon.id}", "aria-expanded" => expanded, "aria-controls" => "collapse-#{t.id}")  %>
+        <% end  %>
+      <% end %>
+      <% unless t.children.empty? %>
+        <%= content_tag :div, class: "panel-collapse collapse #{css_class}", "role" => "tabpanel", "aria-labelledby" => "heading-#{t.id}", id: "collapse-#{t.id}" do %>
+          <%= content_tag :div, class: 'panel-body' do %>
+            <%= content_tag :div, class: 'panel-group', id: "accordion-#{t.id}", "role" => "tablist", "aria-multiselectable" => "true" do %>
+              <% t.children.map do |child_taxon| %>
+                <% css_class = @taxon && @taxon.self_and_ancestors.include?(child_taxon) ? 'in' : '' %>
+                <% expanded = @taxon && @taxon.self_and_ancestors.include?(child_taxon) ? 'true' : 'false' %>
+                <% style = @taxon && @taxon.self_and_ancestors.include?(child_taxon) ? ' ' : 'height:0px;' %>
+                <%= content_tag :div, class: 'panel panel-default' do %>
+                  <%= content_tag :div, class: 'panel-heading', "role" => "tab", id: "heading-#{child_taxon.id}" do %>
+                    <%= content_tag :h4, class: 'panel-title' do %>
+                      <% int_url = child_taxon.children.empty? ? seo_url(child_taxon) : "#collapse-#{child_taxon.id}" %>
+                      <% toggle = child_taxon.children.empty? ? ' ' : "collapse" %>
+                      <% last = child_taxon.children.empty? ? 'lower-level' : ' ' %>
+                      <%= link_to(child_taxon.name, int_url, class: last, "role" => "button", "data-toggle" => toggle, "data-parent" => "#accordion-#{t.id}", "aria-expanded" => expanded, "aria-controls" => "collapse-#{root_taxon.id}" ) %>
+                    <% end %>
+                  <% end %>
+                  <% unless child_taxon.children.empty? %>
+                    <%= content_tag :div, class: "panel-collapse collapse #{css_class}", "role" => "tabpanel", "aria-labelledby" => "heading-#{child_taxon.id}", id: "collapse-#{child_taxon.id}" do %>
+                      <%= content_tag :div, class: 'panel-body' do %>
+                        <% child_taxon.children.map do |lower_taxon| %>
+                          <%= content_tag :div, class: 'panel-heading', "role" => "tab", id: "heading-#{lower_taxon.id}" do %>
+                            <%= content_tag :h4, class: 'panel-title' do %>
+                              <%= link_to(lower_taxon.name, seo_url(lower_taxon), class: "lower-level", "role" => "button", "data-parent" => "#accordion-#{t.id}", "aria-expanded" => "false", "aria-controls" => "collapse-#{root_taxon.id}" ) %>
+                            <% end %>
+                          <% end %>
+                        <% end %>
+                      <% end %>
+                    <% end %>
+                  <% end %>
+                <% end %>
+              <% end %>
+            <% end %>
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>

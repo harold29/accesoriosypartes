@@ -1,15 +1,15 @@
 $(document).ready(function() {
-  // $("#carousel-companies").carousel({
-  //   wrap: false,
-  // });
-
+//   // $("#carousel-companies").carousel({
+//   //   wrap: false,
+//   // });
+//
   $('.dropdown-submenu a.sub-link').on("click", function(e){
     console.log("MENU");
     $(this).next('ul').toggle();
     e.stopPropagation();
     e.preventDefault();
   });
-
+//
   $('.companies-conveyor').slick({
     speed: 6500,
     slidesToShow: 6,
@@ -33,7 +33,7 @@ $(document).ready(function() {
       }
     }]
   });
-
+//
   $('.companies-slider-sub').slick({
     speed: 2500,
     slidesToShow: 9,
@@ -82,7 +82,7 @@ $(document).ready(function() {
       }
     }]
   });
-
+//
   $('#products-featured').slick({
     speed: 6500,
     slidesToShow: 4,
@@ -162,7 +162,7 @@ $(document).ready(function() {
       }
     }]
   });
-
+//
   var aboveHeight = $('#header').outerHeight();
   $(window).scroll(function(){
   	if ($(window).scrollTop() > aboveHeight){
@@ -181,22 +181,22 @@ $(document).ready(function() {
 
       }
   });
-
-  $('a[href*="#"]:not([href="#"]):not([href="#show"]):not([href="#hide"])').click(function() {
-  		if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-  			var target = $(this.hash);
-  			target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-  			if (target.length) {
-  				$('html,body').animate({
-  					scrollTop: target.offset().top
-  				}, 1000);
-  				return false;
-  			}
-  		}
-  	});
-
-
-
+//
+  // $('a[href*="#"]:not([href="#"]):not([href="#show"]):not([href="#hide"])').click(function() {
+  // 		if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+  // 			var target = $(this.hash);
+  // 			target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+  // 			if (target.length) {
+  // 				$('html,body').animate({
+  // 					scrollTop: target.offset().top
+  // 				}, 1000);
+  // 				return false;
+  // 			}
+  // 		}
+  // 	});
+//
+//
+//
   // $('.dropdown-submenu a.test').on("click", function(e){
   //   console.log("FOR TWO LEVELS")
   //   $(this).next('ul').toggle();
@@ -206,21 +206,27 @@ $(document).ready(function() {
 
   var item = $(".desenfoque");
   // agrego la clase blur a todos los 'ítem' que NO sea al que le se le esta aplicando el evento 'hover'
-  item.hover(function() {
-    document.getElementById("slider-container").style.filter="blur(10px)";
-  // al perder el foco, retiro la clase a todos los 'item'
-    console.log("NUKE");
-  }, function() {
-  document.getElementById("slider-container").style.filter="blur(0px)";
-  console.log("CAROUSEL WRAP");
-
-
-  //
-  //
-  // namefield.keyup(function() {
-  //   var charstodel, thischars;
-  //   thischars = this.value.replace(/{.*}/g, '').length;
-  // });
-  });
-
+  if (document.getElementById("slider-container") != null) {
+    item.hover(function() {
+      document.getElementById("slider-container").style.filter="blur(10px)";
+    // al perder el foco, retiro la clase a todos los 'item'
+      console.log("NUKE");
+    }, function() {
+      document.getElementById("slider-container").style.filter="blur(0px)";
+      console.log("CAROUSEL WRAP");
+    });
+  }
+//
+//
+//
+//   //
+//   //
+//   // namefield.keyup(function() {
+//   //   var charstodel, thischars;
+//   //   thischars = this.value.replace(/{.*}/g, '').length;
+//   // });
+//
+//
+//   // $('.collapse').collapse()
+//
 });

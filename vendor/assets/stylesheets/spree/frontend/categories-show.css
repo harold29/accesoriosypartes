@@ -1,0 +1,72 @@
+#spree-header {
+  margin-bottom: 4% !important;
+}
+
+#categories-show {
+  background-color: white;
+}
+
+#categories-show .principal-container {
+  padding-left: 14%;
+  padding-right: 14%;
+}
+
+#categories-show #categories-show-content {
+
+}
+
+#categories-show #sidebar {
+  padding-right: 50px;
+}
+
+#categories-show #sidebar-title {
+  background: rgba(197, 197, 197, 1);
+  color: black;
+  text-align: center;
+  font-size: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+#categories-show .panel-group .panel {
+  border-radius: 0px;
+  border: 0px;
+  margin-top: 7px;
+}
+
+#categories-show .panel-default > .panel-heading {
+  background: rgba(197, 197, 197, 1);
+  border-radius: 0px;
+}
+
+#categories-show .panel-group a {
+  color: #666;
+  font-size: 14px;
+}
+
+#categories-show .panel-group a::before {
+  content: '+';
+}
+
+#categories-show .panel-group a[aria-expanded="true"]::before {
+  content: '-';
+}
+
+#categories-show .panel-group .lower-level::before {
+  content: '' !important;
+}
+
+#categories-show .panel-default > .panel-heading + .panel-collapse > .panel-body {
+    border: none;
+    padding-right: 0px !important;
+    padding-bottom: 0px !important;
+}
+
+#categories-show .panel-default > .panel-heading + .panel-collapse > .panel-body > .panel-group {
+  margin-bottom: 15px !important;
+}
+
+#categories-show .panel-body .panel-default > .panel-heading {
+  background: rgba(197, 197, 197, .40);
+}
