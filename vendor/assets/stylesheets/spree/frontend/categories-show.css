@@ -1,14 +1,45 @@
-#spree-header {
-  margin-bottom: 4% !important;
+#categories-show #spree-header {
+  /* margin-bottom: 4% !important; */
 }
 
 #categories-show {
   background-color: white;
 }
 
+#categories-show #breadcrumbs {
+  margin-top: 0;
+  padding-left: 0;
+  margin-bottom: 1em;
+}
+
+#categories-show #breadcrumbs .breadcrumb {
+  padding-left: 0;
+}
+
 #categories-show .principal-container {
+  padding-top: 4%;
+  background-image: url(https://www.accesoriosypartes.com.ar/wp-content/themes/Divi/epanel/shortcodes/img/cuadrado.png);
+  background-position: top;
+  background-repeat: no-repeat;
+  border-left: 20px solid #2d2d2d;
+  border-right: 20px solid #2d2d2d;
+}
+
+#categories-show .principal-container .principal-subcontainer {
   padding-left: 14%;
   padding-right: 14%;
+  background: url(https://www.accesoriosypartes.com.ar/wp-content/themes/Divi/epanel/shortcodes/img/cuadadro_blanco_footer.png);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  padding-bottom: 120px;
+}
+
+#categories-show .no-products-container p {
+  background: #2ea3f2;
+  color: white;
+  padding: 15px;
+  border: none;
+  font-size: 18px;
 }
 
 #categories-show #categories-show-content {
@@ -16,7 +47,7 @@
 }
 
 #categories-show #sidebar {
-  padding-right: 50px;
+  padding-right: 120px;
 }
 
 #categories-show #sidebar-title {
@@ -69,4 +100,70 @@
 
 #categories-show .panel-body .panel-default > .panel-heading {
   background: rgba(197, 197, 197, .40);
+}
+
+#categories-show #products-categories-index {
+  margin-top: 40px;
+}
+
+#categories-show .category-title-container {
+  border-bottom: 5px solid #7c7c7c;
+  padding-top: 10px;
+  padding-bottom: 0px;
+}
+
+#categories-show .taxon-title {
+  margin-top: 20px !important;
+  margin-bottom: 10px !important;
+  padding-bottom: 10px;
+}
+
+#categories-show .results-counter {
+  color: #999;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+#categories-show .categories-product {
+  margin-bottom: 30px;
+}
+
+#categories-show .categories-product .product-container {
+  max-width: 160px;
+  height: 230px;
+}
+
+#categories-show .categories-product .image-container {
+  text-align: center;
+  width: 100%;
+}
+
+#categories-show .product-image-categories {
+  height: 130px;
+  width: 130px;
+}
+
+#categories-show .categories-product .name-container {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+#categories-show .categories-product .name-container h2 {
+  color: black;
+  line-height: 20px;
+  margin-top: 0 !important;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+#categories-show .categories-product .price-container {
+  font-size: 14px;
+  text-align: center;
+  color: #666!important;
+}
+
+#categories-show .categories-product .price-container .mini {
+  font-size: 80%;
+  font-weight: 400;
 }

@@ -26,8 +26,9 @@
         <%= content_tag :h4, class: 'panel-title' do %>
           <% int_url = t.children.empty? ? seo_url(t) : "#collapse-#{t.id}" %>
           <% toggle = t.children.empty? ? ' ' : "collapse" %>
-          <% last = t.children.empty? ? 'lower-level' : ' ' %>
-          <%= link_to(t.name, int_url, class: last,"role" => "button", "data-toggle" => toggle, "data-parent" => "#accordion-#{root_taxon.id}", "aria-expanded" => expanded, "aria-controls" => "collapse-#{t.id}")  %>
+          <% last = t.children.empty? ? 'lower-level middle-category' : 'middle-category' %>
+          <% url = seo_url(t) %>
+          <%= link_to(t.name, int_url, class: last,"role" => "button", "data-toggle" => toggle, "data-parent" => "#accordion-#{root_taxon.id}", "aria-expanded" => expanded, "aria-controls" => "collapse-#{t.id}", "aria-value" => url)  %>
         <% end  %>
       <% end %>
       <% unless t.children.empty? %>
@@ -43,8 +44,9 @@
                     <%= content_tag :h4, class: 'panel-title' do %>
                       <% int_url = child_taxon.children.empty? ? seo_url(child_taxon) : "#collapse-#{child_taxon.id}" %>
                       <% toggle = child_taxon.children.empty? ? ' ' : "collapse" %>
-                      <% last = child_taxon.children.empty? ? 'lower-level' : ' ' %>
-                      <%= link_to(child_taxon.name, int_url, class: last, "role" => "button", "data-toggle" => toggle, "data-parent" => "#accordion-#{t.id}", "aria-expanded" => expanded, "aria-controls" => "collapse-#{root_taxon.id}" ) %>
+                      <% last = child_taxon.children.empty? ? 'lower-level middle-category' : 'middle-category' %>
+                      <% url = seo_url(child_taxon) %>
+                      <%= link_to(child_taxon.name, int_url, class: last, "role" => "button", "data-toggle" => toggle, "data-parent" => "#accordion-#{t.id}", "aria-expanded" => expanded, "aria-controls" => "collapse-#{root_taxon.id}", "aria-value" => url ) %>
                     <% end %>
                   <% end %>
                   <% unless child_taxon.children.empty? %>

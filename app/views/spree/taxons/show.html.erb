@@ -1,16 +1,24 @@
 <% @body_id = 'categories-show' %>
 
 <div id="categories-show-content" data-hook='taxons_show' class='row'>
-  <h1 class="taxon-title"><%= @taxon.name %></h1>
+  <%= spree_breadcrumbs(@taxon, nil)  %>
+  <div class="category-title-container">
+    <h1 class="taxon-title"><%= @taxon.name %></h1>
+  </div>
+  <% unless @products.empty? %>
+    <div class="results-counter">
+      Mostrando todos los resultados (<%= @products.empty? ? "0" : @products.size %>)
+    </div>
+  <% end %>
   <% content_for :sidebar do %>
     <div data-hook="taxon_sidebar_navigation">
       <%= render partial: 'spree/taxons/sidebar'  %>
       <%# render partial: 'spree/shared/taxonomies' %>
-      <%= render partial: 'spree/shared/filters' if @taxon.leaf? %>
+      <%# render partial: 'spree/shared/filters' if @taxon.leaf? %>
     </div>
   <% end %>
   <div data-hook="taxon_products">
-    <%= render partial: 'spree/shared/products', locals: { products: @products, taxon: @taxon } %>
+    <%= render partial: 'spree/taxons/products', locals: { products: @products, taxon: @taxon } %>
   </div>
 </div>
 

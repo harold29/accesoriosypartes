@@ -11,20 +11,21 @@
     <%= render partial: 'spree/shared/header' %>
 
     <div class="container-fluid principal-container">
-      <div class="row" data-hook>
+      <div class="row principal-subcontainer" data-hook>
         <% if @product %>
           <%= spree_breadcrumbs(@taxon, @product) %>
         <% end %>
 
         <%= render partial: 'spree/shared/sidebar' if content_for? :sidebar %>
 
-        <div id="content" class="<%= !content_for?(:sidebar) ? "col-sm-12" : "col-sm-8 col-md-9" %>" data-hook>
+        <div id="content" class="<%= !content_for?(:sidebar) ? "col-sm-12" : "col-sm-8 col-md-8" %>" data-hook>
           <%= flash_messages %>
           <%= yield %>
         </div>
 
         <%= yield :templates %>
       </div>
+      <%= render partial: 'spree/shared/footer' %>
     </div>
   </body>
 </html>
