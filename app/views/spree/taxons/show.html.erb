@@ -5,10 +5,12 @@
   <div class="category-title-container">
     <h1 class="taxon-title"><%= @taxon.name %></h1>
   </div>
-  <% unless @products.empty? %>
-    <div class="results-counter">
-      Mostrando todos los resultados (<%= @products.empty? ? "0" : @products.size %>)
-    </div>
+  <% if @taxon.children.size == 0 %>
+    <% unless @products.empty? %>
+      <div class="results-counter">
+        Mostrando todos los resultados (<%= @products.empty? ? "0" : @products.size %>)
+      </div>
+    <% end %>
   <% end %>
   <% content_for :sidebar do %>
     <div data-hook="taxon_sidebar_navigation">

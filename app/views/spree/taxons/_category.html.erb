@@ -1,6 +1,19 @@
-<% if category.empty? %>
-  <div class="col-md-3 col-sm-3">
-    <div class="category category-element" id="category-<%= category.id %>">
+<% unless category.nil? %>
+  <div class="col-md-3 col-sm-3 category-box" id="category-<%= category.id %>">
+    <%= link_to seo_url(category), itemprop: "url" do %>
+      <div class="category-container">
+        <div class="image-container">
+          <%# img = I18n.transliterate(category.name).downcase.gsub(/\s+/, "") + ".jpg"%>
+          <%# image_tag(img, class: "category-img")  %>
+          <%= image_tag("placeholder.png", class: "category-img")  %>
+          <!-- <img class="category-img" src="" alt=""> -->
+        </div>
+        <div class="name-container">
+          <%= category.name %>
+        </div>
+      </div>
+    <% end %>
+    <!-- <div class="category category-element" id="category-<%= category.id %>">
       <div class="panel-panel-default">
         <div class="panel-body text-center category-body">
           <a href="">
@@ -9,10 +22,10 @@
         </div>
         <div class="category-name">
           <a href="">
-            <%= category.name %>
+            <%# category.name %>
           </a>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 <% end %>

@@ -8,7 +8,10 @@
           <%= product_image(product, itemprop: "image", class: 'product-image-categories')  %>
         </div>
         <div class="name-container">
-          <%= content_tag(:h2, truncate(product.name, length: 50), class: 'info', itemprop: 'name', title: product.name)  %>
+          <%# content_tag(:h2, truncate(product.name, length: 50), class: 'info', itemprop: 'name', title: product.name)  %>
+          <h2 class="info">
+            Lorem ipsum dolor sit amet, consectetur adipisci.
+          </h2>
         </div>
         <div class="price-container">
           <% product.price %>
