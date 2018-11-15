@@ -55,6 +55,11 @@
   padding-right: 19px;
 }
 
+.thumbnail {
+  width: 70px !important;
+  height: 70px !important;
+}
+
 #product-description .product-title {
   /* color: black; */
   font-size: 23px;
@@ -99,6 +104,18 @@
 
 .peso {
 
+}
+
+.usd-currency {
+  color: #006400;
+}
+
+.ars-currency {
+  color: #000b8c;
+}
+
+.eur-currency {
+  color: #dc8010;
 }
 
 #price-iva {
@@ -200,7 +217,7 @@
 #feature-title div h2 {
   font-size: 24px;
   width: fit-content;
-  border: 2px solid 
+  /* border: 2px solid */
 }
 
 #feature-list {

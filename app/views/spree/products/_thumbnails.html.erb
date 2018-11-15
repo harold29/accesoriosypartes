@@ -4,20 +4,21 @@
     <% @product.images.each_with_index do |i, index| %>
       <% if index < 4 %>
         <li class='tmb-all tmb-<%= i.viewable.id %>'>
-          <%= link_to(image_tag(main_app.url_for(i.url(:mini)), class: "thumbnail"), main_app.url_for(i.url(:product))) %>
+          <%# link_to(image_tag(main_app.url_for(i.url(:mini)), class: "thumbnail"), main_app.url_for(i.url(:product))) %>
+          <%= link_to(image_tag(main_app.url_for(i.attachment.variant(resize: '200x200')), class: "thumbnail"), main_app.url_for(i.attachment.variant(resize: '1000x1000')))  %>
         </li>
       <% end %>
     <% end %>
 
-    <% if @product.has_variants? %>
-      <% @product.variant_images.each_with_index do |i, index| %>
-        <% if index < 4 %>
-        <% next if @product.images.include?(i) %>
-          <li class='vtmb tmb-<%= i.viewable.id %>'>
-            <%= link_to(image_tag(main_app.url_for(i.url(:mini)), class: "thumbnail"), main_app.url_for(i.url(:product))) %>
-          </li>
-        <% end %>
-      <% end %>
-    <% end %>
+    <%# if @product.has_variants? %>
+      <%# @product.variant_images.each_with_index do |i, index| %>
+        <%# if index < 4 %>
+        <%# next if @product.images.include?(i) %>
+          <!-- <li class='vtmb tmb-<%# i.viewable.id %>'> -->
+            <%# link_to(image_tag(main_app.url_for(i.url(:mini)), class: "thumbnail"), main_app.url_for(i.url(:product))) %>
+          <!-- </li> -->
+        <%# end %>
+      <%# end %>
+    <%# end %>
   </ul>
 <% end %>

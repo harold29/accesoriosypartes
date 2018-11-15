@@ -15,7 +15,8 @@
           </div>
           <div id="main-image" class="col-md-10 panel panel-default" data-hook>
             <div class="panel-body text-center">
-              <%= large_image(@product, itemprop: "image", class: "big") %>
+              <%# large_image(@product, itemprop: "image", class: "big") %>
+              <%= image_tag(main_app.url_for(@product.images.first.attachment.variant(resize: '1000x1000')), itemprop: "image", class: "big") %>
             </div>
           </div>
         </div>
@@ -42,16 +43,37 @@
           </div>
 
           <div class="row price-contact-area">
-            <div id="price-area" class="dolar" data-hook="price-area">
+            <div id="price-area" class="currency-area" data-hook="price-area">
               <%# render partial: 'cart_form' %>
-              <div class="col-md-6 col-sm-6">
-                u$d <%= @product.price %> <br>
-                <% p = (@product.price.to_f * 21.0)/100.0 %>
-                <% f = @product.price.to_f - p %>
-                <div class="row" id="price-iva">
-                  u$d <%= f %> + IVA21%
+              <% if @product.cost_currency == "USD" %>
+                <div class="col-md-6 col-sm-6 usd-currency">
+                  u$d <%= "%.2f" % @product.price %> <br>
+                  <% p = (@product.price.to_f * 21.0)/100.00 %>
+                  <% f = @product.price.to_f - p %>
+                  <div class="row" id="price-iva">
+                    u$d <%= "%.2f" % f %> + IVA21%
+                  </div>
                 </div>
-              </div>
+              <% elsif @product.cost_currency == "ARS" %>
+                <div class="col-md-6 col-sm-6 ars-currency">
+                  $ <%= "%.2f" % @product.price %> <br>
+                  <% p = (@product.price.to_f * 21.00)/100.00 %>
+                  <% f = @product.price.to_f - p %>
+                  <div class="row" id="price-iva">
+                    $ <%= "%.2f" % f %> + IVA21%
+                  </div>
+                </div>
+              <% elsif @product.cost_currency == "EUR" %>
+                <div class="col-md-6 col-sm-6 eur-currency">
+                  € <%= "%.2f" % @product.price %> <br>
+                  <% p = (@product.price.to_f * 21.00)/100.00 %>
+                  <% f = @product.price.to_f - p %>
+                  <div class="row" id="price-iva">
+                    € <%= "%.2f" % f %> + IVA21%
+                  </div>
+                </div>
+              <% end %>
+
               <div class="col-md-6 col-sm-6" id="button-consultar-container">
                 <button type="button"class="btn btn-primary">Consultar</button>
               </div>
