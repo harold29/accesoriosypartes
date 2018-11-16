@@ -5,7 +5,8 @@
         <div class="image-container">
           <%# img = I18n.transliterate(category.name).downcase.gsub(/\s+/, "") + ".jpg"%>
           <%# image_tag(img, class: "category-img")  %>
-          <%= image_tag("placeholder.png", class: "category-img")  %>
+          <%# image_tag("placeholder.png", class: "category-img")  %>
+          <%= image_tag((category.icon.nil? ? "placeholder.png" : main_app.url_for(category.icon.attachment.variant(resize: "200x200"))), class: "category-img")  %>
           <!-- <img class="category-img" src="" alt=""> -->
         </div>
         <div class="name-container">

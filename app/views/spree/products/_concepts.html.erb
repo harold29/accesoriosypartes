@@ -12,7 +12,9 @@
       <div class="col-md-6 col-sm-6">
         <div id="image-container-1">
           <%# image_tag(main_app.url_for(@product.images[4].url(:product)), class: "concept-image") %>
-          <%= image_tag(main_app.url_for(@product.images[4].attachment.variant(resize: "1000x1000")), class: "concept-image") %>
+          <% unless @product.images[4].nil? %>
+            <%= image_tag(main_app.url_for(@product.images[4].attachment.variant(resize: "1000x1000")), class: "concept-image") %>
+          <% end %>
 
         </div>
       </div>
@@ -21,7 +23,9 @@
       <div class="col-md-6 col-sm-6">
         <div id="image-container-2">
           <%# image_tag(main_app.url_for(@product.images[5].url(:product)), class: "concept-image") %>
-          <%= image_tag(main_app.url_for(@product.images[5].attachment.variant(resize: "1000x1000")), class: "concept-image") %>
+          <% unless @product.images[5].nil? %>
+            <%=   image_tag(main_app.url_for(@product.images[5].attachment.variant(resize: "1000x1000")), class: "concept-image") %>
+          <% end %>
 
         </div>
 
