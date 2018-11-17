@@ -47,7 +47,7 @@ $(document).ready(function() {
     var numberaux1, numberaux2, numberaux3, numberaux4, numberaux5, numberaux6, numberauxs;
     var max1, max2;
 
-    max1 = 150;
+    max1 = 300;
     max2 = 130;
 
     numberauxs = $(".text-field-number-aux");

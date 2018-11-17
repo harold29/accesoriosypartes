@@ -1,7 +1,7 @@
 <% unless @product_properties.empty? %>
   <div id="concepts">
     <div class="row" id="concepts-show-1">
-      <div class="col-md-6 col-sm-6">
+      <div class="col-md-7 col-sm-6">
         <% unless @product_properties[0].property.presentation.empty? %>
           <h4 class="concept-title"> <%= @product_properties[0].property.name %></h4>
         <% end %>
@@ -9,7 +9,7 @@
           <%= @product_properties[0].value %>
         </p>
       </div>
-      <div class="col-md-6 col-sm-6">
+      <div class="col-md-5 col-sm-6">
         <div id="image-container-1">
           <%# image_tag(main_app.url_for(@product.images[4].url(:product)), class: "concept-image") %>
           <% unless @product.images[4].nil? %>
@@ -20,7 +20,7 @@
       </div>
     </div>
     <div class="row" id="concepts-show-2">
-      <div class="col-md-6 col-sm-6">
+      <div class="col-md-5 col-sm-6">
         <div id="image-container-2">
           <%# image_tag(main_app.url_for(@product.images[5].url(:product)), class: "concept-image") %>
           <% unless @product.images[5].nil? %>
@@ -30,7 +30,7 @@
         </div>
 
       </div>
-      <div class="col-md-6 col-sm-6">
+      <div class="col-md-7 col-sm-6">
         <% unless @product_properties[1].property.presentation.empty? %>
           <h4 class="concept-title"> <%= @product_properties[1].property.name %></h4>
         <% end %>

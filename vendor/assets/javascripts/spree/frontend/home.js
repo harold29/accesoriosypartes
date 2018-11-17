@@ -86,9 +86,9 @@ $(document).ready(function() {
     });
     //
     $('#products-featured').slick({
-      speed: 6500,
+      speed: 1500,
       slidesToShow: 4,
-      slidesToScroll: 1,
+      slidesToScroll: 4,
       autoplaySpeed: 0,
       arrows: true,
       variableWidth: true,
@@ -96,6 +96,8 @@ $(document).ready(function() {
       dots: false,
       paused: true,
       pauseOnHover: true,
+      nextArrow: '<button type="button" class="right-arrow control-button slick-next"><span class="glyphicon flecha-icono glyphicon-menu-right" aria-hidden="true"></span></button>',
+      prevArrow: '<button type="button" class="left-arrow control-button slick-prev"><span class="glyphicon flecha-icono glyphicon-menu-left" aria-hidden="true"></span></button>',
       responsive: [{
         breakpoint: 768,
         settings: {
