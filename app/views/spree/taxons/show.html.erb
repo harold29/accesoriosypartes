@@ -1,20 +1,36 @@
-<h1 class="taxon-title"><%= @taxon.name %></h1>
+<% @body_id = 'categories-show' %>
 
-<% content_for :sidebar do %>
-  <div data-hook="taxon_sidebar_navigation">
-    <%= render partial: 'spree/shared/taxonomies' %>
-    <%= render partial: 'spree/shared/filters' if @taxon.leaf? %>
+<div id="categories-show-content" data-hook='taxons_show' class='row'>
+  <%= spree_breadcrumbs(@taxon, nil)  %>
+  <div class="category-title-container">
+    <h1 class="taxon-title"><%= @taxon.name %></h1>
   </div>
-<% end %>
-
-<div data-hook="taxon_products">
-  <%= render partial: 'spree/shared/products', locals: { products: @products, taxon: @taxon } %>
+  <% if @taxon.children.size == 0 %>
+    <% unless @products.empty? %>
+      <div class="results-counter">
+        Mostrando todos los resultados (<%= @products.empty? ? "0" : @products.size %>)
+      </div>
+    <% end %>
+  <% end %>
+  <% content_for :sidebar do %>
+    <div data-hook="taxon_sidebar_navigation">
+      <%= render partial: 'spree/taxons/sidebar'  %>
+      <%# render partial: 'spree/shared/taxonomies' %>
+      <%# render partial: 'spree/shared/filters' if @taxon.leaf? %>
+    </div>
+  <% end %>
+  <div data-hook="taxon_products">
+    <%= render partial: 'spree/taxons/products', locals: { products: @products, taxon: @taxon } %>
+  </div>
 </div>
 
-<% unless params[:keywords].present? %>
-  <div data-hook="taxon_children">
-    <% cache [I18n.locale, @taxon] do %>
-      <%= render partial: 'taxon', collection: @taxon.children %>
-    <% end %>
-  </div>
-<% end %>
+
+
+
+<%# unless params[:keywords].present? %>
+  <!-- <div data-hook="taxon_children"> -->
+    <%# cache [I18n.locale, @taxon] do %>
+      <%# render partial: 'taxon', collection: @taxon.children %>
+    <%# end %>
+  <!-- </div> -->
+<%# end %>

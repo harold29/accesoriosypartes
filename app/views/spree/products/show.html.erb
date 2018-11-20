@@ -3,19 +3,20 @@
 
 <% cache cache_key_for_product do %>
   <div id="product-show-content" data-hook="product_show" class="row" itemscope itemtype="https://schema.org/Product">
-    <div class="col-md-6 col-sm-5" data-hook="product_left_part">
+    <div class="col-md-5 col-sm-5" data-hook="product_left_part">
       <div data-hook="product_left_part_wrap">
         <div id="product-images" data-hook="product_images">
-          <div id="" class="col-md-2" data-hook>
+          <div id="" class="col-md-3" data-hook>
             <!-- <div class="col-md-1"> -->
               <div id="thumbnails" data-hook>
                 <%= render partial: 'thumbnails' %>
               </div>
             <!-- </div> -->
           </div>
-          <div id="main-image" class="col-md-10 panel panel-default" data-hook>
+          <div id="main-image" class="col-md-9 panel panel-default" data-hook>
             <div class="panel-body text-center">
-              <%= large_image(@product, itemprop: "image", class: "big") %>
+              <%# large_image(@product, itemprop: "image", class: "big") %>
+              <%= image_tag(main_app.url_for(@product.images.first.attachment.variant(resize: '1000x1000')), itemprop: "image", class: "big") %>
             </div>
           </div>
         </div>
@@ -30,7 +31,7 @@
       </div>
     </div>
 
-    <div class="col-md-6 col-sm-7" data-hook="product_right_part">
+    <div class="col-md-7 col-sm-7" data-hook="product_right_part">
       <div data-hook="product_right_part_wrap">
         <div id="product-description" data-hook="product_description">
           <h1 class="product-title" itemprop="name"><%= @product.name %></h1>
@@ -42,16 +43,37 @@
           </div>
 
           <div class="row price-contact-area">
-            <div id="price-area" class="dolar" data-hook="price-area">
+            <div id="price-area" class="currency-area" data-hook="price-area">
               <%# render partial: 'cart_form' %>
-              <div class="col-md-6 col-sm-6">
-                u$d <%= @product.price %> <br>
-                <% p = (@product.price.to_f * 21.0)/100.0 %>
-                <% f = @product.price.to_f - p %>
-                <div class="row" id="price-iva">
-                  u$d <%= f %> + IVA21%
+              <% if @product.cost_currency == "USD" %>
+                <div class="col-md-6 col-sm-6 usd-currency">
+                  u$d <%= "%.2f" % @product.price %> <br>
+                  <% p = (@product.price.to_f * 21.0)/100.00 %>
+                  <% f = @product.price.to_f - p %>
+                  <div class="row" id="price-iva">
+                    U$D <%= "%.2f" % f %> + IVA
+                  </div>
                 </div>
-              </div>
+              <% elsif @product.cost_currency == "ARS" %>
+                <div class="col-md-6 col-sm-6 ars-currency">
+                  $ <%= "%.2f" % @product.price %> <br>
+                  <% p = (@product.price.to_f * 21.00)/100.00 %>
+                  <% f = @product.price.to_f - p %>
+                  <div class="row" id="price-iva">
+                    $ <%= "%.2f" % f %> + IVA
+                  </div>
+                </div>
+              <% elsif @product.cost_currency == "EUR" %>
+                <div class="col-md-6 col-sm-6 eur-currency">
+                  € <%= "%.2f" % @product.price %> <br>
+                  <% p = (@product.price.to_f * 21.00)/100.00 %>
+                  <% f = @product.price.to_f - p %>
+                  <div class="row" id="price-iva">
+                    € <%= "%.2f" % f %> + IVA
+                  </div>
+                </div>
+              <% end %>
+
               <div class="col-md-6 col-sm-6" id="button-consultar-container">
                 <button type="button"class="btn btn-primary">Consultar</button>
               </div>
@@ -66,6 +88,7 @@
     </div>
   </div>
 <% end %>
+<div class="separator-concepts"></div>
 <%= render partial: 'spree/products/concepts'%>
 <%= render partial: 'spree/products/features'%>
 <div id="other-models">

@@ -1,0 +1,25 @@
+<% url = spree.product_path(product, taxon_id: taxon.try(:id)) %>
+
+<div class="categories-product col-md-3 col-sm-3" id="product-<%= product.id %>">
+  <% cache(taxon.present? ? [I18n.locale, current_currency, taxon, product] : cache_key_for_product(product)) do %>
+    <%= link_to url, itemprop: "url" do %>
+      <div class="product-container">
+        <div class="image-container">
+          <%= product_image(product, itemprop: "image", class: 'product-image-categories')  %>
+        </div>
+        <div class="name-container">
+          <%# content_tag(:h2, truncate(product.name, length: 50), class: 'info', itemprop: 'name', title: product.name)  %>
+          <h2 class="info">
+            Lorem ipsum dolor sit amet, consectetur adipisci.
+          </h2>
+        </div>
+        <div class="price-container">
+          <% product.price %>
+          <% p = (product.price.to_f * 21.0)/100.0 %>
+          <% f = product.price.to_f - p %>
+          u$d <%= f.round(2) %> + <span class="mini">IVA21%</span>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
