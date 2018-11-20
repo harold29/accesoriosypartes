@@ -1,7 +1,9 @@
 <div id="bloque-marca">
   <div class="row">
     <div class="col-md-4 col-sm 4">
-      <%= image_tag(main_app.url_for(@product.images[4].url(:product)), class: "image", id: "block-image") %>
+      <% if @product.images[4] %>
+        <%= image_tag(main_app.url_for(@product.images[4].url(:product)), class: "image", id: "block-image") %>
+      <% end %>
     </div>
     <div class="col-md-6 col-sm-6" id="second-element-block">
       Donec pharetra, odio a ultrices commodo, arcu ex interdum odio, vitae vestibulum nibh sapien ut nibh. Fusce blandit quis quam ut ultricies. Curabitur pharetra laoreet mattis. Cras a lorem sit amet lectus feugiat placerat. Fusce egestas neque tortor, sollicitudin sollicitudin dolor iaculis nec. Maecenas quis dignissim sem, vel dictum ex

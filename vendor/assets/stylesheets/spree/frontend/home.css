@@ -538,6 +538,116 @@ ul.nav li:hover > ul.dropdown-menu {
 
 /* ==============================END SLIDER================================= */
 
+/* =========================== COMPANIES SLIDER ============================ */
+
+.companies-slider {
+  border-bottom: 15px solid #e6e6e6;
+  background-color: #ffffff;
+  /* padding-top: 15px !important; */
+}
+
+.company, .company-sub {
+  text-align: center;
+}
+
+.companies-slider .companies {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.companies-slider .companies-conveyor {
+  padding-top: 15px !important;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+
+.companies-slider .companies-slider-sub {
+  padding-top: 15px !important;
+  padding-bottom: 15px !important;
+  padding-right: 0px !important;
+  padding-left: 0px !important;
+}
+
+.companies-slider .companies-conveyor .slick-slide {
+  text-align: center;
+}
+
+.companies-slider .companies-conveyor .company {
+  display: inline-block;
+  width: 100% !important;
+}
+
+.companies-slider .companies-conveyor .company .company-img {
+  /* width: 100% */
+  width: auto;
+  height: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.companies-slider .companies-conveyor .company #logo-1 {
+
+}
+
+.companies-slider .companies-conveyor .company #logo-2 {
+
+}
+
+.companies-slider .companies-conveyor .company #logo-3 {
+
+}
+
+.companies-slider .companies-conveyor .company #logo-4 {
+
+}
+
+.companies-slider .companies-conveyor .company #logo-5 {
+
+}
+
+.companies-slider .companies-conveyor .company #logo-6 {
+
+}
+
+.companies-slider .companies-conveyor .company #logo-7 {
+
+}
+
+.companies-slider .companies-conveyor .company #logo-8 {
+
+}
+
+.companies-slider .companies-conveyor .company #logo-9 {
+
+}
+
+.companies-slider .companies-conveyor .company #logo-10 {
+
+}
+
+.companies-slider .companies-slider-sub .company {
+  display: inline-block;
+  width: 87px !important;
+}
+
+.companies-slider .companies-slider-sub .company .company-img-sub {
+  width: 100%;
+  filter: grayscale(100%);
+  transition: all 0.5s ease;
+}
+
+.companies-slider .companies-slider-sub .company .company-img-sub:hover {
+  filter: grayscale(0%);
+  transition: all 0.5s ease;
+}
+
+.companies-slider .companies-slider-sub .slick-slide {
+  width: 87px !important;
+  margin: 0px 20px;
+}
+
+/* ========================= END COMPANIES SLIDER ========================== */
+
 @media only screen and (max-width: 600px) {
 
 }
@@ -759,6 +869,26 @@ ul.nav li:hover > ul.dropdown-menu {
       background-color: red !important;
   }
   /* ========================END MEDIA SLIDER==============================  */
+
+  /* ======================== MEDIA COMPANIES SLIDER ======================= */
+
+
+  /* CHANGE */
+  .companies-slider .companies-conveyor .company .company-img {
+    /* width: 100% */
+    /* width: auto; */
+    height: 20px;
+    /* margin-left: auto;
+    margin-right: auto; */
+  }
+
+  /* CHANGE */
+  .companies-slider .companies-slider-sub .slick-slide {
+    width: 30px !important;
+    margin: 0px 20px;
+  }
+
+  /* ===================== END MEDIA COMPANIES SLIDER ====================== */
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
@@ -1090,116 +1220,6 @@ ul.nav li:hover > ul.dropdown-menu {
   /* ========================END MEDIA SLIDER==============================  */
 }
 
-
-/* =========================== COMPANIES SLIDER ============================ */
-
-.companies-slider {
-  border-bottom: 15px solid #e6e6e6;
-  background-color: #ffffff;
-  /* padding-top: 15px !important; */
-}
-
-.company, .company-sub {
-  text-align: center;
-}
-
-.companies-slider .companies {
-  padding-top: 15px;
-  padding-bottom: 15px;
-}
-
-.companies-slider .companies-conveyor {
-  padding-top: 15px !important;
-  padding-left: 0px !important;
-  padding-right: 0px !important;
-}
-
-.companies-slider .companies-slider-sub {
-  padding-top: 15px !important;
-  padding-bottom: 15px !important;
-  padding-right: 0px !important;
-  padding-left: 0px !important;
-}
-
-.companies-slider .companies-conveyor .slick-slide {
-  text-align: center;
-}
-
-.companies-slider .companies-conveyor .company {
-  display: inline-block;
-  width: 100% !important;
-}
-
-.companies-slider .companies-conveyor .company .company-img {
-  /* width: 100% */
-  width: auto;
-  height: 50px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.companies-slider .companies-conveyor .company #logo-1 {
-
-}
-
-.companies-slider .companies-conveyor .company #logo-2 {
-
-}
-
-.companies-slider .companies-conveyor .company #logo-3 {
-
-}
-
-.companies-slider .companies-conveyor .company #logo-4 {
-
-}
-
-.companies-slider .companies-conveyor .company #logo-5 {
-
-}
-
-.companies-slider .companies-conveyor .company #logo-6 {
-
-}
-
-.companies-slider .companies-conveyor .company #logo-7 {
-
-}
-
-.companies-slider .companies-conveyor .company #logo-8 {
-
-}
-
-.companies-slider .companies-conveyor .company #logo-9 {
-
-}
-
-.companies-slider .companies-conveyor .company #logo-10 {
-
-}
-
-.companies-slider .companies-slider-sub .company {
-  display: inline-block;
-  width: 87px !important;
-}
-
-.companies-slider .companies-slider-sub .company .company-img-sub {
-  width: 100%;
-  filter: grayscale(100%);
-  transition: all 0.5s ease;
-}
-
-.companies-slider .companies-slider-sub .company .company-img-sub:hover {
-  filter: grayscale(0%);
-  transition: all 0.5s ease;
-}
-
-.companies-slider .companies-slider-sub .slick-slide {
-  width: 87px !important;
-  margin: 0px 20px;
-}
-
-/* ========================= END COMPANIES SLIDER ========================== */
 
 
 .collage-subcontainer-main {
