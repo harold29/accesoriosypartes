@@ -49,7 +49,7 @@
               <%# render partial: 'cart_form' %>
               <% if @product.cost_currency == "USD" %>
                 <div class="col-md-6 col-sm-6 usd-currency">
-                  u$d <%= "%.2f" % @product.price %> <br>
+                  U$D <%= "%.2f" % @product.price %> <br>
                   <% p = (@product.price.to_f * 21.0)/100.00 %>
                   <% f = @product.price.to_f - p %>
                   <div class="row" id="price-iva">
@@ -95,6 +95,9 @@
 <%= render partial: 'spree/products/features'%>
 <div id="other-models">
   <%= render partial: 'spree/products/other_models'%>
+</div>
+<div class="venecitas-container">
+
 </div>
 <%= render partial: 'spree/products/bloque_marca'%>
 <div id="other-products">

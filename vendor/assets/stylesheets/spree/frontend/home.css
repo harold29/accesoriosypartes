@@ -882,12 +882,16 @@ ul.nav li:hover > ul.dropdown-menu {
     margin-right: auto; */
   }
 
+  .companies-slider .companies-slider-sub .company {
+    display: inline-block;
+    width: 40px !important;
+  }
+
   /* CHANGE */
   .companies-slider .companies-slider-sub .slick-slide {
     width: 30px !important;
     margin: 0px 20px;
   }
-
   /* ===================== END MEDIA COMPANIES SLIDER ====================== */
 }
 
@@ -993,6 +997,31 @@ ul.nav li:hover > ul.dropdown-menu {
   /* =========================MEDIA SLIDER=================================  */
 
   /* ========================END MEDIA SLIDER==============================  */
+
+  /* ======================== MEDIA COMPANIES SLIDER ======================= */
+
+
+  /* CHANGE */
+  .companies-slider .companies-conveyor .company .company-img {
+    /* width: 100% */
+    /* width: auto; */
+    height: 35px;
+    /* margin-left: auto;
+    margin-right: auto; */
+  }
+
+  .companies-slider .companies-slider-sub .company {
+    display: inline-block;
+    width: 50px !important;
+  }
+
+  /* CHANGE */
+  .companies-slider .companies-slider-sub .slick-slide {
+    width: 30px !important;
+    margin: 0px 20px;
+  }
+
+  /* ===================== END MEDIA COMPANIES SLIDER ====================== */
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
@@ -1218,8 +1247,32 @@ ul.nav li:hover > ul.dropdown-menu {
       background-color: red !important;
   }
   /* ========================END MEDIA SLIDER==============================  */
-}
 
+  /* ======================== MEDIA COMPANIES SLIDER ======================= */
+
+
+  /* CHANGE */
+  .companies-slider .companies-conveyor .company .company-img {
+    /* width: 100% */
+    /* width: auto; */
+    height: 40px;
+    /* margin-left: auto;
+    margin-right: auto; */
+  }
+
+  .companies-slider .companies-slider-sub .company {
+    display: inline-block;
+    width: 50px !important;
+  }
+
+  /* CHANGE */
+  .companies-slider .companies-slider-sub .slick-slide {
+    width: 87px !important;
+    margin: 0px 20px;
+  }
+
+  /* ===================== END MEDIA COMPANIES SLIDER ====================== */
+}
 
 
 .collage-subcontainer-main {
@@ -1584,6 +1637,20 @@ ul.nav li:hover > ul.dropdown-menu {
   margin: auto;
   max-height: 150px;
 }
+
+.product-img-2 {
+  display: none !important;
+}
+
+.product-list-item:hover .panel .panel-body .product-img-1 {
+  display: none;
+}
+
+.product-list-item:hover .panel .panel-body .product-img-1 + .product-img-2 {
+  display: block !important;
+}
+
+
 
 .product-name {
   text-decoration: none;
