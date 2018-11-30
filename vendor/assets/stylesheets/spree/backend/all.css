@@ -54,6 +54,16 @@ figure figcaption {
   height: 250px;
 }
 
+.separator-text {
+  text-transform: uppercase;
+  font-size: 11px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  vertical-align: middle;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
 /* .cr-image {
   width: 200px;
   height: auto;

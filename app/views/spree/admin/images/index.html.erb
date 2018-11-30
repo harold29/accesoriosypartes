@@ -30,25 +30,63 @@
     </thead>
 
     <tbody>
-      <% (@product.variant_images).each do |image| %>
-        <tr id="<%= spree_dom_id image %>" data-hook="images_row">
-          <td class="move-handle text-center">
-            <% if can? :edit, image %>
-              <span class="icon icon-move handle"></span>
+      <% (@product.variant_images).each_with_index do |image, index| %>
+        <% if index < 4 %>
+          <tr id="<%= spree_dom_id image %>" data-hook="images_row">
+            <td class="move-handle text-center">
+              <% if can? :edit, image %>
+                <span class="icon icon-move handle"></span>
+              <% end %>
+            </td>
+            <td class="image">
+              <%= link_to image_tag(main_app.url_for(image.url(:mini))), main_app.url_for(image.url(:product)) %>
+            </td>
+            <% if has_variants %>
+              <td><%= options_text_for(image) %></td>
             <% end %>
-          </td>
-          <td class="image">
-            <%= link_to image_tag(main_app.url_for(image.url(:mini))), main_app.url_for(image.url(:product)) %>
-          </td>
-          <% if has_variants %>
-            <td><%= options_text_for(image) %></td>
-          <% end %>
-          <td><%= image.alt %></td>
-          <td class="actions actions-2 text-right">
-            <%= link_to_with_icon('edit', Spree.t(:edit), spree.edit_admin_product_image_url(@product, image), class: 'btn btn-primary btn-sm', no_text: true, data: { action: 'edit' }) if can? :edit, image %>
-            <%= link_to_delete(image, { url: spree.admin_product_image_url(@product, image), no_text: true }) if can? :destroy, image %>
-          </td>
-        </tr>
+            <td><%= image.alt %></td>
+            <td class="actions actions-2 text-right">
+              <%= link_to_with_icon('edit', Spree.t(:edit), spree.edit_admin_product_image_url(@product, image), class: 'btn btn-primary btn-sm', no_text: true, data: { action: 'edit' }) if can? :edit, image %>
+              <%= link_to_delete(image, { url: spree.admin_product_image_url(@product, image), no_text: true }) if can? :destroy, image %>
+            </td>
+          </tr>
+        <% end %>
+        <% if index == 5 %>
+          <tr class="separator-text">
+            <td class="move-handle">
+              Imágenes de Conceptos
+
+            </td>
+            <td class="image">
+
+            </td>
+            <td></td>
+            <td class="actions actions-2 text-right">
+            </td>
+          </tr>
+        <% end %>
+      <% end %>
+      <% (@product.variant_images).each_with_index do |image, index| %>
+        <% if index > 3 %>
+          <tr id="<%= spree_dom_id image %>" data-hook="images_row">
+            <td class="move-handle text-center">
+              <% if can? :edit, image %>
+                <span class="icon icon-move handle"></span>
+              <% end %>
+            </td>
+            <td class="image">
+              <%= link_to image_tag(main_app.url_for(image.url(:mini))), main_app.url_for(image.url(:product)) %>
+            </td>
+            <% if has_variants %>
+              <td><%= options_text_for(image) %></td>
+            <% end %>
+            <td><%= image.alt %></td>
+            <td class="actions actions-2 text-right">
+              <%= link_to_with_icon('edit', Spree.t(:edit), spree.edit_admin_product_image_url(@product, image), class: 'btn btn-primary btn-sm', no_text: true, data: { action: 'edit' }) if can? :edit, image %>
+              <%= link_to_delete(image, { url: spree.admin_product_image_url(@product, image), no_text: true }) if can? :destroy, image %>
+            </td>
+          </tr>
+        <% end %>
       <% end %>
     </tbody>
   </table>

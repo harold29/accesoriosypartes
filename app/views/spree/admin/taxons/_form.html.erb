@@ -20,6 +20,12 @@
         <%= image_tag main_app.url_for(@taxon.icon.try(:attachment)) if @taxon.icon %>
         <%= f.file_field :icon %>
       <% end %>
+
+      <%= f.field_container :menu_icon, class: ['form-group'] do %>
+        <%= f.label :menu_icon, Spree.t(:menu_icon) %>
+        <%= image_tag main_app.url_for(@taxon.icon.try(:attachment)) if @taxon.menu_icon %>
+        <%= f.file_field :menu_icon %>
+      <% end %>
     </div>
 
     <div class="col-xs-12 col-md-7">
