@@ -109,7 +109,9 @@ window.addEventListener('DOMContentLoaded', function () {
           $alert.removeClass('alert-success alert-warning');
           canvas.toBlob(function (blob) {
             var formData = new FormData();
-            formData.append('image[attachment]', blob);
+            // formData.append('image[attachment]', blob);
+            // formData.append()
+            console.log("BLOB CONTENT: " + canvas.toDataURL());
             // var datos = {
             //   "image" : canvas.toDataURL(),
             //   "type": "image/jpeg",
@@ -126,13 +128,46 @@ window.addEventListener('DOMContentLoaded', function () {
             //   }
             // };
             console.log("DATOS " + JSON.stringify(formData));
+
+            const file = new File([blob], 'hello.png');
+            console.log(file);
+            console.log(file.webkitRelativePath);
+            // function urltoFile(url, filename, mimeType){
+            //   return (fetch(url)
+            //     .then(function(res){return res.arrayBuffer();})
+            //     .then(function(buf){return new File([buf], filename, {type:mimeType});})
+            //   );
+            // }
+
+            const Url = "/api/v1/products/" + <%= @product.id %> + '/images';
+            const Data = {
+              image: {
+                attachment: URL.createObjectURL(blob)
+              }
+            };
+            // console.log("DATA " + JSON.parse(Data));
+
+            // const Params = {
+            //   headers: {
+            //     "X-Spree-Token" : "1e78a54cc8d1eee110b0299fa7059da390124fa52a2bde67",
+            //     "Content-Type" : "multipart/form-data"
+            //   },
+            //   body: "hola" : "potato/",
+            //   method: "POST"
+            // };
+            //
+            // fetch(Url, Params)
+            // .then(data=>{console.log(data)})
+
+
+
             $.ajax('/api/v1/products/' + <%= @product.id %> + '/images', {
               headers: {
                 "X-Spree-Token" : "1e78a54cc8d1eee110b0299fa7059da390124fa52a2bde67",
                 "Content-Type" : "multipart/form-data"
               },
               method: 'POST',
-              data: formData,
+              data: { maldicion: "shit" },
               processData: false,
               contentType: false,
               xhr: function () {

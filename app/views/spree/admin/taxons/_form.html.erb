@@ -17,14 +17,23 @@
 
       <%= f.field_container :icon, class: ['form-group'] do %>
         <%= f.label :icon, Spree.t(:icon) %>
-        <%= image_tag main_app.url_for(@taxon.icon.try(:attachment)) if @taxon.icon %>
+        <%= image_tag main_app.url_for(@taxon.icon[0].try(:attachment)) if @taxon.icon[0] %>
         <%= f.file_field :icon %>
       <% end %>
 
       <%= f.field_container :menu_icon, class: ['form-group'] do %>
         <%= f.label :menu_icon, Spree.t(:menu_icon) %>
-        <%= image_tag main_app.url_for(@taxon.icon.try(:attachment)) if @taxon.menu_icon %>
+        <%# image_tag main_app.url_for(@taxon.menu_icon.try(:attachment)) if @taxon.menu_icon %>
         <%= f.file_field :menu_icon %>
+        <%# f.fields_for :menu_icon do |k| %>
+          <%# k.number_field :x, class: "" %>
+          <%# k.number_field :y, class: "" %>
+          <%# k.number_field :width, class: "" %>
+          <%# k.number_field :height, class: "" %>
+          <%# k.number_field :scalex, class: "" %>
+          <%# k.number_field :scaley, class: "" %>
+          <%# k.number_field :rotate, class: "" %>
+        <%# end %>
       <% end %>
     </div>
 
