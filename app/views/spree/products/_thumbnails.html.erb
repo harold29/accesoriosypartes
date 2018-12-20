@@ -5,7 +5,7 @@
       <% if index < 4 %>
         <li class='tmb-all tmb-<%= i.viewable.id %>'>
           <%# link_to(image_tag(main_app.url_for(i.url(:mini)), class: "thumbnail"), main_app.url_for(i.url(:product))) %>
-          <%= link_to(image_tag(main_app.url_for(i.attachment.variant(resize: '200x200')), class: "thumbnail"), main_app.url_for(i.attachment.variant(resize: '1000x1000')))  %>
+          <%= link_to(image_tag(main_app.url_for(i.attachment.variant(resize: '200x200')), class: "thumbnail"), main_app.url_for(i.attachment.variant(resize: '1000x1000')), id: "image-#{index}")  %>
         </li>
       <% end %>
     <% end %>

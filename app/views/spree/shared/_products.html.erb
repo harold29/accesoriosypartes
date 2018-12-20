@@ -18,7 +18,11 @@
 
 <% if products.any? %>
   <div id="products" class="row" data-hook>
-    <%= render partial: 'spree/products/product', collection: products, locals: { taxon: @taxon } %>
+    <% if params.key?(:keywords) %>
+      <%= render partial: 'spree/products/search/product', collection: products, locals: { taxon: @taxon } %>
+    <% else %>
+      <%= render partial: 'spree/products/product', collection: products, locals: { taxon: @taxon } %>
+    <% end %>
   </div>
 <% end %>
 

@@ -13,15 +13,30 @@
               </div>
             <!-- </div> -->
           </div>
+
           <div id="main-image" class="col-md-9 panel panel-default" data-hook>
             <div class="panel-body text-center">
               <%# large_image(@product, itemprop: "image", class: "big") %>
               <% if @product.images.first %>
-                <%= image_tag(main_app.url_for(@product.images.first.attachment.variant(resize: '1000x1000')), itemprop: "image", class: "big") %>
+                <%= image_tag(main_app.url_for(@product.images.first.attachment.variant(resize: '1000x1000')), id: "image-main", itemprop: "image", class: "big zoom", :data => { :"magnify-src" => main_app.url_for(@product.images.first.attachment.variant(resize: '1000x1000'))}) %>
+
               <% end %>
             </div>
           </div>
         </div>
+        <script type="text/javascript">
+        $(document).ready(function() {
+          console.log("POTEITO");
+          $('#image-main').on("load", function() {
+            console.log("loaded");
+            let sr = $("#image-main").attr("src");
+            $("#image-main").attr("data-magnify-src", sr);
+            $('.zoom').magnify();
+          });
+          $('.zoom').magnify();
+
+        });
+        </script>
 
         <!-- <div data-hook="product_properties"> -->
           <%# render partial: 'properties' #%>
@@ -90,6 +105,7 @@
     </div>
   </div>
 <% end %>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/magnify/2.3.2/js/jquery.magnify.js"></script>
 <div class="separator-concepts"></div>
 <%= render partial: 'spree/products/concepts'%>
 <%= render partial: 'spree/products/features'%>

@@ -121,6 +121,13 @@ body {
   width: 75%;
 }
 
+/* #search-result .filled {
+  background: white; */
+/* } */
+.filled {
+  background-color: white;
+}
+
 .form-group {
   width: 80%;
 }
