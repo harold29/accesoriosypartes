@@ -5,19 +5,42 @@
     <%= link_to url, itemprop: "url" do %>
       <div class="product-container">
         <div class="image-container">
-          <%= product_image(product, itemprop: "image", class: 'product-image-categories')  %>
+          <%# product_image(product, itemprop: "image", class: 'product-image-categories')  %>
+          <% if product.images.first %>
+            <%= image_tag(main_app.url_for(product.images.first.attachment.variant(resize: '150x150')), class: "product-image-home product-img-1")  %>
+          <% end %>
+
+          <% if product.images.second %>
+            <%= image_tag(main_app.url_for(product.images.second.attachment.variant(resize: '150x150')), class: "product-image-home product-img-2") %>
+          <% else %>
+            <%= image_tag(main_app.url_for(product.images.first.attachment.variant(resize: '150x150')), class: "product-image-home product-img-2")  %>
+          <% end %>
+          <%# product_image(product) %>
         </div>
         <div class="name-container">
           <%# content_tag(:h2, truncate(product.name, length: 50), class: 'info', itemprop: 'name', title: product.name)  %>
           <h2 class="info">
-            Lorem ipsum dolor sit amet, consectetur adipisci.
+            <%= product.name %>
           </h2>
         </div>
         <div class="price-container">
           <% product.price %>
           <% p = (product.price.to_f * 21.0)/100.0 %>
           <% f = product.price.to_f - p %>
-          u$d <%= f.round(2) %> + <span class="mini">IVA21%</span>
+          <!-- u$d <%# f.round(2) %> + <span class="mini">IVA21%</span> -->
+          <% if product.cost_currency == "USD" %>
+            <span class="usd-currency">
+              <%= number_to_currency(product.price, unit: "U$D ", delimiter: ".", separator: ",") %> + <span class="mini">IVA</span>
+            </span>
+          <% elsif product.cost_currency == "ARS" %>
+            <span class="ars-currency">
+              <%= number_to_currency(product.price, unit: "$ ", delimiter: ".", separator: ",") %> + <span class="mini">IVA</span>
+            </span>
+          <% elsif product.cost_currency == "EUR" %>
+            <span class="eur-currency">
+              <%= number_to_currency(product.price, unit: "€ ", delimiter: ".", separator: ",") %> + <span class="mini">IVA</span>
+            </span>
+          <% end %>
         </div>
       </div>
     <% end %>

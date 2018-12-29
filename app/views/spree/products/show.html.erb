@@ -64,29 +64,29 @@
               <%# render partial: 'cart_form' %>
               <% if @product.cost_currency == "USD" %>
                 <div class="col-md-6 col-sm-6 usd-currency">
-                  U$D <%= "%.2f" % @product.price %> <br>
-                  <% p = (@product.price.to_f * 21.0)/100.00 %>
-                  <% f = @product.price.to_f - p %>
+                  <% p = (@product.price.to_f * @product.iva.to_f)/100.00 %>
+                  <% f = @product.price.to_f + p %>
+                  <%= number_to_currency(f, unit: "U$D ", delimiter: ".", separator: ",") %>
                   <div class="row" id="price-iva">
-                    U$D <%= "%.2f" % f %> + IVA
+                    <%= number_to_currency(@product.price, unit: "U$D ", delimiter: ".", separator: ",") %> + IVA
                   </div>
                 </div>
               <% elsif @product.cost_currency == "ARS" %>
                 <div class="col-md-6 col-sm-6 ars-currency">
-                  $ <%= "%.2f" % @product.price %> <br>
-                  <% p = (@product.price.to_f * 21.00)/100.00 %>
-                  <% f = @product.price.to_f - p %>
+                  <% p = (@product.price.to_f * @product.iva.to_f)/100.00 %>
+                  <% f = @product.price.to_f + p %>
+                  <%= number_to_currency(f, unit: "$ ", delimiter: ".", separator: ",") %>
                   <div class="row" id="price-iva">
-                    $ <%= "%.2f" % f %> + IVA
+                    <%= number_to_currency(@product.price, unit: "$ ", delimiter: ".", separator: ",") %> + IVA
                   </div>
                 </div>
               <% elsif @product.cost_currency == "EUR" %>
                 <div class="col-md-6 col-sm-6 eur-currency">
-                  € <%= "%.2f" % @product.price %> <br>
-                  <% p = (@product.price.to_f * 21.00)/100.00 %>
-                  <% f = @product.price.to_f - p %>
+                  <% p = (@product.price.to_f * @product.iva.to_f)/100.00 %>
+                  <% f = @product.price.to_f + p %>
+                  <%= number_to_currency(f, unit: "€ ", delimiter: ".", separator: ",") %>
                   <div class="row" id="price-iva">
-                    € <%= "%.2f" % f %> + IVA
+                    <%= number_to_currency(@product.price, unit: "€ ", delimiter: ".", separator: ",") %> + IVA
                   </div>
                 </div>
               <% end %>
@@ -119,4 +119,3 @@
 <div id="other-products">
   <%= render partial: 'spree/products/other_products' %>
 </div>
-<%= render partial: 'spree/shared/footer' %>

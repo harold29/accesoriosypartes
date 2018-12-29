@@ -38,9 +38,17 @@
     <div class="col-xs-12 col-md-4" data-hook="admin_product_form_right">
       <div data-hook="admin_product_form_price">
         <%= f.field_container :price, class: ['form-group'] do %>
-          <%= f.label :price, raw("PRECIO TOTAL" + content_tag(:span, ' *', class: "required")) %>
+          <%= f.label :price, raw("PRECIO NETO" + content_tag(:span, ' *', class: "required")) %>
           <%= f.text_field :price, value: number_to_currency(@product.price, unit: ''), class: 'form-control', disabled: (cannot? :update, @product.price) %>
           <%= f.error_message_on :price %>
+        <% end %>
+      </div>
+
+      <div data-hook="admin_product_form_iva" class="">
+        <%= f.field_container :iva, class: ['form-group'] do %>
+          <%= f.label :iva, raw("PORCENTAJE DE IVA" + content_tag(:span, ' *', class: "required")) %>
+          <%= f.text_field :iva, value: number_to_currency(@product.iva, unit: ''), class: 'form-control', disabled: (cannot? :update, @product.iva) %>
+          <%= f.error_message_on :iva %>
         <% end %>
       </div>
 
@@ -183,7 +191,7 @@
     <% end %>
   </div>
 
-  <div data-hook="admin_product_form_option_types">
+  <div data-hook="admin_product_form_option_types" class="hidden">
     <%= f.field_container :option_types, class: ['form-group'] do %>
       <%= f.label :option_type_ids, Spree.t(:option_types) %>
 

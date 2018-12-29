@@ -1262,14 +1262,14 @@ ul.nav li:hover > ul.dropdown-menu {
   .companies-slider .companies-conveyor .company .company-img {
     /* width: 100% */
     /* width: auto; */
-    height: 40px;
+    height: 55px;
     /* margin-left: auto;
     margin-right: auto; */
   }
 
   .companies-slider .companies-slider-sub .company {
     display: inline-block;
-    width: 50px !important;
+    width: 90px !important;
   }
 
   /* CHANGE */
