@@ -10,7 +10,7 @@
     <% if @p_taxon %>
       <% @m_taxon = Spree::Taxon.find_by(name: @p_taxon.name) %>
       <% unless @m_taxon.blank? %>
-        <% @f_products = @m_taxon.products %>
+        <% @f_products = Spree::Product.all.sample(20) %>
         <div id="products-other" class="row" data-hook>
           <div class="col-md-1 col-sm-1">
 

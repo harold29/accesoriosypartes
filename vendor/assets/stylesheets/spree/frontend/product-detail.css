@@ -60,11 +60,17 @@
   width: auto;
   height: 320px;
   max-height: 100%;
+  height: 320px;
 }
 
 .magnify > .magnify-lens {
   width: 300px;
   height: 300px;
+}
+
+.modal-body #modal-img {
+  height: 560px;
+  width: 560px;
 }
 
 .price-contact-area {

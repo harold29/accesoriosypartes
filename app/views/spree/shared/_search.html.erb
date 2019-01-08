@@ -14,51 +14,107 @@
     <span class="glyphicon glyphicon-search">
     </span>
   </button>
-  <!-- <div class="form-group search-field">
-  </div> -->
+  <div class="form-group search-field">
+  </div>
   <%= submit_tag Spree.t(:search), id: "search-button",name: nil, class: "btn btn-success" %>
 <% end %>
 <div class="search-result" id="search-result">
 
 </div>
-
+<img src="" alt="">
 <script type="text/javascript">
+  // function findProduct(keyword) {
+  //   let url = "/api/v1/products?q[name_count]=" + keyword;
+  //   $.ajax({
+  //     url: url,
+  //     headers: {
+  //       "X-Spree-Token": "8452ef7de7ab9cfe527d23907920d8e89a0c46bdb93f6cf7"
+  //     }
+  //   }).done(function(data){
+  //     // console.log("DATA " + JSON.stringify(data));
+  //     search_area.innerHTML = "";
+  //     let response = data["products"];
+  //     response.forEach(function(elem) {
+  //       console.log("ELEMENT " + JSON.stringify(elem));
+  //       let cont = document.createElement("div");
+  //       let link = document.createElement("a");
+  //       // link.href =
+  //       search_area.classList.add('filled');
+  //       let node = document.createTextNode(elem["name"]);
+  //       search_area.appendChild(node);
+  //       // $("#search-result").html(
+  //         // document.getElementById("search-result").innerHTML = elem["name"] + "BUSQUEDA";
+  //       // )
+  //     });
+  //   }).fail(function(data){
+  //
+  //   });
+  // }
+
+  function renderProduct(product) {
+    let render = "<div class='autosuggest-product'><a class='autosuggest-link btn btn-default' href='/products/" + product["slug"] + "'><div class='col-md-5'><img src='" + product["master"]["images"][0]["mini_url"] + "' class='autosuggest-product-image'></div><div class='col-md-7'><h3 class='autosuggest-product-name'>"+ product["name"] +"</h3></div></a></div>";
+    console.log("FUEGO " + product["master"]["display_price"]);
+    return render;
+  }
+
+  function getPrice(product) {
+    // let price = product["master"][]
+  }
+
   window.addEventListener('DOMContentLoaded', function() {
+    $(document).ajaxStart(function() {
+      let search_area = document.getElementById("search-result");
+      search_area.innerHTML = " ";
+    });
+
+
     let search = $("#keywords");
     let search_area = document.getElementById("search-result");
-    // search.keypress(function() {
-    //   if ($(this).val().length >= 3) {
-    //     console.log("POTATO " + $(this).val());
-    //     let url = "/api/v1/products?q[name_count]=" + $(this).val();
-    //     $.ajax({
-    //       url: url,
-    //       headers: {
-    //         "X-Spree-Token": "8452ef7de7ab9cfe527d23907920d8e89a0c46bdb93f6cf7"
-    //       }
-    //     }).done(function(data){
-    //       // console.log("DATA " + JSON.stringify(data));
-    //       search_area.innerHTML = "";
-    //       let response = data["products"];
-    //       response.forEach(function(elem) {
-    //         console.log("ELEMENT " + JSON.stringify(elem));
-    //         let cont = document.createElement("div");
-    //         let link = document.createElement("a");
-    //         // link.href =
-    //         search_area.classList.add('filled');
-    //         let node = document.createTextNode(elem["name"]);
-    //         search_area.appendChild(node);
-    //         // $("#search-result").html(
-    //           // document.getElementById("search-result").innerHTML = elem["name"] + "BUSQUEDA";
-    //         // )
-    //       });
-    //     }).fail(function(data){
-    //
-    //     });
-    //     // $.get({
-    //     //   url: "/api/v1/products?q[name_count]",
-    //     //   data: $(this).val(),
-    //     // })
-    //   }
-    // });
+    search.keypress(function() {
+      if ($(this).val().length == 3) {
+        let results = " "
+        setTimeout(
+          function() {
+            // console.log("POTATO " + $(this).val());
+            let url = "/api/v1/products?q[name_cont]=" + search.val();
+            $.ajax({
+              async: true,
+              cache: false,
+              url: url,
+              headers: {
+                "X-Spree-Token": "8452ef7de7ab9cfe527d23907920d8e89a0c46bdb93f6cf7"
+              }
+            }).done(function(data){
+              // console.log("DATA " + JSON.stringify(data));
+              // search_area.innerHTML = ""
+              let response = data["products"];
+              response.forEach(function(elem) {
+                console.log("ELEMENT " + JSON.stringify(elem));
+                let cont = document.createElement("div");
+                let link = document.createElement("a");
+                // link.href =
+                search_area.classList.add('filled');
+                let node = document.createTextNode(elem["name"]);
+                let ren = renderProduct(elem);
+                results = results + ren;
+                // search_area.appendChild(ren);
+                // $("#search-result").html(
+                  // document.getElementById("search-result").innerHTML = elem["name"] + "BUSQUEDA";
+                // )
+              });
+              search_area.innerHTML = results;
+            }).fail(function(data){
+
+            });
+          }, 1000
+        );
+
+
+        // $.get({
+        //   url: "/api/v1/products?q[name_count]",
+        //   data: $(this).val(),
+        // })
+      }
+    });
   });
 </script>

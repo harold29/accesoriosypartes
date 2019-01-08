@@ -24,17 +24,48 @@
             </div>
           </div>
         </div>
+        <div class="modal fade" id='modal-img-container' tabindex="-1" role="dialog">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <!-- <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Modal title</h4>
+              </div> -->
+              <div class="modal-body">
+                <img id="modal-img" src="" alt="">
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
         <script type="text/javascript">
         $(document).ready(function() {
-          console.log("POTEITO");
           $('#image-main').on("load", function() {
-            console.log("loaded");
             let sr = $("#image-main").attr("src");
             $("#image-main").attr("data-magnify-src", sr);
             $('.zoom').magnify();
+            $('html').on({
+              magnifystart: function() {
+                $('.magnify-lens').on('click', function() {
+                  let sr = $("#image-main").attr("src");
+                  $('#modal-img').attr('src', sr);
+                  $('#modal-img-container').modal();
+                });
+              }
+            });
           });
           $('.zoom').magnify();
-
+          $('html').on({
+            magnifystart: function() {
+              $('.magnify-lens').on('click', function() {
+                let sr = $("#image-main").attr("src");
+                $('#modal-img').attr('src', sr);
+                $('#modal-img-container').modal();
+              });
+            }
+          });
         });
         </script>
 

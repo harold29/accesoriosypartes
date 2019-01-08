@@ -1,3 +1,4 @@
+<% @p_taxon = @product.taxons.max_by(&:depth) %>
 <% if @p_taxon %>
   <div class="other-models-products-container">
     <div class="other-models-title">
@@ -5,10 +6,9 @@
         Otros Modelos
       </h2>
     </div>
-    <% @p_taxon = @product.taxons.last %>
     <% @m_taxon = Spree::Taxon.find_by(name: @p_taxon.name) %>
     <% unless @m_taxon.blank? %>
-    <% @f_products = @m_taxon.products %>
+    <% @f_products = @m_taxon.products.sample(4) %>
     <div id="products-other-models" class="row" data-hook>
       <div class="col-md-1 col-sm-1">
 

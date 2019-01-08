@@ -22,7 +22,9 @@
         <% end %>
       </div>
       <div class="product-button">
-        <button> Ver más </button>
+        <%= link_to url, itemprop: "url" do %>
+          <button> Ver más </button>
+        <% end %>
       </div>
     <% end %>
   </div>
