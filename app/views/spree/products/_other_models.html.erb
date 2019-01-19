@@ -1,23 +1,43 @@
 <% @p_taxon = @product.taxons.max_by(&:depth) %>
 <% if @p_taxon %>
-  <div class="other-models-products-container">
-    <div class="other-models-title">
-      <h2>
-        Otros Modelos
-      </h2>
-    </div>
-    <% @m_taxon = Spree::Taxon.find_by(name: @p_taxon.name) %>
-    <% unless @m_taxon.blank? %>
-    <% @f_products = @m_taxon.products.sample(4) %>
-    <div id="products-other-models" class="row" data-hook>
-      <div class="col-md-1 col-sm-1">
+  <% @m_taxon = Spree::Taxon.find_by(name: @p_taxon.name) %>
+  <% unless @m_taxon.blank? %>
+    <% @f_products = @m_taxon.products.sample(4).select { |item| item.id != @product.id } %>
+    <% if @f_products.size < 4 %>
+      <div class="other-models-products-container">
+        <div class="other-models-title">
+          <h2>
+            Articulos Destacados
+          </h2>
+        </div>
+        <div id="products-other-models" class="row" data-hook>
+          <div class="col-md-1 col-sm-1">
 
-      </div>
-      <%= render partial: 'spree/products/product', collection: @f_products, locals: { taxon: @m_taxon } %>
-      <div class="col-md-1 col-sm-1">
+          </div>
+          <% @f_products = Spree::Product.where(promotionable: true).sample(4) %>
+          <%= render partial: 'spree/products/product', collection: @f_products, locals: { taxon: @m_taxon } %>
+          <div class="col-md-1 col-sm-1">
 
+          </div>
+        </div>
       </div>
-    </div>
+    <% else %>
+      <div class="other-models-products-container">
+        <div class="other-models-title">
+          <h2>
+            Otros Modelos
+          </h2>
+        </div>
+        <div id="products-other-models" class="row" data-hook>
+          <div class="col-md-1 col-sm-1">
+
+          </div>
+          <%= render partial: 'spree/products/product', collection: @f_products, locals: { taxon: @m_taxon } %>
+          <div class="col-md-1 col-sm-1">
+
+          </div>
+        </div>
+      </div>
     <% end %>
-  </div>
+  <% end %>
 <% end %>

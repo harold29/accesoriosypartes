@@ -36,6 +36,7 @@ gem 'spree_globalize', github: 'spree-contrib/spree_globalize', branch: 'master'
 gem 'spree_static_content', github: 'spree-contrib/spree_static_content'
 gem 'spree_sitemap', github: 'spree-contrib/spree_sitemap'
 gem 'spree_analytics_trackers', github: 'spree-contrib/spree_analytics_trackers'
+gem 'spree_contact_us', :git => 'https://github.com/spree-contrib/spree_contact_us'
 gem 'spree_digital', github: 'spree-contrib/spree_digital'
 
 gem "google-cloud-storage", "~> 1.11", require: false

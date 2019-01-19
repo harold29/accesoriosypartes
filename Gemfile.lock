@@ -17,6 +17,13 @@ GIT
       spree_extension
 
 GIT
+  remote: https://github.com/spree-contrib/spree_contact_us
+  revision: 1c5dc62a363d978e6bc197e400b1e2122ac2916e
+  specs:
+    spree_contact_us (3.3.0)
+      spree_core (>= 3.1.0, < 4.0)
+
+GIT
   remote: https://github.com/spree-contrib/spree_digital.git
   revision: 5ec03ce845c6bd1af2a434c750324a576cba2d31
   specs:
@@ -598,6 +605,7 @@ DEPENDENCIES
   spree (~> 3.6.4)
   spree_analytics_trackers!
   spree_auth_devise (~> 3.3)
+  spree_contact_us!
   spree_digital!
   spree_gateway (~> 3.3)
   spree_globalize!

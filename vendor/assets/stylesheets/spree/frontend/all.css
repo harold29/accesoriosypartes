@@ -8,6 +8,7 @@
  *= require_self
  *= require_tree .
  *= require spree/frontend/spree_digital
+ *= require spree/frontend/spree_static_content
 */
 
 .product .panel .panel-body .product-image-home {
@@ -21,7 +22,8 @@
   -ms-transition:.5s;
   -moz-transition:.5s;
   -webkit-transition:.5s;
-  /* ...and now for the proper property */
+  /* ...and now for the proper property  *= require spree/frontend/spree_static_content
+*/
   transition:.5s;
 }
 
