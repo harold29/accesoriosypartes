@@ -224,7 +224,7 @@ $(document).ready(function() {
 
   $(".middle-category").click(function() {
     var url = $(this).attr("aria-value")
-    document.location.href = url;
+    // document.location.href = url;
   });
 //
 //

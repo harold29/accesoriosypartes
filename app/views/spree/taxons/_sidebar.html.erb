@@ -29,12 +29,14 @@
           <% toggle = t.children.empty? ? ' ' : "collapse" %>
           <% last = t.children.empty? ? 'lower-level middle-category' : 'middle-category' %>
           <% url = seo_url(t) %>
-          <%= link_to(t.name, int_url, class: last + red_class,"role" => "button", "data-toggle" => toggle, "data-parent" => "#accordion-#{root_taxon.id}", "aria-expanded" => expanded, "aria-controls" => "collapse-#{t.id}", "aria-value" => url)  %>
-          <% unless t.children.empty? %>
+          <%= link_to(int_url, class: last + red_class,"role" => "button", "data-toggle" => toggle, "data-parent" => "#accordion-#{root_taxon.id}", "aria-expanded" => expanded, "aria-controls" => "collapse-#{t.id}", "aria-value" => url) do %>
+            <%= t.name %>
+            <% unless t.children.empty? %>
             <%# link_to("", class: last + red_class + " arrow-elem", "role" => "button", "data-toggle" => toggle, "data-parent" => "#accordion-#{root_taxon.id}", "aria-expanded" => expanded, "aria-controls" => "collapse-#{t.id}", "aria-value" => url) do %>
-              <%= content_tag(:span, " ",class: "no-expanded-icon more-icon glyphicon glyphicon-chevron-down", "aria-hidden" => "true") %>
-              <%= content_tag(:span, " ",class: "expanded-icon more-icon glyphicon glyphicon-minus", "aria-hidden" => "true") %>
+            <%= content_tag(:span, " ",class: "no-expanded-icon more-icon glyphicon glyphicon-chevron-down", "aria-hidden" => "true") %>
+            <%= content_tag(:span, " ",class: "expanded-icon more-icon glyphicon glyphicon-minus", "aria-hidden" => "true") %>
             <%# end %>
+            <% end %>
           <% end %>
         <% end  %>
       <% end %>
@@ -54,10 +56,12 @@
                       <% toggle = child_taxon.children.empty? ? ' ' : "collapse" %>
                       <% last = child_taxon.children.empty? ? 'lower-level middle-category' : 'middle-category' %>
                       <% url = seo_url(child_taxon) %>
-                      <%= link_to(child_taxon.name, int_url, class: last + red_class, "role" => "button", "data-toggle" => toggle, "data-parent" => "#accordion-#{t.id}", "aria-expanded" => expanded, "aria-controls" => "collapse-#{root_taxon.id}", "aria-value" => url) %>
-                      <% unless child_taxon.children.empty? %>
-                        <%= content_tag(:span, " ",class: "no-expanded-icon more-icon glyphicon glyphicon-chevron-down", "aria-hidden" => "true")  %>
-                        <%= content_tag(:span, " ",class: "expanded-icon more-icon glyphicon glyphicon-minus", "aria-hidden" => "true") %>
+                      <%= link_to(int_url, class: last + red_class, "role" => "button", "data-toggle" => toggle, "data-parent" => "#accordion-#{t.id}", "aria-expanded" => expanded, "aria-controls" => "collapse-#{root_taxon.id}", "aria-value" => url) do %>
+                        <%= child_taxon.name  %>
+                        <% unless child_taxon.children.empty? %>
+                          <%= content_tag(:span, " ",class: "no-expanded-icon more-icon glyphicon glyphicon-chevron-down", "aria-hidden" => "true")  %>
+                          <%= content_tag(:span, " ",class: "expanded-icon more-icon glyphicon glyphicon-minus", "aria-hidden" => "true") %>
+                        <% end %>
                       <% end %>
                     <% end %>
                   <% end %>

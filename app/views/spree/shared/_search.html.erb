@@ -70,12 +70,15 @@
 
     let search = $("#keywords");
     let search_area = document.getElementById("search-result");
+    console.log("GET SEARCH");
     search.keypress(function() {
+      console.log("Key pressed");
       if ($(this).val().length == 3) {
+        console.log('LENGTH 3');
         let results = " "
         setTimeout(
           function() {
-            // console.log("POTATO " + $(this).val());
+            console.log("POTATO " + search.val());
             let url = "/api/v1/products?q[name_cont]=" + search.val();
             $.ajax({
               async: true,

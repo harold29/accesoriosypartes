@@ -1,6 +1,6 @@
 <% @p_taxon = @product.taxons.max_by(&:depth) %>
 <% if @p_taxon %>
-  <% @m_taxon = Spree::Taxon.find_by(name: @p_taxon.name) %>
+  <% @m_taxon = Spree::Taxon.find(@p_taxon.id) %>
   <% unless @m_taxon.blank? %>
     <% @f_products = @m_taxon.products.sample(4).select { |item| item.id != @product.id } %>
     <% if @f_products.size < 4 %>
