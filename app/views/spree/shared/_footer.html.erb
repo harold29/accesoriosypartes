@@ -44,41 +44,14 @@
     </h4>
     <div class="pages">
       <ul>
-        <li>
-          <a href="#">
-            Audio y video
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            Domótica y control
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            Control de acceso
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            Muebles y sillas
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            Diseño de interior
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            Instalaciones
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            Accesorios
-          </a>
-        </li>
+        <% main_taxon = Spree::Taxon.find_by(name: "Categorias") %>
+        <% unless main_taxon.blank? %>
+          <% main_taxon.children.map do |t| %>
+            <%= content_tag :li, class: 'footer-link' do %>
+              <%= link_to(t.name, seo_url(t)) %>
+            <% end %>
+          <% end %>
+        <% end %>
       </ul>
     </div>
   </div>

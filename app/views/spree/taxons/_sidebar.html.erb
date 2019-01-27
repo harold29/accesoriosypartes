@@ -14,7 +14,9 @@
 <%# style = @taxon && @taxon.self_and_ancestors.include?(@taxon) ? ' ' : 'height:0px;' %>
 <%# abort %>
 <div class="panel-title" id="sidebar-title">
-  CATEGORÍAS
+  <%= link_to(seo_url(root_taxon), "role" => "button") do %>
+    CATEGORÍAS
+  <% end %>
 </div>
 <%= content_tag :div, class: 'panel-group', "role" => "tablist", "aria-multiselectable" => "true", id: "accordion-#{root_taxon.id}" do  %>
   <% root_taxon.children.map do |t|  %>

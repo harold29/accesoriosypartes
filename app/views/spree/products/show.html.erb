@@ -93,35 +93,44 @@
           <div class="row price-contact-area">
             <div id="price-area" class="currency-area" data-hook="price-area">
               <%# render partial: 'cart_form' %>
-              <% if @product.cost_currency == "USD" %>
-                <div class="col-md-6 col-sm-6 usd-currency">
-                  <% p = (@product.price.to_f * @product.iva.to_f)/100.00 %>
-                  <% f = @product.price.to_f + p %>
-                  <%= number_to_currency(f, unit: "U$D ", delimiter: ".", separator: ",") %>
-                  <div class="row" id="price-iva">
-                    <%= number_to_currency(@product.price, unit: "U$D ", delimiter: ".", separator: ",") %> + IVA
-                  </div>
+              <% if @product.price.to_i == 1 %>
+                <div class="col-md-6 col-sm-6 currency">
+                  Consultar
                 </div>
-              <% elsif @product.cost_currency == "ARS" %>
-                <div class="col-md-6 col-sm-6 ars-currency">
-                  <% p = (@product.price.to_f * @product.iva.to_f)/100.00 %>
-                  <% f = @product.price.to_f + p %>
-                  <%= number_to_currency(f, unit: "$ ", delimiter: ".", separator: ",") %>
-                  <div class="row" id="price-iva">
-                    <%= number_to_currency(@product.price, unit: "$ ", delimiter: ".", separator: ",") %> + IVA
-                  </div>
+              <% elsif @product.price.to_i == 2 %>
+                <div class="col-md-6 col-sm-6 currency">
+                  Descontinuado
                 </div>
-              <% elsif @product.cost_currency == "EUR" %>
-                <div class="col-md-6 col-sm-6 eur-currency">
-                  <% p = (@product.price.to_f * @product.iva.to_f)/100.00 %>
-                  <% f = @product.price.to_f + p %>
-                  <%= number_to_currency(f, unit: "€ ", delimiter: ".", separator: ",") %>
-                  <div class="row" id="price-iva">
-                    <%= number_to_currency(@product.price, unit: "€ ", delimiter: ".", separator: ",") %> + IVA
+              <% else %>
+                <% if @product.cost_currency == "USD" %>
+                  <div class="col-md-6 col-sm-6 usd-currency">
+                    <% p = (@product.price.to_f * @product.iva.to_f)/100.00 %>
+                    <% f = @product.price.to_f + p %>
+                    <%= number_to_currency(f, unit: "U$D ", delimiter: ".", separator: ",") %>
+                    <div class="row" id="price-iva">
+                      <%= number_to_currency(@product.price, unit: "U$D ", delimiter: ".", separator: ",") %> + IVA
+                    </div>
                   </div>
-                </div>
+                <% elsif @product.cost_currency == "ARS" %>
+                  <div class="col-md-6 col-sm-6 ars-currency">
+                    <% p = (@product.price.to_f * @product.iva.to_f)/100.00 %>
+                    <% f = @product.price.to_f + p %>
+                    <%= number_to_currency(f, unit: "$ ", delimiter: ".", separator: ",") %>
+                    <div class="row" id="price-iva">
+                      <%= number_to_currency(@product.price, unit: "$ ", delimiter: ".", separator: ",") %> + IVA
+                    </div>
+                  </div>
+                <% elsif @product.cost_currency == "EUR" %>
+                  <div class="col-md-6 col-sm-6 eur-currency">
+                    <% p = (@product.price.to_f * @product.iva.to_f)/100.00 %>
+                    <% f = @product.price.to_f + p %>
+                    <%= number_to_currency(f, unit: "€ ", delimiter: ".", separator: ",") %>
+                    <div class="row" id="price-iva">
+                      <%= number_to_currency(@product.price, unit: "€ ", delimiter: ".", separator: ",") %> + IVA
+                    </div>
+                  </div>
+                <% end %>
               <% end %>
-
               <div class="col-md-6 col-sm-6" id="button-consultar-container">
                 <button type="button"class="btn btn-primary">Consultar</button>
               </div>

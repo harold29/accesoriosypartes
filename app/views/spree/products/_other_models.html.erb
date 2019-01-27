@@ -2,7 +2,8 @@
 <% if @p_taxon %>
   <% @m_taxon = Spree::Taxon.find(@p_taxon.id) %>
   <% unless @m_taxon.blank? %>
-    <% @f_products = @m_taxon.products.sample(4).select { |item| item.id != @product.id } %>
+    <% non_equal_child_products = @m_taxon.products.select { |item| item.id != @product.id } %>
+    <% @f_products = non_equal_child_products.sample(4) %>
     <% if @f_products.size < 4 %>
       <div class="other-models-products-container">
         <div class="other-models-title">

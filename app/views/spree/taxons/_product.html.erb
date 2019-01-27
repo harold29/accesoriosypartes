@@ -17,18 +17,28 @@
           <% product.price %>
           <% p = (product.price.to_f * product.iva.to_f)/100.0 %>
           <% f = product.price.to_f + p %>
-          <% if product.cost_currency == "USD" %>
-            <span class="usd-currency">
-              <%= number_to_currency(product.price, unit: "U$D ", delimiter: ".", separator: ",") %> + <span class="mini">IVA</span>
+          <% if product.price.to_i == 1 %>
+            <span class='placeholder'>
+              Consultar
             </span>
-          <% elsif product.cost_currency == "ARS" %>
-            <span class="ars-currency">
-              <%= number_to_currency(product.price, unit: "$ ", delimiter: ".", separator: ",") %> + <span class="mini">IVA</span>
+          <% elsif product.price.to_i == 2 %>
+            <span class='placeholder'>
+              Descontinuado
             </span>
-          <% elsif product.cost_currency == "EUR" %>
-            <span class="eur-currency">
-              <%= number_to_currency(product.price, unit: "€ ", delimiter: ".", separator: ",") %> + <span class="mini">IVA</span>
-            </span>
+          <% else %>
+            <% if product.cost_currency == "USD" %>
+              <span class="usd-currency">
+                <%= number_to_currency(product.price, unit: "U$D ", delimiter: ".", separator: ",") %> + <span class="mini">IVA</span>
+              </span>
+            <% elsif product.cost_currency == "ARS" %>
+              <span class="ars-currency">
+                <%= number_to_currency(product.price, unit: "$ ", delimiter: ".", separator: ",") %> + <span class="mini">IVA</span>
+              </span>
+            <% elsif product.cost_currency == "EUR" %>
+              <span class="eur-currency">
+                <%= number_to_currency(product.price, unit: "€ ", delimiter: ".", separator: ",") %> + <span class="mini">IVA</span>
+              </span>
+            <% end %>
           <% end %>
         </div>
       </div>
