@@ -39,6 +39,8 @@ gem 'spree_analytics_trackers', github: 'spree-contrib/spree_analytics_trackers'
 gem 'spree_contact_us', :git => 'https://github.com/spree-contrib/spree_contact_us'
 gem 'spree_digital', github: 'spree-contrib/spree_digital'
 
+gem 'whenever', require: false
+
 gem "google-cloud-storage", "~> 1.11", require: false
 
 
