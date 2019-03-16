@@ -18,7 +18,7 @@
 
 #categories-show .principal-container {
   padding-top: 4%;
-  background-image: url(https://www.accesoriosypartes.com.ar/wp-content/themes/Divi/epanel/shortcodes/img/cuadrado.png);
+  background-image: url("cuadrado.png");
   background-position: top;
   background-repeat: no-repeat;
   border-left: 20px solid #2d2d2d;
@@ -28,7 +28,7 @@
 #categories-show .principal-container .principal-subcontainer {
   padding-left: 4%;
   padding-right: 4%;
-  background: url(https://www.accesoriosypartes.com.ar/wp-content/themes/Divi/epanel/shortcodes/img/cuadadro_blanco_footer.png);
+  background: url("cuadadro_blanco_footer.png");
   background-position: bottom;
   background-repeat: no-repeat;
   padding-bottom: 120px;
@@ -197,8 +197,8 @@
 #categories-show .categories-product .name-container {
   text-align: center;
   margin-top: 10px;
-  margin-bottom: 5px;
-  height: 40px;
+  margin-bottom: 10px;
+  height: 50px;
 }
 
 #categories-show .categories-product .name-container h2 {

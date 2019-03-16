@@ -354,3 +354,7 @@ img.logo-img-property {
 #other-products .product{
   width: 90% !important;
 }
+
+.slick-slide {
+  margin-bottom: 8px;
+}
