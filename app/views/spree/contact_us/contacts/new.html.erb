@@ -81,7 +81,7 @@
   </div>
   <%= render :partial => 'spree/shared/error_messages', :locals => { :target => @contact } %>
 
-  <%= form_for @contact, :url => contacts_path, :html => { :novalidate => '' } do |f| %>
+  <%= form_for :contact, :url => main_app.send_contact_path, :html => { :novalidate => '' } do |f| %>
     <% if SpreeContactUs.require_name %>
       <p>
         <%= f.label :name, "Nombre", class: "label label-nombre" %>

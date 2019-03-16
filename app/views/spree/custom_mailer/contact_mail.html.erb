@@ -1,0 +1,35 @@
+<table class="row header">
+  <tr>
+    <td>
+      <p class="lede">
+        ¡Nuevo Contacto de: <%= @contact[:email] %>!
+      </p>
+      <p>
+        Datos del Contacto
+      </p>
+      <p>
+        Una persona ha hecho una nueva consulta:
+      </p>
+      <table class="container">
+        <tr>
+          <td class="wrapper last">
+              EMAIL: <%= @contact[:email] %>
+          </td>
+
+          <td class="wrapper last">
+              NOMBRE: <%= @contact[:name] %>
+          </td>
+
+          <td class="wrapper last">
+              NUMERO DE TELEFONO: <%= @contact[:subject] %>
+          </td>
+
+          <td class="wrapper last">
+              MENSAJE: <%= @contact[:message] %>
+          </td>
+        </tr>
+      </table>
+    </td>
+    <td class="expander"></td>
+  </tr>
+</table>

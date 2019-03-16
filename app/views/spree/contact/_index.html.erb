@@ -1,6 +1,12 @@
-<div class="col-md-6">
+<% content_for :head do -%>
+  <meta name="title" content="Contactanos">
+<% end -%>
+
+<% @body_id = 'contact-page' %>
+
+<div class="col-md-6 contact-left-side">
   <div class="contact-information">
-    <h2 class="contact-title">
+    <h2 class="contact-title-form">
       Venta de Productos
     </h2>
     <span class="contact-specific">
@@ -42,7 +48,7 @@
     </span>
   </div>
 </div>
-<div class="col-md-6">
+<div class="col-md-6 contact-right-side">
   <div class="contact-title">
     Formulario de contacto
   </div>
