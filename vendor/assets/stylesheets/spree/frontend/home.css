@@ -7,7 +7,8 @@ body {
 /* ====================================HEADER=============================== */
 
 #spree-header {
-  background-image: url("https://www.accesoriosypartes.com.ar/wp-content/themes/Divi/epanel/shortcodes/img/fondo.png") !important;
+  /* background-image: url("https://www.accesoriosypartes.com.ar/wp-content/themes/Divi/epanel/shortcodes/img/fondo.png") !important; */
+  background-image: url("fondo.png") !important;
   background-color: transparent;
   margin-bottom: 0;
   border-bottom: 5px solid #7c7c7c;
@@ -16,7 +17,8 @@ body {
 }
 
 #header {
-  background-image: url("https://www.accesoriosypartes.com.ar/wp-content/themes/Divi/epanel/shortcodes/img/fondo.png") !important;
+  /* background-image: url("https://www.accesoriosypartes.com.ar/wp-content/themes/Divi/epanel/shortcodes/img/fondo.png") !important; */
+  background-image: url("fondo.png") !important;
   /* padding: 0px 0 !important; */
   padding-top: 0px !important;
   padding-bottom: 0px !important;
@@ -114,11 +116,65 @@ body {
   background-color: white;
   border-radius: 15px;
   border: 1px solid #d6d6d6;
+  height: 30px;
 
 }
 
 #search-bar {
   width: 75%;
+}
+
+/* #search-result .filled {
+  background: white; */
+/* } */
+
+input#keywords {
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+.filled {
+  /* background-color: white; */
+  position: absolute;
+  z-index: 1000;
+}
+
+.autosuggest-product {
+  /* border-bottom: 1px solid #3c3c3c; */
+  height: 80px;
+}
+
+.autosuggest-link {
+  width: 100%;
+  height: 100%;
+  white-space: normal;
+  border: 1.5px solid #bdbdbd;
+  border-radius: 11px;
+  background-color: white;
+}
+
+.autosuggest-link:hover {
+  background: #e0e0e0 !important;
+}
+
+.autosuggest-product .autosuggest-product-image {
+  height: 50px;
+  width: 50px;
+}
+
+.autosuggest-product .autosuggest-product-name {
+  color: #3c3c3c;
+  font-size: 14px;
+  text-align: left;
+  padding-right: 20px;
+  margin-top: 0px;
+}
+
+.autosuggest-product .autosuggest-product-price {
+  color: #3c3c3c;
+  font-size: 14px;
+  text-align: left;
+  padding-right: 20px;
 }
 
 .form-group {
@@ -538,6 +594,116 @@ ul.nav li:hover > ul.dropdown-menu {
 
 /* ==============================END SLIDER================================= */
 
+/* =========================== COMPANIES SLIDER ============================ */
+
+.companies-slider {
+  border-bottom: 15px solid #e6e6e6;
+  background-color: #ffffff;
+  /* padding-top: 15px !important; */
+}
+
+.company, .company-sub {
+  text-align: center;
+}
+
+.companies-slider .companies {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.companies-slider .companies-conveyor {
+  padding-top: 15px !important;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+
+.companies-slider .companies-slider-sub {
+  padding-top: 15px !important;
+  padding-bottom: 15px !important;
+  padding-right: 0px !important;
+  padding-left: 0px !important;
+}
+
+.companies-slider .companies-conveyor .slick-slide {
+  text-align: center;
+}
+
+.companies-slider .companies-conveyor .company {
+  display: inline-block;
+  width: 100% !important;
+}
+
+.companies-slider .companies-conveyor .company .company-img {
+  /* width: 100% */
+  width: auto;
+  height: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.companies-slider .companies-conveyor .company #logo-1 {
+
+}
+
+.companies-slider .companies-conveyor .company #logo-2 {
+
+}
+
+.companies-slider .companies-conveyor .company #logo-3 {
+
+}
+
+.companies-slider .companies-conveyor .company #logo-4 {
+
+}
+
+.companies-slider .companies-conveyor .company #logo-5 {
+
+}
+
+.companies-slider .companies-conveyor .company #logo-6 {
+
+}
+
+.companies-slider .companies-conveyor .company #logo-7 {
+
+}
+
+.companies-slider .companies-conveyor .company #logo-8 {
+
+}
+
+.companies-slider .companies-conveyor .company #logo-9 {
+
+}
+
+.companies-slider .companies-conveyor .company #logo-10 {
+
+}
+
+.companies-slider .companies-slider-sub .company {
+  display: inline-block;
+  width: 87px !important;
+}
+
+.companies-slider .companies-slider-sub .company .company-img-sub {
+  width: 100%;
+  filter: grayscale(100%);
+  transition: all 0.5s ease;
+}
+
+.companies-slider .companies-slider-sub .company .company-img-sub:hover {
+  filter: grayscale(0%);
+  transition: all 0.5s ease;
+}
+
+.companies-slider .companies-slider-sub .slick-slide {
+  width: 87px !important;
+  margin: 0px 20px;
+}
+
+/* ========================= END COMPANIES SLIDER ========================== */
+
 @media only screen and (max-width: 600px) {
 
 }
@@ -596,7 +762,7 @@ ul.nav li:hover > ul.dropdown-menu {
   }
 
   #search-bar {
-    width: 75%;
+    width: 65%;
     float: right;
   }
 
@@ -759,6 +925,30 @@ ul.nav li:hover > ul.dropdown-menu {
       background-color: red !important;
   }
   /* ========================END MEDIA SLIDER==============================  */
+
+  /* ======================== MEDIA COMPANIES SLIDER ======================= */
+
+
+  /* CHANGE */
+  .companies-slider .companies-conveyor .company .company-img {
+    /* width: 100% */
+    /* width: auto; */
+    height: 20px;
+    /* margin-left: auto;
+    margin-right: auto; */
+  }
+
+  .companies-slider .companies-slider-sub .company {
+    display: inline-block;
+    width: 40px !important;
+  }
+
+  /* CHANGE */
+  .companies-slider .companies-slider-sub .slick-slide {
+    width: 30px !important;
+    margin: 0px 20px;
+  }
+  /* ===================== END MEDIA COMPANIES SLIDER ====================== */
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
@@ -863,6 +1053,31 @@ ul.nav li:hover > ul.dropdown-menu {
   /* =========================MEDIA SLIDER=================================  */
 
   /* ========================END MEDIA SLIDER==============================  */
+
+  /* ======================== MEDIA COMPANIES SLIDER ======================= */
+
+
+  /* CHANGE */
+  .companies-slider .companies-conveyor .company .company-img {
+    /* width: 100% */
+    /* width: auto; */
+    height: 35px;
+    /* margin-left: auto;
+    margin-right: auto; */
+  }
+
+  .companies-slider .companies-slider-sub .company {
+    display: inline-block;
+    width: 50px !important;
+  }
+
+  /* CHANGE */
+  .companies-slider .companies-slider-sub .slick-slide {
+    width: 30px !important;
+    margin: 0px 20px;
+  }
+
+  /* ===================== END MEDIA COMPANIES SLIDER ====================== */
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
@@ -914,13 +1129,15 @@ ul.nav li:hover > ul.dropdown-menu {
   }
 
   #search-bar {
-    width: 75%;
+    width: 65%;
     float: right;
   }
 
   #search-bar #keywords {
     padding-top: 1%;
     padding-bottom: 1%;
+    font-size: 13px;
+    margin-top: 4px;
   }
 
   .navbar-nav {
@@ -1088,118 +1305,32 @@ ul.nav li:hover > ul.dropdown-menu {
       background-color: red !important;
   }
   /* ========================END MEDIA SLIDER==============================  */
+
+  /* ======================== MEDIA COMPANIES SLIDER ======================= */
+
+
+  /* CHANGE */
+  .companies-slider .companies-conveyor .company .company-img {
+    /* width: 100% */
+    /* width: auto; */
+    height: 55px;
+    /* margin-left: auto;
+    margin-right: auto; */
+  }
+
+  .companies-slider .companies-slider-sub .company {
+    display: inline-block;
+    width: 90px !important;
+  }
+
+  /* CHANGE */
+  .companies-slider .companies-slider-sub .slick-slide {
+    width: 87px !important;
+    margin: 0px 20px;
+  }
+
+  /* ===================== END MEDIA COMPANIES SLIDER ====================== */
 }
-
-
-/* =========================== COMPANIES SLIDER ============================ */
-
-.companies-slider {
-  border-bottom: 15px solid #e6e6e6;
-  background-color: #ffffff;
-  /* padding-top: 15px !important; */
-}
-
-.company, .company-sub {
-  text-align: center;
-}
-
-.companies-slider .companies {
-  padding-top: 15px;
-  padding-bottom: 15px;
-}
-
-.companies-slider .companies-conveyor {
-  padding-top: 15px !important;
-  padding-left: 0px !important;
-  padding-right: 0px !important;
-}
-
-.companies-slider .companies-slider-sub {
-  padding-top: 15px !important;
-  padding-bottom: 15px !important;
-  padding-right: 0px !important;
-  padding-left: 0px !important;
-}
-
-.companies-slider .companies-conveyor .slick-slide {
-  text-align: center;
-}
-
-.companies-slider .companies-conveyor .company {
-  display: inline-block;
-  width: 100% !important;
-}
-
-.companies-slider .companies-conveyor .company .company-img {
-  /* width: 100% */
-  width: auto;
-  height: 50px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.companies-slider .companies-conveyor .company #logo-1 {
-
-}
-
-.companies-slider .companies-conveyor .company #logo-2 {
-
-}
-
-.companies-slider .companies-conveyor .company #logo-3 {
-
-}
-
-.companies-slider .companies-conveyor .company #logo-4 {
-
-}
-
-.companies-slider .companies-conveyor .company #logo-5 {
-
-}
-
-.companies-slider .companies-conveyor .company #logo-6 {
-
-}
-
-.companies-slider .companies-conveyor .company #logo-7 {
-
-}
-
-.companies-slider .companies-conveyor .company #logo-8 {
-
-}
-
-.companies-slider .companies-conveyor .company #logo-9 {
-
-}
-
-.companies-slider .companies-conveyor .company #logo-10 {
-
-}
-
-.companies-slider .companies-slider-sub .company {
-  display: inline-block;
-  width: 87px !important;
-}
-
-.companies-slider .companies-slider-sub .company .company-img-sub {
-  width: 100%;
-  filter: grayscale(100%);
-  transition: all 0.5s ease;
-}
-
-.companies-slider .companies-slider-sub .company .company-img-sub:hover {
-  filter: grayscale(0%);
-  transition: all 0.5s ease;
-}
-
-.companies-slider .companies-slider-sub .slick-slide {
-  width: 87px !important;
-  margin: 0px 20px;
-}
-
-/* ========================= END COMPANIES SLIDER ========================== */
 
 
 .collage-subcontainer-main {
@@ -1380,7 +1511,7 @@ ul.nav li:hover > ul.dropdown-menu {
       height: 34vw;
       max-width: 1320px;
       margin-top: 15px !important;
-      margin-left: 1vw;
+      margin-left: 7vw;
   }
 
   #cat-uno {
@@ -1426,9 +1557,9 @@ ul.nav li:hover > ul.dropdown-menu {
   }
 
   #cat-siete {
-    left: 90.5%;
+    left: 76.5%;
     top: 0;
-    width: 262px;
+    width: 28.9%;
     height: auto;
   }
 }
@@ -1439,58 +1570,58 @@ ul.nav li:hover > ul.dropdown-menu {
       width: 82%;
       margin: auto;
       position: relative;
-      height: 40vw;
+      height: 36.5vw;
       max-width: 1320px;
       margin-top: 15px !important;
-      margin-left: 2vw;
+      margin-left: 3vw;
   }
 
   #cat-uno {
     top: 0;
     left: 2%;
-    width: 28%;
+    width: 28.5%;
     height: auto;
   }
 
   #cat-dos {
     left: 2%;
     bottom: 0;
-    width: 28%;
+    width: 28.5%;
     height: auto;
   }
 
   #cat-tres {
     top: 0;
-    left: 30.5%;
-    width: 30%;
+    left: 31.5%;
+    width: 31%;
     height: auto;
   }
 
   #cat-cuatro {
     bottom: 0;
-    left: 30.5%;
-    width: 30%;
+    left: 31.5%;
+    width: 31%;
     height: auto;
   }
 
   #cat-cinco {
     top: 0;
-    left: 60.8%;
-    width: 152px;
+    left: 63.3%;
+    width: 18%;
     height: auto;
   }
 
   #cat-seis {
     bottom: 0;
-    left: 60.8%;
-    width: 152px;
+    left: 63.3%;
+    width: 18%;
     height: auto;
   }
 
   #cat-siete {
-    left: 74.5%;
+    left: 82.5%;
     top: 0;
-    width: 310px;
+    width: 31%;
     height: auto;
   }
 }
@@ -1564,6 +1695,20 @@ ul.nav li:hover > ul.dropdown-menu {
   margin: auto;
   max-height: 150px;
 }
+
+.product-img-2 {
+  display: none !important;
+}
+
+.product-list-item:hover .panel .panel-body .product-img-1 {
+  display: none;
+}
+
+.product-list-item:hover .panel .panel-body .product-img-1 + .product-img-2 {
+  display: block !important;
+}
+
+
 
 .product-name {
   text-decoration: none;
@@ -1876,7 +2021,7 @@ ul.nav li:hover > ul.dropdown-menu {
 
 .clients-title {
   text-align: center;
-  background: url(https://www.accesoriosypartes.com.ar/wp-content/themes/Divi/epanel/shortcodes/img/cuadadro_blanco_footer.png);
+  background: url("cuadadro_blanco_footer.png");
   height: 145px;
   margin-top: -7px;
 }

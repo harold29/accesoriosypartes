@@ -5,7 +5,13 @@
     <% cache(taxon.present? ? [I18n.locale, current_currency, taxon, product] : cache_key_for_product(product)) do %>
       <div class="panel-body text-center product-body">
         <%= link_to url, itemprop: "url" do %>
-          <%= product_image(product, itemprop: "image", class: 'product-image-home') %><br/>
+          <% if product.images.first %>
+            <%= image_tag(main_app.url_for(product.images.first.attachment.variant(resize: '150x150')), class: "product-image-home product-img-1") %>
+          <% end %>
+          <% if product.images.second %>
+            <%= image_tag(main_app.url_for(product.images.second.attachment.variant(resize: '150x150')), class: "product-image-home product-img-2")  %>
+          <% end %>
+          <br/>
         <% end %>
         <br/>
       </div>
@@ -15,7 +21,9 @@
         <% end %>
       </div>
       <div class="product-button">
-        <button> Ver más </button>
+        <%= link_to url, itemprop: "url" do %>
+          <button> Ver más </button>
+        <% end %>
       </div>
     <% end %>
   </div>

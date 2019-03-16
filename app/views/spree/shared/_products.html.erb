@@ -10,15 +10,27 @@
       <%= Spree.t(:no_products_found) %>
     </div>
   <% elsif params.key?(:keywords) %>
-    <div data-hook="products_search_results_heading_results_found">
+    <% @body_id = 'categories-show' %>
+    <div class="search-header" data-hook="products_search_results_heading_results_found">
       <h6 class="search-results-title"><%= Spree.t(:search_results, keywords: h(params[:keywords])) %></h6>
+      <div class="results-counter">
+        <% if products.blank? %>
+          No se encontraron resultados
+        <% else %>
+          Se encontraron <%= products.size %> productos
+        <% end %>
+      </div>
     </div>
   <% end %>
 </div>
 
 <% if products.any? %>
   <div id="products" class="row" data-hook>
-    <%= render partial: 'spree/products/product', collection: products, locals: { taxon: @taxon } %>
+    <% if params.key?(:keywords) %>
+      <%= render partial: 'spree/products/search/product', collection: products, locals: { taxon: @taxon } %>
+    <% else %>
+      <%= render partial: 'spree/products/product', collection: products, locals: { taxon: @taxon } %>
+    <% end %>
   </div>
 <% end %>
 

@@ -1,48 +1,40 @@
 <div class="collage-container container-fluid">
   <div class="collage-subcontainer-main">
     <div class="collage-link-container" id="cat-uno">
-      <a class="collage-link" href="http://accesoriosypartes.com.ar/sillas-de-oficina">
-        Sillas de oficina
-      </a>
-      <!-- <img class="collage-img" src="https://www.accesoriosypartes.com.ar/wp-content/themes/Divi/epanel/shortcodes/img/cat_uno.jpg" alt=""> -->
+      <% taxon = Spree::Taxon.find_by(name: 'Sillas y Sillones') %>
+      <%= link_to 'Sillas y Sillones', seo_url(taxon), class: 'collage-link' unless taxon.nil? %>
       <%= image_tag("cat_uno.jpg", class: "collage-img") %>
     </div>
     <div class="row collage-image-row">
       <div class="collage-link-container" id="cat-dos">
-        <a class="collage-link" href="http://accesoriosypartes.com.ar/salas-multimedia">
-          Salas multimedia
-        </a>
+        <% taxon = Spree::Taxon.find_by(name: 'Audio, Video y Multimedia') %>
+        <%= link_to 'Salas multimedia', seo_url(taxon), class: 'collage-link' unless taxon.nil? %>
         <%= image_tag("cat_dos.jpg", class: "collage-img") %>
       </div>
     </div>
     <div class="collage-link-container" id="cat-tres">
-      <a class="collage-link" href="http://accesoriosypartes.com.ar/diseno-interior">
-        Diseño interior
-      </a>
+      <% taxon = Spree::Taxon.find_by(name: 'Diseño de Interior') %>
+      <%= link_to 'Diseño interior', seo_url(taxon), class: 'collage-link' unless taxon.nil? %>
       <%= image_tag("cat_tres.jpg", class: "collage-img") %>
     </div>
     <div class="collage-link-container" id="cat-cuatro">
-      <a class="collage-link" href="http://accesoriosypartes.com.ar/audio-y-video">
-        Audio y video
-      </a>
+      <% taxon = Spree::Taxon.find_by(name: 'Audio, Video y Multimedia') %>
+      <%= link_to 'Audio y video', seo_url(taxon), class: 'collage-link' unless taxon.nil? %>
       <%= image_tag("cat_cuatro.jpg", class: "collage-img") %>
     </div>
     <div class="collage-link-container" id="cat-cinco">
-      <a class="collage-link" href="http://accesoriosypartes.com.ar/control-de-acceso">
-        Control de acceso
-      </a>
+      <% taxon = Spree::Taxon.find_by(name: 'Control de Acceso') %>
+      <%= link_to 'Control de acceso', seo_url(taxon), class: 'collage-link' unless taxon.nil? %>
       <%= image_tag("cat_cinco.jpg", class: "collage-img") %>
     </div>
     <div class="collage-link-container" id="cat-seis">
-      <a class="collage-link" href="http://accesoriosypartes.com.ar/muebles-de-oficina">
-        Muebles de oficina
-      </a>
+      <% taxon = Spree::Taxon.find_by(name: 'Muebles de Oficina') %>
+      <%= link_to 'Muebles de oficina', seo_url(taxon), class: 'collage-link' unless taxon.nil? %>
       <%= image_tag("cat_seis.jpg", class: "collage-img") %>
     </div>
     <div class="collage-link-container" id="cat-siete">
-      <a class="collage-link" href="http://accesoriosypartes.com.ar/casas-inteligentes">
-        Casas inteligentes
-      </a>
+      <% taxon = Spree::Taxon.find_by(name: 'Domótica y Control') %>
+      <%= link_to 'Casas inteligentes', seo_url(taxon), class: 'collage-link' unless taxon.nil? %>
       <%= image_tag("cat_siete.jpg", class: "collage-img") %>
     </div>
   </div>

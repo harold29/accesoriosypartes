@@ -268,7 +268,7 @@ en:
         other: Promociones
       spree/promotion_category:
       spree/property:
-        one: Propiedad
+        one: Encabezado
         other: Propiedades
       spree/prototype:
         one: Prototipo
@@ -809,7 +809,7 @@ en:
     manage_promotion_categories: Gestionar Categorías de Promoción
     manage_variants: Gestionar Variaciones
     manual_intervention_required: Intervención Manual requerida
-    master_price: Precio principal
+    master_price: Precio Neto
     match_choices:
       all: Todos
       none: Ninguno
@@ -1074,7 +1074,7 @@ en:
     promotions: Promociones
     propagate_all_variants: Propagar todas las variantes
     properties: Propiedades
-    property: Propiedad
+    property: Encabezado
     prototype: Prototipo
     prototypes: Prototipos
     provider: Proveedor
@@ -1352,7 +1352,7 @@ en:
     total: Total
     total_per_item: Total por artículo
     total_pre_tax_refund: Total antes de impuesto
-    total_price: Precio Total
+    total_price: Precio Neto
     total_sales: Total de ventas
     track_inventory: Seguir inventario
     tracking: Tracking
@@ -1391,7 +1391,7 @@ en:
       must_be_int: debe ser un número entero
       must_be_non_negative: debe ser un valor no negativo
       unpaid_amount_not_zero: cantidad pendiente de pago no es cero
-    value: Valor
+    value: Desarrollo
     variant: Variante
     variant_placeholder: Escoge una variante
     variants: Variantes

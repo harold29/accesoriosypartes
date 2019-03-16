@@ -5,12 +5,36 @@
     </h4>
     <div class="pages">
       <ul>
-        <li>Términos comerciales y legales</li>
-        <li>Nuestra empresa</li>
-        <li>Mapa del sitio</li>
-        <li>Productos</li>
-        <li>Blog</li>
-        <li>Clientes reconocidos</li>
+        <li>
+          <a href="#">
+            Términos comerciales y legales
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            Nuestra empresa
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            Mapa del sitio
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            Productos
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            Blog
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            Clientes reconocidos
+          </a>
+        </li>
       </ul>
     </div>
   </div>
@@ -20,13 +44,14 @@
     </h4>
     <div class="pages">
       <ul>
-        <li>Audio y video</li>
-        <li>Domótica y control</li>
-        <li>Control de acceso</li>
-        <li>Muebles y sillas</li>
-        <li>Diseño de interior</li>
-        <li>Instalaciones</li>
-        <li>Accesorios</li>
+        <% main_taxon = Spree::Taxon.find_by(name: "Categorias") %>
+        <% unless main_taxon.blank? %>
+          <% main_taxon.children.map do |t| %>
+            <%= content_tag :li, class: 'footer-link' do %>
+              <%= link_to(t.name, seo_url(t)) %>
+            <% end %>
+          <% end %>
+        <% end %>
       </ul>
     </div>
   </div>
@@ -35,7 +60,7 @@
       ACERCA DE NOSOTROS
     </h4>
     <div class="">
-      <img id="footer-logo" src="https://www.accesoriosypartes.com.ar/wp-content/themes/Divi/epanel/shortcodes/img/logo.png" alt="">
+      <%= logo %>
       <p class="about-us-text">
         Somos parte de <a href="#">INTELHOME</a>, desde 1992 pioneros en el desarrollo de la Domótica en Argentina
       </p>

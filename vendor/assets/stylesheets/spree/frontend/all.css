@@ -8,4 +8,42 @@
  *= require_self
  *= require_tree .
  *= require spree/frontend/spree_digital
+ *= require spree/frontend/spree_static_content
 */
+
+.product .panel .panel-body .product-image-home {
+  width: 60%;
+  margin: auto;
+  max-height: 150px;
+}
+
+.product-img-1 {
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  /* ...and now for the proper property  *= require spree/frontend/spree_static_content
+*/
+  transition:.5s;
+}
+
+.product-img-2 {
+  display: none !important;
+}
+
+.categories-product:hover .product-container .image-container .product-img-1 {
+  display: none;
+}
+
+.categories-product:hover .product-container .image-container .product-img-1 + .product-img-2 {
+  display: block !important;
+  margin: auto !important;
+}
+
+.categories-product a:hover {
+  text-decoration: none;
+}
+
+.categories-product a:hover .name-container {
+  text-decoration: underline;
+}

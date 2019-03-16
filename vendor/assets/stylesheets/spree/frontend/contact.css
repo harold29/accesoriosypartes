@@ -1,0 +1,102 @@
+#contact-page {
+  background-color: white;
+}
+
+#contact-page .contact-left-side {
+  background-color: white;
+  padding-top: 0%;
+  padding-bottom: 10%;
+  padding-left: 3%;
+  /* height: 135vh; */
+}
+
+#contact-page .contact-information {
+  padding-top: 80px;
+}
+
+#contact-page .contact-title {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+#contact-page .contact-specific {
+  color: black;
+  font-size: 13px;
+}
+
+#contact-page .contact-map {
+
+}
+
+#contact-page .no-interactive {
+  width: 600;
+  height: 250;
+}
+
+#contact-page .contact-right-side {
+  background: #ececec;
+  /* height: 135vh; */
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+#contact-page .contact-title-form {
+  /* padding-top: 80px; */
+  font-size: 20px;
+  font-weight: 500;
+}
+
+#contact-page #new_contact_us_contact {
+  width: 80%;
+  padding: 20px 0;
+  margin: auto
+}
+
+#contact-page .label {
+  color: black;
+  font-weight: normal;
+  margin-top: 5px;
+  font-size: 16px;
+}
+
+#contact-page .label-nombre {
+
+}
+
+#contact-page .contacto-nombre {
+
+}
+
+#contact-page .label-email {
+
+}
+
+#contact-page .contacto-email {
+
+}
+
+#contact-page .label-numero {
+
+}
+
+#contact-page .contacto-numero {
+
+}
+
+#contact-page .label-mensaje {
+
+}
+
+#contact-page .contacto-mensaje {
+
+}
+
+#contact-page #contact_us_contact_submit {
+  background: black;
+  border: none;
+  padding: 10px;
+  color: white;
+  margin-top: 10px;
+  width: 100%;
+  font-size: 16px;
+}

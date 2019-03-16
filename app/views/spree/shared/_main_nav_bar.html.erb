@@ -13,9 +13,9 @@
       <div class="collapse navbar-collapse" id="navigationbar">
         <ul class="nav navbar-nav nav-main visible-sm visible-md visible-lg desenfoque">
           <li class="dropdown">
-            <a href="https://www.accesoriosypartes.com.ar" class="menu3" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            <%= link_to root_path, id: 'navigationbar' do %>
               &nbsp;&nbsp;HOME&nbsp;&nbsp;
-            </a>
+            <% end %>
           </li>
           <li class="dropdown" id="catalogue-link">
             <a href="#" class="menu3" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -24,31 +24,31 @@
             <ul class="dropdown-menu">
               <% images = ["audio-y-video.jpg", "domotica-y-control-2.jpg", "control-de-acceso.jpg"] %>
               <% main_taxon = Spree::Taxon.find_by(name: "Categorias") %>
-              <% i = 0 %>
-              <% main_taxon.children.map do |t| %>
-                <%= content_tag :li, class: "dropdown-submenu second-level" do %>
-                  <% if t.children.empty? %>
-                    <%= link_to(t.name, seo_url(t)) %>
-                  <% else %>
-                    <a href="#">
-                      <%= t.name %>
-                    </a>
-                    <%= content_tag :ul, class: "dropdown-menu submenu-container" do %>
-                      <%= content_tag :div, class: "submenu-links" do %>
-                        <% t.children.map do |child_taxon| %>
-                          <%= content_tag :li do %>
-                            <%= link_to(child_taxon.name, seo_url(child_taxon)) %>
+              <% unless main_taxon.blank? %>
+                <% i = 0 %>
+                <% main_taxon.children.map do |t| %>
+                  <%= content_tag :li, class: "dropdown-submenu second-level" do %>
+                    <% if t.children.empty? %>
+                      <%= link_to(t.name, seo_url(t)) %>
+                    <% else %>
+                      <%= link_to(t.name, seo_url(t)) %>
+                      <%= content_tag :ul, class: "dropdown-menu submenu-container" do %>
+                        <%= content_tag :div, class: "submenu-links" do %>
+                          <% t.children.map do |child_taxon| %>
+                            <%= content_tag :li do %>
+                              <%= link_to(child_taxon.name, seo_url(child_taxon)) %>
+                            <% end %>
                           <% end %>
                         <% end %>
-                      <% end %>
-                      <% if i < 3 %>
-                        <%= content_tag :div, class: "submenu-img" do %>
-                          <%= content_tag :div do %>
-                            <%= image_tag(images[i]) %>
+                        <% if i < 3 %>
+                          <%= content_tag :div, class: "submenu-img" do %>
+                            <%= content_tag :div do %>
+                              <%= image_tag(images[i]) %>
+                            <% end %>
                           <% end %>
                         <% end %>
+                        <% i += 1 %>
                       <% end %>
-                      <% i += 1 %>
                     <% end %>
                   <% end %>
                 <% end %>

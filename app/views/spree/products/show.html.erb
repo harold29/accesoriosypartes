@@ -13,16 +13,64 @@
               </div>
             <!-- </div> -->
           </div>
+
           <div id="main-image" class="col-md-9 panel panel-default" data-hook>
             <div class="panel-body text-center">
               <%# large_image(@product, itemprop: "image", class: "big") %>
-              <%= image_tag(main_app.url_for(@product.images.first.attachment.variant(resize: '1000x1000')), itemprop: "image", class: "big") %>
+              <% if @product.images.first %>
+                <%= image_tag(main_app.url_for(@product.images.first.attachment.variant(resize: '1000x1000')), id: "image-main", itemprop: "image", class: "big zoom", :data => { :"magnify-src" => main_app.url_for(@product.images.first.attachment.variant(resize: '1000x1000'))}) %>
+
+              <% end %>
             </div>
           </div>
         </div>
+        <div class="modal fade" id='modal-img-container' tabindex="-1" role="dialog">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <!-- <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Modal title</h4>
+              </div> -->
+              <div class="modal-body">
+                <img id="modal-img" src="" alt="">
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+        <script type="text/javascript">
+        $(document).ready(function() {
+          $('#image-main').on("load", function() {
+            let sr = $("#image-main").attr("src");
+            $("#image-main").attr("data-magnify-src", sr);
+            $('.zoom').magnify();
+            $('html').on({
+              magnifystart: function() {
+                $('.magnify-lens').on('click', function() {
+                  let sr = $("#image-main").attr("src");
+                  $('#modal-img').attr('src', sr);
+                  $('#modal-img-container').modal();
+                });
+              }
+            });
+          });
+          $('.zoom').magnify();
+          $('html').on({
+            magnifystart: function() {
+              $('.magnify-lens').on('click', function() {
+                let sr = $("#image-main").attr("src");
+                $('#modal-img').attr('src', sr);
+                $('#modal-img-container').modal();
+              });
+            }
+          });
+        });
+        </script>
 
         <!-- <div data-hook="product_properties"> -->
-          <%# render partial: 'properties' %>
+          <%# render partial: 'properties' #%>
         <!-- </div> -->
 
         <!-- <div data-hook="promotions"> -->
@@ -45,35 +93,44 @@
           <div class="row price-contact-area">
             <div id="price-area" class="currency-area" data-hook="price-area">
               <%# render partial: 'cart_form' %>
-              <% if @product.cost_currency == "USD" %>
-                <div class="col-md-6 col-sm-6 usd-currency">
-                  u$d <%= "%.2f" % @product.price %> <br>
-                  <% p = (@product.price.to_f * 21.0)/100.00 %>
-                  <% f = @product.price.to_f - p %>
-                  <div class="row" id="price-iva">
-                    U$D <%= "%.2f" % f %> + IVA
-                  </div>
+              <% if @product.price.to_i == 1 %>
+                <div class="col-md-6 col-sm-6 currency">
+                  Consultar
                 </div>
-              <% elsif @product.cost_currency == "ARS" %>
-                <div class="col-md-6 col-sm-6 ars-currency">
-                  $ <%= "%.2f" % @product.price %> <br>
-                  <% p = (@product.price.to_f * 21.00)/100.00 %>
-                  <% f = @product.price.to_f - p %>
-                  <div class="row" id="price-iva">
-                    $ <%= "%.2f" % f %> + IVA
-                  </div>
+              <% elsif @product.price.to_i == 2 %>
+                <div class="col-md-6 col-sm-6 currency">
+                  Descontinuado
                 </div>
-              <% elsif @product.cost_currency == "EUR" %>
-                <div class="col-md-6 col-sm-6 eur-currency">
-                  € <%= "%.2f" % @product.price %> <br>
-                  <% p = (@product.price.to_f * 21.00)/100.00 %>
-                  <% f = @product.price.to_f - p %>
-                  <div class="row" id="price-iva">
-                    € <%= "%.2f" % f %> + IVA
+              <% else %>
+                <% if @product.cost_currency == "USD" %>
+                  <div class="col-md-6 col-sm-6 usd-currency">
+                    <% p = (@product.price.to_f * @product.iva.to_f)/100.00 %>
+                    <% f = @product.price.to_f + p %>
+                    <%= number_to_currency(f, unit: "U$D ", delimiter: ".", separator: ",") %>
+                    <div class="row" id="price-iva">
+                      <%= number_to_currency(@product.price, unit: "U$D ", delimiter: ".", separator: ",") %> + IVA
+                    </div>
                   </div>
-                </div>
+                <% elsif @product.cost_currency == "ARS" %>
+                  <div class="col-md-6 col-sm-6 ars-currency">
+                    <% p = (@product.price.to_f * @product.iva.to_f)/100.00 %>
+                    <% f = @product.price.to_f + p %>
+                    <%= number_to_currency(f, unit: "$ ", delimiter: ".", separator: ",") %>
+                    <div class="row" id="price-iva">
+                      <%= number_to_currency(@product.price, unit: "$ ", delimiter: ".", separator: ",") %> + IVA
+                    </div>
+                  </div>
+                <% elsif @product.cost_currency == "EUR" %>
+                  <div class="col-md-6 col-sm-6 eur-currency">
+                    <% p = (@product.price.to_f * @product.iva.to_f)/100.00 %>
+                    <% f = @product.price.to_f + p %>
+                    <%= number_to_currency(f, unit: "€ ", delimiter: ".", separator: ",") %>
+                    <div class="row" id="price-iva">
+                      <%= number_to_currency(@product.price, unit: "€ ", delimiter: ".", separator: ",") %> + IVA
+                    </div>
+                  </div>
+                <% end %>
               <% end %>
-
               <div class="col-md-6 col-sm-6" id="button-consultar-container">
                 <button type="button"class="btn btn-primary">Consultar</button>
               </div>
@@ -88,14 +145,17 @@
     </div>
   </div>
 <% end %>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/magnify/2.3.2/js/jquery.magnify.js"></script>
 <div class="separator-concepts"></div>
 <%= render partial: 'spree/products/concepts'%>
 <%= render partial: 'spree/products/features'%>
 <div id="other-models">
   <%= render partial: 'spree/products/other_models'%>
 </div>
+<div class="venecitas-container">
+
+</div>
 <%= render partial: 'spree/products/bloque_marca'%>
 <div id="other-products">
   <%= render partial: 'spree/products/other_products' %>
 </div>
-<%= render partial: 'spree/shared/footer' %>

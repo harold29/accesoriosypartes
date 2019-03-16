@@ -1,13 +1,31 @@
-<div id="bloque-marca">
-  <div class="row">
-    <div class="col-md-4 col-sm 4">
-      <%= image_tag(main_app.url_for(@product.images[4].url(:product)), class: "image", id: "block-image") %>
+<% marca_padre = Spree::Taxon.find_by(name: 'Marcas') %>
+
+<% if @product && marca_padre %>
+  <% marca = @product.taxons.select { |t| t.parent_id == marca_padre.id } %>
+
+  <% unless marca.blank? %>
+    <div id="bloque-marca">
+      <div class="row">
+        <div class="col-md-offset-1 col-md-3 col-sm 2">
+          <%# if marca.icon? %>
+            <%= image_tag((marca[0].icon.nil? ? "placeholder.png" : main_app.url_for(marca[0].icon.attachment.variant(resize: "500x500"))), class: "image bloque-marca-img", id: "block-image")  %>
+            <%# image_tag(main_app.url_for(marca.icon.url(:product)), class: "image", id: "block-image") %>
+          <%# end %>
+        </div>
+        <div class="col-md-7 col-sm-8" id="second-element-block">
+          <div class="marca-title-container">
+            <% if marca[0].name %>
+              <%= marca[0].name %>
+            <% end %>
+          </div>
+          <% if marca[0].description %>
+            <%= marca[0].description %>
+          <% end %>
+        </div>
+        <!-- <div class="col-md-2 col-sm-2" id="third-element-block"> -->
+          <%# product_image(@product, itemprop: "image") %>
+        <!-- </div> -->
+      </div>
     </div>
-    <div class="col-md-6 col-sm-6" id="second-element-block">
-      Donec pharetra, odio a ultrices commodo, arcu ex interdum odio, vitae vestibulum nibh sapien ut nibh. Fusce blandit quis quam ut ultricies. Curabitur pharetra laoreet mattis. Cras a lorem sit amet lectus feugiat placerat. Fusce egestas neque tortor, sollicitudin sollicitudin dolor iaculis nec. Maecenas quis dignissim sem, vel dictum ex
-    </div>
-    <div class="col-md-2 col-sm-2" id="third-element-block">
-      <%= product_image(@product, itemprop: "image") %>
-    </div>
-  </div>
-</div>
+  <% end %>
+<% end %>

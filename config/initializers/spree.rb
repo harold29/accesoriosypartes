@@ -18,6 +18,9 @@ end
 
 Spree.user_class = "Spree::User"
 
+Spree::PermittedAttributes.taxon_attributes.push(:menu_icon, {:menu_icon_attributes => [:id, :x, :y, :width, :height, :rotate, :scalex, :scaley]}, :icon, {:icon => [:id, :x, :y, :width, :height, :rotate, :scalex, :scaley]})
+
+
 # attachment_config = {
 #   styles: {
 #       mini:     "48x48>",

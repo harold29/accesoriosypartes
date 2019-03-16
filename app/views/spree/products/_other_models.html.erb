@@ -1,21 +1,44 @@
-<div class="other-models-products-container">
-  <div class="other-models-title">
-    <h2>
-      Otros Modelos
-    </h2>
-  </div>
-  <% @p_taxon = @product.taxons.last %>
-  <% @m_taxon = Spree::Taxon.find_by(name: @p_taxon.name) %>
+<% @p_taxon = @product.taxons.max_by(&:depth) %>
+<% if @p_taxon %>
+  <% @m_taxon = Spree::Taxon.find(@p_taxon.id) %>
   <% unless @m_taxon.blank? %>
-  <% @f_products = @m_taxon.products %>
-  <div id="products-other-models" class="row" data-hook>
-    <div class="col-md-1 col-sm-1">
+    <% non_equal_child_products = @m_taxon.products.select { |item| item.id != @product.id } %>
+    <% @f_products = non_equal_child_products.sample(4) %>
+    <% if @f_products.size < 4 %>
+      <div class="other-models-products-container">
+        <div class="other-models-title">
+          <h2>
+            Articulos Destacados
+          </h2>
+        </div>
+        <div id="products-other-models" class="row" data-hook>
+          <div class="col-md-1 col-sm-1">
 
-    </div>
-    <%= render partial: 'spree/products/product', collection: @f_products, locals: { taxon: @m_taxon } %>
-    <div class="col-md-1 col-sm-1">
+          </div>
+          <% @f_products = Spree::Product.where(promotionable: true).sample(4) %>
+          <%= render partial: 'spree/products/product', collection: @f_products, locals: { taxon: @m_taxon } %>
+          <div class="col-md-1 col-sm-1">
 
-    </div>
-  </div>
+          </div>
+        </div>
+      </div>
+    <% else %>
+      <div class="other-models-products-container">
+        <div class="other-models-title">
+          <h2>
+            Otros Modelos
+          </h2>
+        </div>
+        <div id="products-other-models" class="row" data-hook>
+          <div class="col-md-1 col-sm-1">
+
+          </div>
+          <%= render partial: 'spree/products/product', collection: @f_products, locals: { taxon: @m_taxon } %>
+          <div class="col-md-1 col-sm-1">
+
+          </div>
+        </div>
+      </div>
+    <% end %>
   <% end %>
-</div>
+<% end %>

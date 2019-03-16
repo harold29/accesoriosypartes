@@ -1,22 +1,27 @@
-<div class="other-models-products-container">
-  <div class="other-models-title">
-    <h2>
-      Otros Productos
-    </h2>
-  </div>
-  <% @size = @product.taxons.size %>
-  <% @p_taxon = @product.taxons[@size - 2] %>
-  <% @m_taxon = Spree::Taxon.find_by(name: @p_taxon.name) %>
-  <% unless @m_taxon.blank? %>
-  <% @f_products = @m_taxon.products %>
-  <div id="products-other" class="row" data-hook>
-    <div class="col-md-1 col-sm-1">
-
+<% if @product.taxons %>
+  <div class="other-models-products-container">
+    <div class="other-models-title">
+      <h2>
+        Otros Productos
+      </h2>
     </div>
-    <%= render partial: 'spree/products/product', collection: @f_products, locals: { taxon: @m_taxon } %>
-    <div class="col-md-1 col-sm-1">
+    <% @size = @product.taxons.size %>
+    <% @p_taxon = @product.taxons[@size - 2] %>
+    <% if @p_taxon %>
+      <% @m_taxon = Spree::Taxon.find_by(name: @p_taxon.name) %>
+      <% unless @m_taxon.blank? %>
+        <% @f_products = Spree::Product.all.sample(20).select{ |item| item.id != @product.id } %>
+        <div id="products-other" class="row" data-hook>
+          <div class="col-md-1 col-sm-1">
 
-    </div>
+          </div>
+          <%= render partial: 'spree/products/product', collection: @f_products, locals: { taxon: @m_taxon } %>
+          <div class="col-md-1 col-sm-1">
+
+          </div>
+        </div>
+      <% end %>
+
+    <% end %>
   </div>
-  <% end %>
-</div>
+<% end %>

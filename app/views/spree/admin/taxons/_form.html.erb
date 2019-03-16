@@ -17,11 +17,310 @@
 
       <%= f.field_container :icon, class: ['form-group'] do %>
         <%= f.label :icon, Spree.t(:icon) %>
-        <%= image_tag main_app.url_for(@taxon.icon.try(:attachment)) if @taxon.icon %>
+        <%= image_tag main_app.url_for(@taxon.icon.try(:attachment)) if @taxon.icon && @taxon.icon.attachment %>
         <%= f.file_field :icon %>
       <% end %>
-    </div>
 
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.4.3/cropper.js"></script>
+    <script type="text/javascript">
+      // window.addEventListener('DOMContentLoaded', function(){
+      //   var avatar = document.getElementById('');
+      //   var avatar2 = document.getElementById('avatar2');
+      //
+      //   var input = document.getElementById('taxon_icon');
+      //   var input2 = document.getElementById('taxon_menu_icon');
+      //
+      //   var image = document.getElementById('image');
+      //   var image2 = document.getElementById('image2');
+      //
+      //   var $alert = $('.alert');
+      //   var $modal = $('#modal');
+      //   var $modal2 = $('#modal2');
+      //
+      //   var x = 0;
+      //   var y = 0;
+      //   var scalex = 0;
+      //   var scaley = 0;
+      //   var rotate = 0;
+      //   var width = 0;
+      //   var height = 0;
+      //
+      //   var x2 = 0;
+      //   var y2 = 0;
+      //   var scalex2 = 0;
+      //   var scaley2 = 0;
+      //   var rotate2 = 0;
+      //   var width2 = 0;
+      //   var height2 = 0;
+      //
+      //   var cropper;
+      //   var cropper2;
+      //   $('[data-toggle="tooltip"]').tooltip();
+      //   input.addEventListener('change', function(e) {
+      //     var files = e.target.files;
+      //     console.log("FILES " + e);
+      //     var done = function(url) {
+      //       // input.value = '';
+      //       image.src = url;
+      //       $alert.hide();
+      //       $modal.modal('show');
+      //     };
+      //     var reader;
+      //     var file;
+      //     var url;
+      //     if (files && files.length > 0) {
+      //       file = files[0];
+      //       if (URL) {
+      //         done(URL.createObjectURL(file));
+      //       } else if (FileReader) {
+      //         reader = new FileReader();
+      //         reader.onload = function (e) {
+      //           done(reader.result);
+      //         };
+      //         reader.readAsDataURL(file);
+      //       }
+      //     }
+      //   });
+      //   $modal.on('shown.bs.modal', function () {
+      //     cropper = new Cropper(image, {
+      //       aspectRatio: 1,
+      //       viewMode: 3,
+      //       crop(event) {
+              // console.log(event.detail.x);
+              // console.log(event.detail.y);
+              // console.log(event.detail.width);
+              // console.log(event.detail.height);
+              // console.log(event.detail.rotate);
+              // console.log(event.detail.scaleX);
+              // console.log(event.detail.scaleY);
+              // console.log(event.detail.rotate);
+        //       x = event.detail.x;
+        //       y = event.detail.y;
+        //       width = event.detail.width;
+        //       height = event.detail.height;
+        //       rotate = event.detail.rotate;
+        //       scalex = event.detail.scaleX;
+        //       scaley = event.detail.scaleY;
+        //       rotate = event.detail.rotate;
+        //     }
+        //   });
+        // }).on('hidden.bs.modal', function () {
+        //   cropper.destroy();
+        //   cropper = null;
+        // });
+
+        // input.addEventListener('change', function(e) {
+        //   var files = e.target.files;
+        //   console.log("FILES " + e);
+        //   var done = function(url) {
+        //     // input.value = '';
+        //     image.src = url;
+        //     $alert.hide();
+        //     $modal.modal('show');
+        //   };
+        //   var reader;
+        //   var file;
+        //   var url;
+        //   if (files && files.length > 0) {
+        //     file = files[0];
+        //     if (URL) {
+        //       done(URL.createObjectURL(file));
+        //     } else if (FileReader) {
+        //       reader = new FileReader();
+        //       reader.onload = function (e) {
+        //         done(reader.result);
+        //       };
+        //       reader.readAsDataURL(file);
+        //     }
+        //   }
+        // });
+
+        // input2.addEventListener('change', function(e) {
+        //   var files2 = e.target.files;
+        //   console.log("FILES " + e);
+        //   var done = function(url) {
+        //     // input.value = '';
+        //     image2.src = url;
+        //     $alert.hide();
+        //     $modal2.modal('show');
+        //   };
+        //   var reader;
+        //   var file;
+        //   var url;
+        //   if (files2 && files2.length > 0) {
+        //     file = files2[0];
+        //     if (URL) {
+        //       done(URL.createObjectURL(file));
+        //     } else if (FileReader) {
+        //       reader = new FileReader();
+        //       reader.onload = function (e) {
+        //         done(reader.result);
+        //       };
+        //       reader.readAsDataURL(file);
+        //     }
+        //   }
+        //
+        // });
+        //
+        // $modal2.on('shown.bs.modal', function () {
+        //   cropper2 = new Cropper(image2, {
+        //     aspectRatio: 1,
+        //     viewMode: 3,
+        //     crop(event) {
+              // console.log(event.detail.x);
+              // console.log(event.detail.y);
+              // console.log(event.detail.width);
+              // console.log(event.detail.height);
+              // console.log(event.detail.rotate);
+              // console.log(event.detail.scaleX);
+              // console.log(event.detail.scaleY);
+              // console.log(event.detail.rotate);
+            //   x2 = event.detail.x;
+            //   y2 = event.detail.y;
+            //   width2 = event.detail.width;
+            //   height2 = event.detail.height;
+            //   rotate2 = event.detail.rotate;
+            //   scalex2 = event.detail.scaleX;
+            //   scaley2 = event.detail.scaleY;
+            //   // rotate2 = event.detail.rotate;
+            // },
+            // setData: {
+            //   x:x2,
+            //   y:y2,
+            //   width:width2,
+            //   height:height2,
+            //   rotate:rotate2,
+            //   scalex:scalex2,
+            //   scaley:scaley2,
+            // }
+        //   });
+        // }).on('hidden.bs.modal', function () {
+        //   cropper2.destroy();
+        //   cropper2 = null;
+        // });
+        //
+        // var img = document.getElementById('potato');
+        // var c = new Cropper(img, {
+        //   viewMode: 3,
+        //   autoCrop: true,
+        //   setData: {
+        //     x:x2,
+        //     y:y2,
+        //     width:width2,
+        //     height:height2,
+        //     rotate:rotate2,
+        //     scalex:scalex2,
+        //     scaley:scaley2,
+        //   },
+        //   crop(event) {
+        //     console.log("EVENTO " + event.detail);
+        //   }
+        // });
+        // var k = c.getCroppedCanvas({
+        //   width: 160,
+        //   height: 160,
+        // });
+        // function getMaskedCanvas(sourceCanvas, sourceImage, cropper) {
+        //   var canvas = document.createElement('canvas');
+        //   var context = canvas.getContext('2d');
+        //   var maskWidth = cropper.getData().width;
+        //   var maskHeight = cropper.getData().height;
+        //   var maskTop =  cropper.getData().y;
+        //   var maskLeft =  cropper.getData().x;
+        //   var imageWidth = cropper.getImageData().naturalWidth;
+        //   var imageHeight = cropper.getImageData().naturalHeight;
+        //   var imageLeft = cropper.getImageData().left;
+        //   var imageTop = cropper.getImageData().top;
+        //   var imageAspect = cropper.getImageData().aspectRatio;
+        //   canvas.width = imageWidth;
+        //   canvas.height = imageHeight;
+        //   // Debug
+        //   console.log('Image Width: ' + imageWidth  + ' Image Height: ' + imageHeight + ' Image Aspect Ratio: ' + imageAspect );
+        //   console.log('Image Left: ' + imageLeft  + ' Image Top: ' + imageTop );
+        //   console.log('Mask Width: ' + maskWidth + ' Mask Height: ' + maskHeight + ' Mask Left: ' + maskLeft + ' Mask Top: ' + maskTop);
+        //   context.imageSmoothingEnabled = true;
+        //   context.drawImage(image, 0, 0, imageWidth, imageHeight);
+        //   context.fillRect(maskLeft, maskTop, maskWidth, maskHeight);
+        //   return canvas;
+        // }
+        //
+        // document.getElementById('crop').addEventListener('click', function() {
+        //   var initialAvatarURL;
+        //   var canvas;
+        //   $modal.modal('hide');
+        //   if (cropper) {
+        //     document.getElementById('taxon_icon_x').value = x;
+        //     document.getElementById('taxon_icon_y').value = y;
+        //     document.getElementById('taxon_icon_height').value = height;
+        //     document.getElementById('taxon_icon_width').value = width;
+        //     document.getElementById('taxon_icon_scalex').value = scalex;
+        //     document.getElementById('taxon_icon_scaley').value = scaley;
+        //     document.getElementById('taxon_icon_rotate').value = rotate;
+        //
+        //     // initialAvatarURL = avatar.src;
+        //     // avatar.src = canvas.toDataURL();
+        //     // $progress.show();
+        //     // $alert.removeClass('alert-success alert-warning');
+        //   }
+        // });
+        //
+        // document.getElementById('crop2').addEventListener('click', function() {
+        //   var initialAvatarURL;
+        //   var canvas;
+        //   $modal2.modal('hide');
+        //   if (cropper2) {
+        //     document.getElementById('taxon_menu_icon_attributes_x').value = x2;
+        //     document.getElementById('taxon_menu_icon_attributes_y').value = y2;
+        //     document.getElementById('taxon_menu_icon_attributes_height').value = height2;
+        //     document.getElementById('taxon_menu_icon_attributes_width').value = width2;
+        //     document.getElementById('taxon_menu_icon_attributes_scalex').value = scalex2;
+        //     document.getElementById('taxon_menu_icon_attributes_scaley').value = scaley2;
+        //     document.getElementById('taxon_menu_icon_attributes_rotate').value = rotate2;
+        //
+        //     canvas = cropper2.getCroppedCanvas({
+        //       width: 160,
+        //       height: 160,
+        //     });
+        //
+        //     var mc = getMaskedCanvas(canvas, img, cropper2);
+        //     avatar2.src = mc.toDataURL();
+        //
+        //     // canvas = cropper.getCroppedCanvas({
+        //     //   width: 160,
+        //     //   height: 160,
+        //     // });
+        //     // initialAvatarURL = avatar.src;
+        //     // avatar.src = canvas.toDataURL();
+        //     // $progress.show();
+        //     // $alert.removeClass('alert-success alert-warning');
+        //   }
+        // });
+
+        // var img = document.getElementById('potato');
+        // var cropping = new Cropper(im, {
+        //   aspectRatio: 1,
+        //   viewMode: 3,
+        //   crop(event) {
+        //     console.log(event.detail.x);
+        //     console.log(event.detail.y);
+        //     console.log(event.detail.width);
+        //     console.log(event.detail.height);
+        //     console.log(event.detail.rotate);
+        //     console.log(event.detail.scaleX);
+        //     console.log(event.detail.scaleY);
+        //     console.log(event.detail.rotate);
+        //     x2 = event.detail.x;
+        //     y2 = event.detail.y;
+        //     width2 = event.detail.width;
+        //     height2 = event.detail.height;
+        //     rotate2 = event.detail.rotate;
+        //     scalex2 = event.detail.scaleX;
+        //     scaley2 = event.detail.scaleY;
+        //     rotate2 = event.detail.rotate;
+        //   }
+        // });
+      // });
+    </script>
     <div class="col-xs-12 col-md-7">
       <%= f.field_container :description, class: ['form-group'] do %>
         <%= f.label :description, Spree.t(:description) %>

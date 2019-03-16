@@ -1,0 +1,113 @@
+<% content_for :head do -%>
+  <meta name="title" content="Contactanos">
+<% end -%>
+
+<% @body_id = 'contact-page' %>
+
+<div class="col-md-7 contact-left-side">
+  <div class="contact-information">
+    <h2 class="contact-title">
+      VENTA DE PRODUCTOS / ADMINISTRACIÓN
+    </h2>
+    <span class="contact-specific">
+      Calle: Luis María Drago 148 C1414AID. Ciudad Autónoma de Buenos Aires
+    </span>
+    <br>
+    <br>
+    <span class="contact-specific">
+      Tel/Fax (+5411) 4857 5027 / 4854 4473
+    </span>
+    <br>
+    <br>
+    <span class="contact-specific">
+      E-mail: info@accesoriosypartes.com.ar
+    </span>
+    <br>
+    <br>
+    <div class="contact-map">
+      <iframe width="600" height="250" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCILkLCjHTSW9rAravtzotV7S5yySf3kyY  &q=INTELHOME+Tecnologia+y+Diseño+Casas%2Fofic+Inteligentes" allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+  <div class="contact-information">
+    <h2 class="contact-title">
+      OFICINA TÉCNICO-COMERCIAL / SHOWROOM
+    </h2>
+    <span class="contact-specific">
+      Calle: Boulevard del Mirador 220, Local 1. Bahía Grande, Nordelta, Tigre (Ruta 27).
+    </span>
+    <br>
+    <br>
+    <span class="contact-specific">
+      Tel/Fax (+5411) 4871 3666 (DOMO)
+    </span>
+    <br>
+    <br>
+    <span class="contact-specific">
+      E-mail: info@intelhome.com.ar
+    </span>
+    <br>
+    <br>
+    <div class="contact-map">
+      <iframe
+      width="600"
+      height="250"
+      frameborder="0" style="border:0"
+      src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3292.2401514529406!2d-58.64947174470802!3d-34.395241415081635!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xe1c9c941ae749667!2sINTELHOME!5e0!3m2!1ses!2sar!4v1525301650775" allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+  <div class="contact-information">
+    <h2 class="contact-title">
+      INTERIOR DEL PAÍS / DISTRIBUIDORES
+    </h2>
+    <span class="contact-specific">
+      Comunicate al 0810-444-3666 (DOMO)
+    </span>
+    <br><br>
+    <div class="contact-map no-interactive">
+      <%= image_tag("map-fixed.jpg", id: "map-no-interactive") %>
+    </div>
+  </div>
+</div>
+<div class="col-md-5 contact-right-side">
+  <div class="contact-information">
+    <h2 class="contact-title-form">
+      Formulario de contacto
+    </h2>
+    <p class="contact-specific">
+      Escríbanos un mensaje, le responderemos a la brevedad.
+    </p>
+  </div>
+  <%= render :partial => 'spree/shared/error_messages', :locals => { :target => @contact } %>
+
+  <%= form_for @contact, :url => contacts_path, :html => { :novalidate => '' } do |f| %>
+    <% if SpreeContactUs.require_name %>
+      <p>
+        <%= f.label :name, "Nombre", class: "label label-nombre" %>
+        <span class="required">*</span><br/>
+        <%= f.text_field :name, class: 'required form-control contacto-nombre' %>
+      </p>
+    <% end %>
+    <p>
+      <%= f.label :email, "Correo Electrónico", class: "label label-email" %>
+      <span class="required">*</span><br/>
+      <%= f.email_field :email, class: 'required form-control email contacto-email' %>
+    </p>
+    <% if SpreeContactUs.require_subject %>
+      <p>
+        <%= f.label :subject, "Número de Teléfono", class: "label label-numero" %>
+        <span class="required">*</span><br/>
+        <%= f.text_field :subject, class: 'required form-control contacto-numero' %>
+      </p>
+    <% end %>
+    <p>
+      <%= f.label :message, "Mensaje", class: 'label label-mensaje' %>
+      <span class="required">*</span><br/>
+      <%= f.text_area :message, class: 'required form-control contacto-mensaje' %>
+    </p>
+    <p>
+      <%= f.submit "ENVIAR COMENTARIO", :alt => Spree.t(:submit), :id => 'contact_us_contact_submit', :title => Spree.t(:submit) %>
+    </p>
+  <% end %>
+</div>

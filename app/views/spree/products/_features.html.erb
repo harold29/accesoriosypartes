@@ -8,53 +8,101 @@
       </div>
     </div>
     <div class="row" id="feature-list">
-      <div class="col-md-6 col-sm-12 feature">
-        <h4 class="concept-subtitle">
-          <%= @product_properties[2].property.name %>
-        </h4>
-        <p class="concept-text">
-          <%= @product_properties[2].value %>
-        </p>
+      <div class="row">
+        <div class="col-md-1 col-sm-1 img-ayp-feature">
+          <%= image_tag("logo-AyP-gris-3.png", class: 'logo-img-property') %>
+        </div>
+        <div class="col-md-5 col-sm-11 feature">
+          <h4 class="concept-subtitle">
+            <% if @product_properties[2] %>
+              <%= @product_properties[2].property.name %>
+            <% end %>
+          </h4>
+          <p class="concept-text">
+            <% if @product_properties[2] %>
+              <%= @product_properties[2].value %>
+            <% end %>
+          </p>
+        </div>
+        <div class="col-md-1 col-sm-1 img-ayp-feature">
+          <%= image_tag("logo-AyP-gris-3.png", class: 'logo-img-property') %>
+        </div>
+        <div class="col-md-5 col-sm-11 feature">
+          <h4 class="concept-subtitle">
+            <% if @product_properties[3] %>
+              <%= @product_properties[3].property.name %>
+            <% end %>
+          </h4>
+          <p class="concept-text">
+            <% if @product_properties[3] %>
+              <%= @product_properties[3].value %>
+            <% end %>
+          </p>
+        </div>
       </div>
-      <div class="col-md-6 col-sm-12 feature">
-        <h4 class="concept-subtitle">
-          <%= @product_properties[3].property.name %>
-        </h4>
-        <p class="concept-text">
-          <%= @product_properties[3].value %>
-        </p>
+      <div class="row">
+        <div class="col-md-1 col-sm-1 img-ayp-feature">
+          <%= image_tag("logo-AyP-gris-3.png", class: 'logo-img-property') %>
+        </div>
+        <div class="col-md-5 col-sm-11 feature">
+          <h4 class="concept-subtitle">
+            <% if @product_properties[4] %>
+              <%= @product_properties[4].property.name %>
+            <% end %>
+          </h4>
+          <p class="concept-text">
+            <% if @product_properties[4] %>
+              <%= @product_properties[4].value %>
+            <% end %>
+          </p>
+        </div>
+        <div class="col-md-1 col-sm-1 img-ayp-feature">
+          <%= image_tag("logo-AyP-gris-3.png", class: 'logo-img-property') %>
+        </div>
+        <div class="col-md-5 col-sm-11 feature">
+          <h4 class="concept-subtitle">
+            <% if @product_properties[5] %>
+              <%= @product_properties[5].property.name %>
+            <% end %>
+          </h4>
+          <p class="concept-text">
+            <% if @product_properties[5] %>
+              <%= @product_properties[5].value %>
+            <% end %>
+          </p>
+        </div>
       </div>
-      <div class="col-md-6 col-sm-12 feature">
-        <h4 class="concept-subtitle">
-          <%= @product_properties[4].property.name %>
-        </h4>
-        <p class="concept-text">
-          <%= @product_properties[4].value %>
-        </p>
-      </div>
-      <div class="col-md-6 col-sm-12 feature">
-        <h4 class="concept-subtitle">
-          <%= @product_properties[5].property.name %>
-        </h4>
-        <p class="concept-text">
-          <%= @product_properties[5].value %>
-        </p>
-      </div>
-      <div class="col-md-6 col-sm-12 feature">
-        <h4 class="concept-subtitle">
-          <%= @product_properties[6].property.name %>
-        </h4>
-        <p class="concept-text">
-          <%= @product_properties[6].value %>
-        </p>
-      </div>
-      <div class="col-md-6 col-sm-12 feature">
-        <h4 class="concept-subtitle">
-          <%= @product_properties[7].property.name %>
-        </h4>
-        <p class="concept-text">
-          <%= @product_properties[7].value %>
-        </p>
+      <div class="row">
+        <div class="col-md-1 col-sm-1 img-ayp-feature">
+          <%= image_tag("logo-AyP-gris-3.png", class: 'logo-img-property') %>
+        </div>
+        <div class="col-md-5 col-sm-11 feature">
+          <h4 class="concept-subtitle">
+            <% if @product_properties[6] %>
+              <%= @product_properties[6].property.name %>
+            <% end %>
+          </h4>
+          <p class="concept-text">
+            <% if @product_properties[6] %>
+              <%= @product_properties[6].value %>
+            <% end %>
+          </p>
+        </div>
+        <div class="col-md-1 col-sm-1 img-ayp-feature">
+          <%= image_tag("logo-AyP-gris-3.png", class: 'logo-img-property') %>
+        </div>
+        <div class="col-md-5 col-sm-11 feature">
+          <h4 class="concept-subtitle">
+            <% if @product_properties[7] %>
+              <%= @product_properties[7].property.name %>
+            <% end %>
+          </h4>
+          <p class="concept-text">
+            <% if @product_properties[7] %>
+              <%= @product_properties[7].value %>
+            <% end %>
+          </p>
+        </div>
       </div>
     </div>
   </div>

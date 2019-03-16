@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_22_192049) do
+ActiveRecord::Schema.define(version: 2018_12_21_004335) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -106,6 +106,13 @@ ActiveRecord::Schema.define(version: 2018_09_22_192049) do
     t.text "alt"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.float "x"
+    t.float "y"
+    t.float "width"
+    t.float "height"
+    t.float "rotate"
+    t.float "scalex"
+    t.float "scaley"
     t.index ["position"], name: "index_spree_assets_on_position"
     t.index ["viewable_id"], name: "index_assets_on_viewable_id"
     t.index ["viewable_type", "type"], name: "index_assets_on_viewable_type_and_type"
@@ -549,6 +556,7 @@ ActiveRecord::Schema.define(version: 2018_09_22_192049) do
     t.boolean "promotionable", default: true
     t.string "meta_title"
     t.datetime "discontinue_on"
+    t.float "iva"
     t.index ["available_on"], name: "index_spree_products_on_available_on"
     t.index ["deleted_at"], name: "index_spree_products_on_deleted_at"
     t.index ["discontinue_on"], name: "index_spree_products_on_discontinue_on"
